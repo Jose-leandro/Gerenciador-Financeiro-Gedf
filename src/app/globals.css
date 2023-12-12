@@ -2,10 +2,10 @@ body {
   background-color: #121117f5;
 }
 
-
-li {
+li, h1, h2, h3, h4, h5, h6, a {
   color: #fff;
   list-style-type: none;
+  font-weight: normal;
 }
 
 

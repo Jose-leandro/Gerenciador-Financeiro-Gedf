@@ -1,18 +1,22 @@
 import Header from "./header"
 import styles from '../Sass/page.module.sass'
+import Footer from "./footer"
+import Main from "./main/main"
 
 export default function Page() {
   return (
-   <div>
-    <Header>
+    <>
+      <header>
+        <Header />
+      </header>
 
-    </Header>
-    <main>
+      <main>
+        <Main />
+      </main>
 
-    </main>
-    <footer>
-
-    </footer>
-   </div>
+      <footer className={styles.footer}>
+        <Footer />
+      </footer>
+    </>
   )
 }

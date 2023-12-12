@@ -14,8 +14,11 @@ export default function Header() {
             <div className={styles.menu}>
                 <ul className={styles.div__ul}>
                     <li>Visão geral</li>
+                    <li>Seu desempenho</li>
+                    <li>Aprenda como usar</li>
                     <li>Configurações</li>
                     <li>Sobre</li>
+                    <li>Contato</li>
                 </ul>
             </div>
         </div>
