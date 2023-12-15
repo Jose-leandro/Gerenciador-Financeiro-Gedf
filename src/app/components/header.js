@@ -1,4 +1,4 @@
-import  styles from "../sass/header.module.sass"
+import  styles from "../../Sass/header.module.sass"
 import Image from "next/image"
 import { Cormorant_Garamond } from 'next/font/google'
 

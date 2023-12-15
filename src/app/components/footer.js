@@ -1,5 +1,5 @@
 
-import stylesFooter from '../Sass/footer.module.sass'
+import stylesFooter from '../../Sass/footer.module.sass'
 
 import Image from "next/image"
 import { Cormorant_Garamond } from 'next/font/google'

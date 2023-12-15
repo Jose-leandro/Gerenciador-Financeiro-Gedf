@@ -1,7 +1,7 @@
-import Header from "./header"
-import styles from '../Sass/page.module.sass'
-import Footer from "./footer"
-import Main from "./main/main"
+import Header from "./components/header"
+import styles from '../../src/Sass/page.module.sass'
+import Footer from "./components/footer"
+import Main from "./components/main/main"
 
 export default function Page() {
   return (
