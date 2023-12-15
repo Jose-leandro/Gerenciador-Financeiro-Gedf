@@ -1,5 +1,102 @@
-.main__inicio 
-    height: 300px
+.main__h1
+    font-size: 30px
+    font-family: none
+    margin-bottom: 1em
 
-.inicio__h1
-    font-size: 18px
+.main__container
+    display: flex
+    height: 100%
+    flex-wrap: wrap
+    width: 95%
+    justify-content: space-evenly
+    align-items: flex-start
+
+.container__gasto
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
+    width: 33%
+    height: 215px
+    padding: 20px 70px
+    border-radius: 10px
+    background: #151a21a1
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 30px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px
+
+.gasto__input
+    background: transparent
+    border: none
+    border-bottom: 2px solid #2f3b45
+    height: auto
+    padding: 10px 30px
+    width: 70%
+
+.gasto__input input:focus
+    border-bottom: 2px solid #2e3135
+    outline: none
+    padding: 0px 2px
+    width: 102%
+
+.gasto__input input::placeholder
+    color: #5f6264
+    font-size: 15px
+
+.container__categorias
+    @extend .container__gasto
+    width: 200px
+    height: 251px
+    padding: 10px 40px
+    margin-bottom: 1em
+    flex-wrap: wrap
+    flex-direction: column
+    align-items: center
+
+.categorias__alimentacao, .categorias__roupas, .categorias__trasnporte
+    @extend .gasto__input
+    border: 1px solid #2f3b45
+    padding: 10px 20px
+    border-radius: 10px
+    width: 82%
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+.categorias__expandir
+    border: 1px solid #2f3b45
+    border-radius: 10px
+    background-color: transparent
+    cursor: pointer
+
+.categorias__expandir:hover
+    width: 47px
+    border-radius: 8px
+
+.categorias__expandir:focus
+    width: 43px
+    border-radius: 12px
+
+.categorias__casa, .categorias__saude
+    @extend .categorias__alimentacao
+    display: none
+
+.selecao__pagamento
+    @extend .container__gasto
+    width: auto
+    padding: 20px 40px
+    height: auto
+
+.pagamento__button
+    @extend .gasto__input
+    border: 1px solid #2f3b45
+    padding: 10px 20px
+    margin-top: 1em
+    width: auto
+    border-radius: 10px
+
+.container__mais
+    @extend .container__gasto
+    height: auto
+    width: auto
+    flex-direction: row
+    padding: 10px 40px
+    align-items: center
+    margin-top: 1em

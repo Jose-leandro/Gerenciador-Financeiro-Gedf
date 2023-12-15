@@ -10,7 +10,7 @@ export default function Page() {
         <Header />
       </header>
 
-      <main>
+      <main className={styles.main}>
         <Main />
       </main>
 

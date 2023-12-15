@@ -1,9 +1,13 @@
 body {
-  background-color: #121117f5;
+  background:#0D1117;
+  color: #fff;
 }
 
-li, h1, h2, h3, h4, h5, h6, a {
+button {
   color: #fff;
+}
+
+li, h1, h2, h3, h4, h5, h6 {
   list-style-type: none;
   font-weight: normal;
 }

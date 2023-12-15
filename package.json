@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001397",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
