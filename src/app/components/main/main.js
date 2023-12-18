@@ -3,7 +3,7 @@ import stylesMain from '../../../Sass/main.module.sass'
 import Image from "next/image"
 
 import React, { useRef, useEffect, useState } from 'react';
-export default function Main() {
+function Main() {
 
     const categoriaCasa = useRef(null);
     const categoriaSaude = useRef(null);
@@ -11,28 +11,28 @@ export default function Main() {
     const [botaoClicado, setBotaoClicado] = useState(false);
 
     useEffect(() => {
-          if (botaoClicado) {
+        if (botaoClicado) {
 
             const categoriasOcultas = { "categoriaCasa": categoriaCasa, "categoriaSaude": categoriaSaude }
 
             for (var chave in categoriasOcultas) {
 
                 if (categoriasOcultas.hasOwnProperty(chave)) {
-                    console.log("Chave: " + chave + ", Valor: " + categoriasOcultas[chave]);
-                    categoriasOcultas[chave].current.style.display = "inline-block";
+                    // console.log("Chave: " + chave + ", Valor: " + categoriasOcultas[chave]);
+                    categoriasOcultas[chave].current.style.display = "flex";
                 }
             }
         };
     }, [botaoClicado]);
 
-  const handleClick = () => {
-    setBotaoClicado(true);
-  };
+    const handleClick = () => {
+        setBotaoClicado(true);
+    };
 
     return (
         <>
+            <h1 className={stylesMain.main__h1}>Adicionar gasto</h1>
             <div className={stylesMain.main__container}>
-                <h1 className={stylesMain.main__h1}>Adicionar gasto</h1>
 
                 <div className={stylesMain.container__gasto}>
 
@@ -63,16 +63,16 @@ export default function Main() {
                         Transporte
                     </button>
 
-                    <button className={stylesMain.categorias__expandir} onClick={handleClick}>
+                    <button className={stylesMain.categorias__expandir} onClick={handleClick} data-testid="botao">
                         <Image src="/img/icons8-seta-para-expandir-32.png" width={30} height={30} alt="Icone para adicionar mais infromaçãoes ao seu gasto" />
                     </button>
 
-                    <button className={stylesMain.categorias__casa} ref={categoriaCasa}>
+                    <button className={stylesMain.categorias__casa} ref={categoriaCasa} data-testid="categoriaCasa">
                         <Image src="/img/icons8-home-48.png" width={30} height={30} alt="Icone para adicionar mais infromaçãoes ao seu gasto" />
                         Casa
                     </button>
-
-                    <button className={stylesMain.categorias__saude} ref={categoriaSaude}>
+                    
+                    <button className={stylesMain.categorias__saude} ref={categoriaSaude} data-testid="categoriaSaude">
                         <Image src="/img/icons8-health-48.png" width={30} height={30} alt="Icone para adicionar mais infromaçãoes ao seu gasto" />
                         Saúde
                     </button>
@@ -98,4 +98,5 @@ export default function Main() {
     )
 }
 
+export default Main;
 

@@ -43,7 +43,7 @@
 .container__categorias
     @extend .container__gasto
     width: 200px
-    height: 251px
+    height: auto
     padding: 10px 40px
     margin-bottom: 1em
     flex-wrap: wrap
@@ -56,6 +56,8 @@
     padding: 10px 20px
     border-radius: 10px
     width: 82%
+    margin-top: 0.3em
+    margin-bottom: 0.6em
     display: flex
     justify-content: space-around
     align-items: center
@@ -65,6 +67,7 @@
     border-radius: 10px
     background-color: transparent
     cursor: pointer
+    order: 10
 
 .categorias__expandir:hover
     width: 47px
@@ -75,8 +78,16 @@
     border-radius: 12px
 
 .categorias__casa, .categorias__saude
-    @extend .categorias__alimentacao
+    @extend .gasto__input
+    border: 1px solid #2f3b45
+    padding: 10px 20px
+    border-radius: 10px
+    width: 82%
+    margin-top: 0.3em
+    margin-bottom: 0.6em
     display: none
+    justify-content: space-around
+    align-items: center
 
 .selecao__pagamento
     @extend .container__gasto
