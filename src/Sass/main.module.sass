@@ -29,6 +29,7 @@
     height: auto
     padding: 10px 30px
     width: 70%
+    color: #fff
 
 .gasto__input input:focus
     border-bottom: 2px solid #2e3135
@@ -56,11 +57,18 @@
     padding: 10px 20px
     border-radius: 10px
     width: 82%
-    margin-top: 0.3em
+    margin-top: 0.5em
     margin-bottom: 0.6em
     display: flex
     justify-content: space-around
     align-items: center
+    cursor: pointer
+
+.categorias__alimentacao
+    margin-top: 1em
+
+.alimentacao__selecionada, .roupas__selecionada, .transporte__selecionada, .casa__selecionada, .saude__selecionada
+    display: none
 
 .categorias__expandir
     border: 1px solid #2f3b45
@@ -73,7 +81,7 @@
     width: 47px
     border-radius: 8px
 
-.categorias__expandir:focus
+.categorias__expandir:active
     width: 43px
     border-radius: 12px
 
@@ -88,6 +96,7 @@
     display: none
     justify-content: space-around
     align-items: center
+    cursor: pointer
 
 .selecao__pagamento
     @extend .container__gasto
@@ -102,6 +111,16 @@
     margin-top: 1em
     width: auto
     border-radius: 10px
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    cursor: pointer
+
+.pagado__selecionado
+    display: none
+
+.nao_pagado__selecionado
+    display: none
 
 .container__mais
     @extend .container__gasto
@@ -111,3 +130,23 @@
     padding: 10px 40px
     align-items: center
     margin-top: 1em
+
+.main__btn_registar
+    @extend .container__gasto
+    height: auto
+    width: auto
+    flex-direction: row
+    padding: 15px 40px
+    align-items: center
+    border: none
+    margin-top: 1em
+    cursor: pointer
+    font-size: 17px
+
+.main__btn_registar:hover
+    border-radius: 8px
+    background: #1d2125a1
+
+.main__btn_registar:active
+    border-radius: 18px
+    background: #15171aa1
