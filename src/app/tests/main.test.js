@@ -1,20 +1,42 @@
 import React from 'react';
 
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import Main from '../components/main/main';
+import Main from '../components/main/adicaoGastos';
 
-test('deve alterar o estilo dos elementos ao ser clicado', async () => {
-  const { getByTestId} = render(<Main />);
-
-  // Adiciona um console.log para verificar a estrutura do DOM
-  // console.log(container.innerHTML);
-
-  // Simula o clique no botão
-  fireEvent.click(getByTestId('botao'));
+describe('Testes de visibilidade de imagens na seção pagamento e categoria ', () => {
   
-  await waitFor(() => {
+    let getByTestId;
+  
+    beforeEach(() => {
+      ({ getByTestId } = render(<Main />));
+    });
 
-    expect(getByTestId('categoriaCasa').style.display).toBe('flex');
-    expect(getByTestId('categoriaSaude').style.display).toBe('flex');
+  test('Verifica se as categorias "casa" e "saude" fica visível ao clicar em "botaoExpandir', async () => {
+   
+    fireEvent.click(getByTestId('botaoExpandir'));
+    
+    await waitFor(() => {
+      expect(getByTestId('categoriaCasa').style.display).toBe('flex');
+      expect(getByTestId('categoriaSaude').style.display).toBe('flex');
+    });
+  });
+
+  test('Verifica se a imagem "pagado_img-selecionado" fica visível ao clicar em "botaoPagado"', async () => {
+
+    fireEvent.click(getByTestId('botaoPagado'));
+
+    await waitFor(() => {
+      expect(getByTestId('pagado_img-selecionado').style.display).toBe('flex');
+    });
+  });
+
+  test('Verifica se a imagem "nao_pagado_img-selecionado" fica visível ao clicar em "botaoNaoPagado"', async () => {
+
+    fireEvent.click(getByTestId('botaoNaoPagado'));
+
+    await waitFor(() => {
+      expect(getByTestId('nao_pagado_img-selecionado').style.display).toBe('flex');
+    });
   });
 });
+
