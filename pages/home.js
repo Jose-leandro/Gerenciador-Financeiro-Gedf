@@ -1,8 +1,8 @@
-import Header from "./components/header"
+import Header from "../src/app/components/header"
 import styles from '../../src/Sass/page.module.sass'
-import Footer from "./components/footer"
-import TelaInicial from "./components/main/telaInicial"
-import AdicaoGastos from "./components/main/adicaoGastos"
+import Footer from "../src/app/components/footer"
+import TelaInicial from "../src/app/components/main/telaInicial"
+import AdicaoGastos from "../src/app/components/main/adicaoGastos"
 
 import { Cormorant_Garamond } from 'next/font/google'
 import Link from "next/link"

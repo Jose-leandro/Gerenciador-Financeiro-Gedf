@@ -3,8 +3,6 @@ import stylesMain from '../../../Sass/main.module.sass'
 import Image from "next/image"
 
 import React, { useRef, useEffect, useState } from 'react';
-import supabase from '../../../../utils/dbConnection';
-
 
 function AdicaoGastos() {
 
