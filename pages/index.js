@@ -69,9 +69,67 @@ function Index() {
           </div>
         </div>
 
-        <div>
-          <h4>Perguntas Frequentes</h4>
-          <div>
+        <section className={stylesIndex.precos}>
+          <h4 className={stylesIndex.precos__h4}><span className={stylesIndex.h4__span}>Quanto</span> custa o <span className={stylesIndex.h4__span}>Gedf</span> </h4>
+        </section>
+
+        <div className={stylesIndex.perguntas}>
+          <h4 className={stylesIndex.perguntas__h4}>O que as <span className={stylesIndex.h4__span}>pessoas</span> mais <sapan className={stylesIndex.h4__span}>querem saber</sapan> sobre o <span className={stylesIndex.h4__span}>Gedf</span></h4>
+          <div className={stylesIndex.perguntas__contener}>
+            <div className={stylesIndex.contener__gedf}>
+              <div className={stylesIndex.gedf__titulo}>
+                <h5 className={stylesIndex.titulo__h5}>O que é gedf </h5>
+                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
+              </div>
+              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
+                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
+                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
+                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
+            </div>
+
+            <div className={stylesIndex.contener__significado}>
+              <div className={stylesIndex.significado__titulo}>
+                <h5 className={stylesIndex.titulo__h5}>O que significa a palavra gedf </h5>
+                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
+              </div>
+              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
+                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
+                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
+                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
+            </div>
+
+            <div className={stylesIndex.contener__preco}>
+              <div className={stylesIndex.preco__titulo}>
+                <h5 className={stylesIndex.titulo__h5}>Quanto custa o gedf </h5>
+                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
+              </div>
+              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
+                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
+                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
+                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
+            </div>
+
+            <div className={stylesIndex.contener__conta}>
+              <div className={stylesIndex.conta__titulo}>
+                <h5 className={stylesIndex.titulo__h5}>Onde posso acessar minha conta no gedf </h5>
+                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
+              </div>
+              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
+                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
+                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
+                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
+            </div>
+
+            <div className={stylesIndex.contener__seguranca}>
+              <div className={stylesIndex.seguranca__titulo}>
+                <h5 className={stylesIndex.titulo__h5}>Os meus daos estão seguro no Gedf </h5>
+                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
+              </div>
+              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
+                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
+                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
+                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
+            </div>
 
           </div>
         </div>
