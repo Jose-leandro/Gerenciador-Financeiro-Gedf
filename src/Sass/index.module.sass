@@ -67,10 +67,70 @@
 
 .precos
     width: 100%
+    padding: 60px 0px
+    display: flex
+    flex-direction: column
+    align-items: center
 
 .precos__h4
     @extend .funcionaliddaes__h2
-    width: 70%
+    width: auto
+
+.precos__div
+    display: flex
+    justify-content: space-evenly
+
+.precos__informacoes
+    width: 50%
+
+.informacoes__h4
+    font-weight: 500 
+    font-size: 30px
+    font-weight: bold
+
+.informacoes__p
+    font-size: 16px
+
+.informacoes__titulo
+    color: #585add
+    font-weight: 400 
+    font-size: 20px
+    margin-bottom: 1em
+
+.informacoes__contener
+    @extend .funcionalidades__contener
+    justify-content: flex-start
+
+.contener__funcionalidades
+    display: flex
+    width: 42%
+    justify-content: space-around
+    margin-left: 1em
+    margin-bottom: 1em 
+
+.informacoes__preco
+    background-color: #20203575
+    width: 30%
+    padding: 40px 0px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.preco__p
+    font-weight: 400 
+    font-size: 20px
+    margin-bottom: 1em
+
+.preco__valor
+    font-weight: 600 
+    font-size: 35px
+    margin-bottom: 1em
+    color: #585add
+
+.preco__button
+    @extend .main__button
+    border: #0c0c0c 1px solid
+
 
 .perguntas
     margin-top: 1.6em

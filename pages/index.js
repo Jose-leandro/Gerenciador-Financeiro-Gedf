@@ -71,6 +71,44 @@ function Index() {
 
         <section className={stylesIndex.precos}>
           <h4 className={stylesIndex.precos__h4}><span className={stylesIndex.h4__span}>Quanto</span> custa o <span className={stylesIndex.h4__span}>Gedf</span> </h4>
+
+          <div className={stylesIndex.precos__div}>
+            <div className={stylesIndex.precos__informacoes}>
+              <h4 className={stylesIndex.informacoes__h4}>Plano Graituito</h4>
+              <p className={stylesIndex.informacoes__p}>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
+                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.</p>
+
+              <h4 className={stylesIndex.informacoes__titulo}>Beneficios</h4>
+              <div className={stylesIndex.informacoes__contener}>
+                <div className={stylesIndex.contener__funcionalidades}>
+                  <h4>Todas as funcionalidades liberads</h4>
+                  <img src='/img/icons8-selecionado-24.png' alt='Icone de seleção'></img>
+                </div>
+
+                <div className={stylesIndex.contener__funcionalidades}>
+                  <h4>Todas as funcionalidades liberads</h4>
+                  <img src='/img/icons8-selecionado-24.png' alt='Icone de seleção'></img>
+                </div>
+
+                <div className={stylesIndex.contener__funcionalidades}>
+                  <h4>Todas as funcionalidades liberads</h4>
+                  <img src='/img/icons8-selecionado-24.png' alt='Icone de seleção'></img>
+                </div>
+
+                <div className={stylesIndex.contener__funcionalidades}>
+                  <h4>Todas as funcionalidades liberads</h4>
+                  <img src='/img/icons8-selecionado-24.png' alt='Icone de seleção'></img>
+                </div>
+              </div>
+            </div>
+
+            <div className={stylesIndex.informacoes__preco}>
+              <p className={stylesIndex.preco__p}>Por apenas</p>
+              <h4 className={stylesIndex.preco__valor}>R$ 0</h4>
+
+              <button className={stylesIndex.preco__button}>Começar minha jornada financeira</button>
+            </div>
+          </div>
         </section>
 
         <div className={stylesIndex.perguntas}>
