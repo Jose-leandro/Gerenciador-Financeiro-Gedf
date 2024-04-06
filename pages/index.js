@@ -2,19 +2,18 @@ import React, { useEffect, useRef } from 'react'
 import Header from '../app/components/header'
 import Footer from '../app/components/footer'
 import stylesIndex from '../src/Sass/index.module.sass'
-import Image from 'next/image'
 
-function Index() {
+function Index () {
   const gastosh3 = useRef(null)
   const gastosDiv = useRef(null)
 
   useEffect(() => {
     if (gastosh3.current) {
-      let widthGastosh3 = gastosh3.current.offsetWidth
+      const widthGastosh3 = gastosh3.current.offsetWidth
       console.log(widthGastosh3)
-      gastosDiv.current.style.width = (widthGastosh3 - 25) + 'px';
+      gastosDiv.current.style.width = (widthGastosh3 - 25) + 'px'
     }
-  }, [gastosh3]);
+  }, [gastosh3])
 
   return (
     <>
@@ -23,11 +22,15 @@ function Index() {
       </header>
 
       <main className={stylesIndex.main}>
-        <h1 className={stylesIndex.main__h1}>Transforme o controle do seu dinheiro em liberdade e conquiste seus sonhos a partir de agora</h1>
+        <section className={stylesIndex.main__apresentacao}>
+          <div className={stylesIndex.apresentacao__informacoes}>
+            <h1 className={stylesIndex.main__h1}><span className={stylesIndex.h1__span}>Controle</span> seu dinheiro, conquiste seus <span className={stylesIndex.h1__span}>sonhos</span>, viva livre<span className={stylesIndex.h1__span}>!</span></h1>
 
-        <button className={stylesIndex.main__button}>Iniciar minha liberdade</button>
+            <button className={stylesIndex.main__button}>Iniciar minha liberdade</button>
+          </div>
 
-        <img className={stylesIndex.main__img} src="/img/Screenshot-Gedf.png" alt="Image de apresentação" />
+          <img className={stylesIndex.main__img} src="/img/Screenshot-Gedf.png" alt="Image de apresentação" />
+        </section>
 
         <div className={stylesIndex.main__funcionalidades}>
           <h2 className={stylesIndex.funcionaliddaes__h2}>O que o <span className={stylesIndex.h2__span}>Gedf</span> por <span className={stylesIndex.h2__span}>oferecer </span>a você</h2>
