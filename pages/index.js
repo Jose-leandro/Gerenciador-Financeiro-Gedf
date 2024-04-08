@@ -3,17 +3,7 @@ import Header from '../app/components/header'
 import Footer from '../app/components/footer'
 import stylesIndex from '../src/Sass/index.module.sass'
 
-function Index () {
-  const gastosh3 = useRef(null)
-  const gastosDiv = useRef(null)
-
-  useEffect(() => {
-    if (gastosh3.current) {
-      const widthGastosh3 = gastosh3.current.offsetWidth
-      console.log(widthGastosh3)
-      gastosDiv.current.style.width = (widthGastosh3 - 25) + 'px'
-    }
-  }, [gastosh3])
+function Index() {
 
   return (
     <>
@@ -36,17 +26,10 @@ function Index () {
           <h2 className={stylesIndex.funcionaliddaes__h2}>O que o <span className={stylesIndex.h2__span}>Gedf</span> por <span className={stylesIndex.h2__span}>oferecer </span>a você</h2>
           <div className={stylesIndex.funcionalidades__contener}>
             <div className={stylesIndex.contener__gastos}>
-              <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
-
-            <div className={stylesIndex.contener__gastos}>
               <div className={stylesIndex.gastos__titulos}>
-                <h3 ref={gastosh3} className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-                <div className={stylesIndex.gastos__div} ref={gastosDiv}></div>
+                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
+                <div className={stylesIndex.gastos__div}></div>
+                <img src='/img/icons8-financial-64.png' />
               </div>
               <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
                 você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
@@ -55,7 +38,11 @@ function Index () {
             </div>
 
             <div className={stylesIndex.contener__gastos}>
-              <h3>Gerenciamentod dos seus gatos</h3>
+            <div className={stylesIndex.gastos__titulos}>
+                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
+                <div className={stylesIndex.gastos__div}></div>
+                <img src='/img/icons8-financial-64.png' />
+              </div>
               <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
                 você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
                 Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
@@ -63,7 +50,23 @@ function Index () {
             </div>
 
             <div className={stylesIndex.contener__gastos}>
-              <h3>Gerenciamentod dos seus gatos</h3>
+            <div className={stylesIndex.gastos__titulos}>
+                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
+                <div className={stylesIndex.gastos__div}></div>
+                <img src='/img/icons8-financial-64.png' />
+              </div>
+              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
+                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
+                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
+                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
+            </div>
+
+            <div className={stylesIndex.contener__gastos}>
+            <div className={stylesIndex.gastos__titulos}>
+                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
+                <div className={stylesIndex.gastos__div}></div>
+                <img src='/img/icons8-financial-64.png' />
+              </div>
               <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
                 você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
                 Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.

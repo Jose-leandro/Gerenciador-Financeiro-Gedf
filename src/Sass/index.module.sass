@@ -8,6 +8,7 @@
 .main__apresentacao
     display: flex
     justify-content: space-evenly
+    padding: 0px 0px 70px 0px
     
 .main__h1
     width: auto
@@ -42,6 +43,11 @@
 
 .main__funcionalidades
     @extend .main
+    padding: 80px 0px
+    background-color: #5254d721
+    width: 100%
+    border-radius: 10px
+    height: auto
 
 .funcionaliddaes__h2
     width: 50%
@@ -60,24 +66,28 @@
     flex-wrap: wrap
 
 .contener__gastos
-    width: 35%
+    width: 45%
     margin-bottom: 1em
+    background-color: #00000036
+    border-radius: 10px
+    padding: 20px 20px
 
 .gastos__div
     background-color: #585add
-    height: 3px
+    width: 3px
     border-radius: 6px
-    margin-top: 0.5em
-
+    margin: 0px 5px
+    height: 25px
 
 .gastos__titulos
     display: flex
-    flex-direction: column
     align-items: center
+    justify-content: space-evenly
 
 .gastos__h3
    @extend .main__h1
-   width: 378px
+   width: auto
+   font-size: 24px
 
 .precos
     width: 100%
@@ -144,7 +154,6 @@
 .preco__button
     @extend .main__button
     border: #0c0c0c 1px solid
-
 
 .perguntas
     margin-top: 1.6em
