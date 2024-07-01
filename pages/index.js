@@ -15,6 +15,7 @@ function Index() {
         <section className={stylesIndex.main__apresentacao}>
           <div className={stylesIndex.apresentacao__informacoes}>
             <h1 className={stylesIndex.main__h1}><span className={stylesIndex.h1__span}>Controle</span> seu dinheiro, conquiste seus <span className={stylesIndex.h1__span}>sonhos</span>, viva livre<span className={stylesIndex.h1__span}>!</span></h1>
+            <p className={stylesIndex.informacoes__p} >Explore, aproveite e alcance sua liberdade financeira. Transforme seus sonhos e objetivos financeiros em realidade com Gedf.</p>
 
             <button className={stylesIndex.main__button}>Iniciar minha liberdade</button>
           </div>
