@@ -2,8 +2,42 @@ import React, { useEffect, useRef } from 'react'
 import Header from '../app/components/header'
 import Footer from '../app/components/footer'
 import stylesIndex from '../src/Sass/index.module.sass'
+import { CardComponent } from '../app/components/landinng-page/cardComponent'
 
 function Index() {
+
+  let informationCreateCard = {
+    spendManagement: {
+      imgFunct: 'icons8-analysis-64.png',
+      titleFunct: 'Spend management',
+      textFunct: 'Discover a prosperous financial life: manage expenses and achieve your dreams!'
+    },
+    mySpendReports: {
+      imgFunct: 'icons8-relatórios-externos-produtividade-icons-64.png',
+      titleFunct: 'Reports',
+      textFunct: 'Discover a prosperous financial life: manage expenses and achieve your dreams!'
+    },
+    mySpendPlanning: {
+      imgFunct: 'icons8-pay-date-100.png',
+      titleFunct: 'Financial Planning',
+      textFunct: 'Discover a prosperous financial life: manage expenses and achieve your dreams!'
+    },
+    mySpendAccounts: {
+      imgFunct: 'icons8-conta-de-teste-100.png',
+      titleFunct: 'Create and manage custom accounts',
+      textFunct: 'Discover a prosperous financial life: manage expenses and achieve your dreams!'
+    },
+    mySpendLimit: {
+      imgFunct: 'icons8-alerta-100.png',
+      titleFunct: 'Create and manage custom accounts',
+      textFunct: 'Discover a prosperous financial life: manage expenses and achieve your dreams!'
+    },
+    mySpendAFree: {
+      imgFunct: 'icons8-dinheiro-100.png',
+      titleFunct: 'Create and manage custom accounts',
+      textFunct: 'Discover a prosperous financial life: manage expenses and achieve your dreams!'
+    },
+  }
 
   return (
     <>
@@ -24,55 +58,16 @@ function Index() {
         </section>
 
         <div className={stylesIndex.main__funcionalidades}>
-          <h2 className={stylesIndex.funcionaliddaes__h2}>O que o <span className={stylesIndex.h2__span}>Gedf</span> por <span className={stylesIndex.h2__span}>oferecer </span>a você</h2>
+          <h2 className={stylesIndex.funcionaliddaes__h2}>
+            O que o Gedf por oferecer a você</h2>
+
           <div className={stylesIndex.funcionalidades__contener}>
-            <div className={stylesIndex.contener__gastos}>
-              <div className={stylesIndex.gastos__titulos}>
-                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-                <div className={stylesIndex.gastos__div}></div>
-                <img src='/img/icons8-financial-64.png' />
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
 
-            <div className={stylesIndex.contener__gastos}>
-            <div className={stylesIndex.gastos__titulos}>
-                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-                <div className={stylesIndex.gastos__div}></div>
-                <img src='/img/icons8-financial-64.png' />
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
+            {informationCreateCard &&
+              Object.entries(informationCreateCard).map(([key, value]) => (
+                <CardComponent key={key} informationCardValue={value} />
+              ))}
 
-            <div className={stylesIndex.contener__gastos}>
-            <div className={stylesIndex.gastos__titulos}>
-                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-                <div className={stylesIndex.gastos__div}></div>
-                <img src='/img/icons8-financial-64.png' />
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
-
-            <div className={stylesIndex.contener__gastos}>
-            <div className={stylesIndex.gastos__titulos}>
-                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-                <div className={stylesIndex.gastos__div}></div>
-                <img src='/img/icons8-financial-64.png' />
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
           </div>
         </div>
 
