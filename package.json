@@ -38,7 +38,7 @@
     "jest-transform-stub": "^2.0.0",
     "jsdom": "^23.0.1",
     "sass": "^1.69.5",
-    "webpack": "^5.91.0",
+    "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   }
 }
