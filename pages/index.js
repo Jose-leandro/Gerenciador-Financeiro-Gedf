@@ -1,9 +1,41 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Header from '../app/components/header'
 import Footer from '../app/components/footer'
 import stylesIndex from '../src/Sass/index.module.sass'
 
 function Index() {
+  const [wichiCardComponent, setWichiCardComponent] = useState(false);
+
+  const createCard = (imgFunct, titleFunct, textFunct) => ({ imgFunct, titleFunct, textFunct });
+
+  const createCardInfo = (imgFunct, titleFunct, textFunct) => ({
+    imgFunct,
+    titleFunct,
+    textFunct,
+  });
+
+  const defaultText = 'Discover a prosperous financial life: manage expenses and achieve your dreams!';
+
+  let informationCreateCard = {
+    cardFuncionalidades: {
+      spendManagement: createCardInfo('icons8-analysis-64.png', 'Spend management', defaultText),
+      mySpendReports: createCardInfo('icons8-relatórios-externos-produtividade-icons-64.png', 'Reports', defaultText),
+      mySpendPlanning: createCardInfo('icons8-pay-date-100.png', 'Financial Planning', defaultText),
+      mySpendAccounts: createCardInfo('icons8-conta-de-teste-100.png', 'Create and manage custom accounts', defaultText),
+      mySpendLimit: createCardInfo('icons8-alerta-100.png', 'Create and manage custom accounts', defaultText),
+      mySpendAFree: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
+    },
+    cardQuestions: {
+      question1: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
+      question2: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
+      question3: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
+      question4: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
+      question5: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
+    }
+  };
+
+
+
 
   return (
     <>
@@ -25,53 +57,12 @@ function Index() {
         <div className={stylesIndex.main__funcionalidades}>
           <h2 className={stylesIndex.funcionaliddaes__h2}>O que o <span className={stylesIndex.h2__span}>Gedf</span> por <span className={stylesIndex.h2__span}>oferecer </span>a você</h2>
           <div className={stylesIndex.funcionalidades__contener}>
-            <div className={stylesIndex.contener__gastos}>
-              <div className={stylesIndex.gastos__titulos}>
-                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-                <div className={stylesIndex.gastos__div}></div>
-                <img src='/img/icons8-financial-64.png' />
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
 
-            <div className={stylesIndex.contener__gastos}>
-            <div className={stylesIndex.gastos__titulos}>
-                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-                <div className={stylesIndex.gastos__div}></div>
-                <img src='/img/icons8-financial-64.png' />
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
+            {informationCreateCard &&
+              Object.entries(informationCreateCard.cardFuncionalidades).map(([key, value]) => (
+                <CardComponent key={key} informationCardValue={value} />
+              ))}
 
-            <div className={stylesIndex.contener__gastos}>
-            <div className={stylesIndex.gastos__titulos}>
-                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-                <div className={stylesIndex.gastos__div}></div>
-                <img src='/img/icons8-financial-64.png' />
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
-
-            <div className={stylesIndex.contener__gastos}>
-            <div className={stylesIndex.gastos__titulos}>
-                <h3 className={stylesIndex.gastos__h3}>Gerenciamentod dos seus gatos</h3>
-                <div className={stylesIndex.gastos__div}></div>
-                <img src='/img/icons8-financial-64.png' />
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
           </div>
         </div>
 
@@ -120,7 +111,12 @@ function Index() {
         <div className={stylesIndex.perguntas}>
           <h4 className={stylesIndex.perguntas__h4}>O que as <span className={stylesIndex.h4__span}>pessoas</span> mais <sapan className={stylesIndex.h4__span}>querem saber</sapan> sobre o <span className={stylesIndex.h4__span}>Gedf</span></h4>
           <div className={stylesIndex.perguntas__contener}>
-            <div className={stylesIndex.contener__gedf}>
+
+            {informationCreateCard &&
+              Object.entries(informationCreateCard.cardQuestions).map(([key, value]) => (
+                <CardComponent key={key} informationCardValue={value} />
+              ))}
+            {/* <div className={stylesIndex.contener__gedf}>
               <div className={stylesIndex.gedf__titulo}>
                 <h5 className={stylesIndex.titulo__h5}>O que é gedf </h5>
                 <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
@@ -173,7 +169,7 @@ function Index() {
                 você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
                 Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
                 Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
+            </div> */}
 
           </div>
         </div>
