@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import Header from '../app/components/header'
 import Footer from '../app/components/footer'
 import stylesIndex from '../src/Sass/index.module.sass'
+import { CardComponent } from '../app/components/landinng-page/cardComponent'
 
 function Index() {
   const [wichiCardComponent, setWichiCardComponent] = useState(false);
 
-  const createCard = (imgFunct, titleFunct, textFunct) => ({ imgFunct, titleFunct, textFunct });
 
   const createCardInfo = (imgFunct, titleFunct, textFunct) => ({
     imgFunct,
