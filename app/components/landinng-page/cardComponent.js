@@ -7,7 +7,7 @@ export function CardComponent({ informationCardValue }) {
   }
 
   const { imgFunct, titleFunct, textFunct } = informationCardValue;
-  const isCardFuncionalidades = informationCardValue === cardFuncionalidades;
+  const isCardFuncionalidades = informationCardValue === 'cardFuncionalidades';
 
   return (
     <div className={isCardFuncionalidades ? stylesIndex.contener__gastos : stylesIndex.contener__gedf}>
