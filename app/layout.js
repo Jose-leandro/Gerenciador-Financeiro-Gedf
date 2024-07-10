@@ -1,3 +1,4 @@
+import React from 'react'
 import '../app/styles/globals.css'
 import '../app/styles/reset.css'
 import PropTypes from 'prop-types'
@@ -7,10 +8,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Gerenciador Financeiro Gedf',
-  description: 'Desenvolvido por José leandro',
+  description: 'Desenvolvido por José leandro'
 }
 
-function RootLayout({ children }) {
+function RootLayout ({ children }) {
   return (
     <html lang="pt-BR">
       <head>
