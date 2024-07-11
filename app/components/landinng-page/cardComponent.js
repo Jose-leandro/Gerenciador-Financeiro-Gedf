@@ -2,12 +2,14 @@ import React from "react";
 import stylesIndex from '../../../src/Sass/index.module.sass';
 
 export function CardComponent({ informationCardValue }) {
+  console.log(informationCardValue)
   if (!informationCardValue) {
     return null; 
   }
 
   const { imgFunct, titleFunct, textFunct } = informationCardValue;
   const isCardFuncionalidades = informationCardValue === 'cardFuncionalidades';
+  console.log(isCardFuncionalidades)
 
   return (
     <div className={isCardFuncionalidades ? stylesIndex.contener__gastos : stylesIndex.contener__gedf}>

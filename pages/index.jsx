@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Header from '../app/components/header'
-import Footer from '../app/components/footer'
-import stylesIndex from '../src/Sass/index.module.sass'
-import { CardComponent } from '../app/components/landinng-page/cardComponent'
+import React, { useEffect, useRef, useState } from 'react';
+import Header from '../app/components/header';
+import Footer from '../app/components/footer';
+import stylesIndex from '../src/Sass/index.module.sass';
+import { CardComponent } from '../app/components/landinng-page/cardComponent';
 
 function Index() {
   const [wichiCardComponent, setWichiCardComponent] = useState(false);
-
 
   const createCardInfo = (imgFunct, titleFunct, textFunct) => ({
     imgFunct,
@@ -16,7 +15,7 @@ function Index() {
 
   const defaultText = 'Discover a prosperous financial life: manage expenses and achieve your dreams!';
 
-  let informationCreateCard = {
+  const informationCreateCard = {
     cardFuncionalidades: {
       spendManagement: createCardInfo('icons8-analysis-64.png', 'Spend management', defaultText),
       mySpendReports: createCardInfo('icons8-relatórios-externos-produtividade-icons-64.png', 'Reports', defaultText),
@@ -31,11 +30,10 @@ function Index() {
       question3: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
       question4: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
       question5: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
-    }
+    },
   };
 
-
-
+  console.log(informationCreateCard)
 
   return (
     <>
@@ -46,7 +44,16 @@ function Index() {
       <main className={stylesIndex.main}>
         <section className={stylesIndex.main__apresentacao}>
           <div className={stylesIndex.apresentacao__informacoes}>
-            <h1 className={stylesIndex.main__h1}><span className={stylesIndex.h1__span}>Controle</span> seu dinheiro, conquiste seus <span className={stylesIndex.h1__span}>sonhos</span>, viva livre<span className={stylesIndex.h1__span}>!</span></h1>
+            <h1 className={stylesIndex.main__h1}>
+              <span className={stylesIndex.h1__span}>Controle</span>
+              {' '}
+              seu dinheiro, conquiste seus
+              {' '}
+              <span className={stylesIndex.h1__span}>sonhos</span>
+              , viva livre
+              <span className={stylesIndex.h1__span}>!</span>
+            </h1>
+            <p className={stylesIndex.informacoes__p}>Explore, aproveite e alcance sua liberdade financeira. Transforme seus sonhos e objetivos financeiros em realidade com Gedf.</p>
 
             <button className={stylesIndex.main__button}>Iniciar minha liberdade</button>
           </div>
@@ -55,11 +62,14 @@ function Index() {
         </section>
 
         <div className={stylesIndex.main__funcionalidades}>
-          <h2 className={stylesIndex.funcionaliddaes__h2}>O que o <span className={stylesIndex.h2__span}>Gedf</span> por <span className={stylesIndex.h2__span}>oferecer </span>a você</h2>
+          <h2 className={stylesIndex.funcionaliddaes__h2}>
+            O que o Gedf por oferecer a você
+          </h2>
+
           <div className={stylesIndex.funcionalidades__contener}>
 
-            {informationCreateCard &&
-              Object.entries(informationCreateCard.cardFuncionalidades).map(([key, value]) => (
+            {informationCreateCard
+              && Object.entries(informationCreateCard.cardFuncionalidades).map(([key, value]) => (
                 <CardComponent key={key} informationCardValue={value} />
               ))}
 
@@ -67,34 +77,43 @@ function Index() {
         </div>
 
         <section className={stylesIndex.precos}>
-          <h4 className={stylesIndex.precos__h4}><span className={stylesIndex.h4__span}>Quanto</span> custa o <span className={stylesIndex.h4__span}>Gedf</span> </h4>
+          <h4 className={stylesIndex.precos__h4}>
+            <span className={stylesIndex.h4__span}>Quanto</span>
+            {' '}
+            custa o
+            {' '}
+            <span className={stylesIndex.h4__span}>Gedf</span>
+            {' '}
+          </h4>
 
           <div className={stylesIndex.precos__div}>
             <div className={stylesIndex.precos__informacoes}>
               <h4 className={stylesIndex.informacoes__h4}>Plano Graituito</h4>
-              <p className={stylesIndex.informacoes__p}>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.</p>
+              <p className={stylesIndex.informacoes__p}>
+                Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
+                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
+              </p>
 
               <h4 className={stylesIndex.informacoes__titulo}>Beneficios</h4>
               <div className={stylesIndex.informacoes__contener}>
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>Todas as funcionalidades liberads</h4>
-                  <img src='/img/icons8-selecionado-24.png' alt='Icone de seleção'></img>
+                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>Todas as funcionalidades liberads</h4>
-                  <img src='/img/icons8-selecionado-24.png' alt='Icone de seleção'></img>
+                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>Todas as funcionalidades liberads</h4>
-                  <img src='/img/icons8-selecionado-24.png' alt='Icone de seleção'></img>
+                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>Todas as funcionalidades liberads</h4>
-                  <img src='/img/icons8-selecionado-24.png' alt='Icone de seleção'></img>
+                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
                 </div>
               </div>
             </div>
@@ -109,11 +128,20 @@ function Index() {
         </section>
 
         <div className={stylesIndex.perguntas}>
-          <h4 className={stylesIndex.perguntas__h4}>O que as <span className={stylesIndex.h4__span}>pessoas</span> mais <sapan className={stylesIndex.h4__span}>querem saber</sapan> sobre o <span className={stylesIndex.h4__span}>Gedf</span></h4>
+          <h4 className={stylesIndex.perguntas__h4}>
+            O que as
+            <span className={stylesIndex.h4__span}>pessoas</span>
+            {' '}
+            mais
+            <sapan className={stylesIndex.h4__span}>querem saber</sapan>
+            {' '}
+            sobre o
+            <span className={stylesIndex.h4__span}>Gedf</span>
+          </h4>
           <div className={stylesIndex.perguntas__contener}>
 
-            {informationCreateCard &&
-              Object.entries(informationCreateCard.cardQuestions).map(([key, value]) => (
+            {informationCreateCard
+              && Object.entries(informationCreateCard.cardQuestions).map(([key, value]) => (
                 <CardComponent key={key} informationCardValue={value} />
               ))}
             {/* <div className={stylesIndex.contener__gedf}>
@@ -180,7 +208,7 @@ function Index() {
       </footer>
     </>
 
-  )
-};
+  );
+}
 
-export default Index
+export default Index;
