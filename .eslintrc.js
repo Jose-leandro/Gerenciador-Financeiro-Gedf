@@ -6,23 +6,22 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard'
+    'airbnb',
+    'plugin:jsx-a11y/recommended',
   ],
   overrides: [
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: [
     'react',
     'jest',
+    'jsx-a11y',
   ],
   rules: {
+    "jsx-a11y/alt-text": 2,
+    "jsx-a11y/anchor-has-content": 2
   },
-  settings: {
-    react: {
-      version: 'detect'
-    }
-  }
-}
+};
