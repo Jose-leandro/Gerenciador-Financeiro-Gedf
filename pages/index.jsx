@@ -53,7 +53,11 @@ function Index() {
               , viva livre
               <span className={stylesIndex.h1__span}>!</span>
             </h1>
-            <p className={stylesIndex.informacoes__p}>Explore, aproveite e alcance sua liberdade financeira. Transforme seus sonhos e objetivos financeiros em realidade com Gedf.</p>
+            <p
+              className={stylesIndex.informacoes__p}>
+              Explore, aproveite e alcance sua liberdade financeira.
+              Transforme seus sonhos e objetivos
+              financeiros em realidade com Gedf.</p>
 
             <button className={stylesIndex.main__button}>Iniciar minha liberdade</button>
           </div>
@@ -70,7 +74,7 @@ function Index() {
 
             {informationCreateCard
               && Object.entries(informationCreateCard.cardFuncionalidades).map(([key, value]) => (
-                <CardComponent key={key} informationCardValue={value} />
+                <CardComponent key={key} cardFuncionalidades={value} />
               ))}
 
           </div>
@@ -122,7 +126,8 @@ function Index() {
               <p className={stylesIndex.preco__p}>Por apenas</p>
               <h4 className={stylesIndex.preco__valor}>R$ 0</h4>
 
-              <button className={stylesIndex.preco__button}>Começar minha jornada financeira</button>
+              <button className={stylesIndex.preco__button}>
+                Começar minha jornada financeira</button>
             </div>
           </div>
         </section>
@@ -130,19 +135,22 @@ function Index() {
         <div className={stylesIndex.perguntas}>
           <h4 className={stylesIndex.perguntas__h4}>
             O que as
+            {' '}
             <span className={stylesIndex.h4__span}>pessoas</span>
             {' '}
             mais
+            {' '}
             <sapan className={stylesIndex.h4__span}>querem saber</sapan>
             {' '}
             sobre o
+            {' '}
             <span className={stylesIndex.h4__span}>Gedf</span>
           </h4>
           <div className={stylesIndex.perguntas__contener}>
 
             {informationCreateCard
               && Object.entries(informationCreateCard.cardQuestions).map(([key, value]) => (
-                <CardComponent key={key} informationCardValue={value} />
+                <CardComponent key={key} cardQuestions={value} />
               ))}
             {/* <div className={stylesIndex.contener__gedf}>
               <div className={stylesIndex.gedf__titulo}>
