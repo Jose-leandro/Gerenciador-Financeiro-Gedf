@@ -11,6 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@axe-core/react": "^4.9.1",
     "@supabase/supabase-js": "^2.39.1",
     "@testing-library/react": "^14.1.2",
     "caniuse-lite": "^1.0.30001397",
