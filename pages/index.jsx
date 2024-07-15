@@ -24,16 +24,43 @@ function Index() {
       mySpendLimit: createCardInfo('icons8-alerta-100.png', 'Create and manage custom accounts', defaultText),
       mySpendAFree: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
     },
-    cardQuestions: {
-      question1: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
-      question2: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
-      question3: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
-      question4: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
-      question5: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
-    },
+    const cardQuestions = {
+      question1: createCardInfo(
+        false,
+        'What is Gedf',
+        `Discover the secret to a peaceful and prosperous financial life! By managing your expenses, 
+    you can achieve your financial goals and make your dreams come true without worries. The time has 
+    come to take control of your financial life and gain the freedom you deserve. Start today to transform 
+    your expenses into opportunities for a better future`
+      ),
+      question2: createCardInfo(
+        false,
+        'Create and manage custom accounts',
+        defaultText
+      ),
+      question3: createCardInfo(
+        false,
+        'Create and manage custom accounts',
+        defaultText
+      ),
+      question4: createCardInfo(
+        false,
+        'Create and manage custom accounts',
+        defaultText
+      ),
+      question5: createCardInfo(
+        false,
+        'Create and manage custom accounts',
+        defaultText
+      ),
+      question6: createCardInfo(
+        false,
+        'Create and manage custom accounts',
+        defaultText
+      ),
+    };
+    
   };
-
-  console.log(informationCreateCard)
 
   return (
     <>
@@ -54,12 +81,14 @@ function Index() {
               <span className={stylesIndex.h1__span}>!</span>
             </h1>
             <p
-              className={stylesIndex.informacoes__p}>
+              className={stylesIndex.informacoes__p}
+            >
               Explore, aproveite e alcance sua liberdade financeira.
               Transforme seus sonhos e objetivos
-              financeiros em realidade com Gedf.</p>
+              financeiros em realidade com Gedf.
+            </p>
 
-            <button className={stylesIndex.main__button}>Iniciar minha liberdade</button>
+            <button className={stylesIndex.main__button}>Iniciar minha liberdade financeira</button>
           </div>
 
           <img className={stylesIndex.main__img} src="/img/Screenshot-Gedf.png" alt="Image de apresentação" />
@@ -67,7 +96,15 @@ function Index() {
 
         <div className={stylesIndex.main__funcionalidades}>
           <h2 className={stylesIndex.funcionaliddaes__h2}>
-            O que o Gedf por oferecer a você
+            Discover
+            {' '}
+            <span className={stylesIndex.h2__span}>The unique</span>
+            {' '}
+            Benefits
+            {' '}
+            <span className={stylesIndex.h2__span}>Gedf</span>
+            {' '}
+            Brings to You
           </h2>
 
           <div className={stylesIndex.funcionalidades__contener}>
@@ -127,7 +164,8 @@ function Index() {
               <h4 className={stylesIndex.preco__valor}>R$ 0</h4>
 
               <button className={stylesIndex.preco__button}>
-                Começar minha jornada financeira</button>
+                Começar minha jornada financeira
+              </button>
             </div>
           </div>
         </section>
@@ -146,6 +184,13 @@ function Index() {
             {' '}
             <span className={stylesIndex.h4__span}>Gedf</span>
           </h4>
+          <p className={stylesIndex.perguntas__p}>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, alias
+            ipsa nisi quae ullam autem laboriosam
+            harum ducimus omnis consequuntur accusantium. Cum esse quidem,
+            totam consequuntur consectetur earum neque repellendus.
+          </p>
+
           <div className={stylesIndex.perguntas__contener}>
 
             {informationCreateCard
@@ -211,7 +256,7 @@ function Index() {
         </div>
       </main>
 
-      <footer>
+      <footer className={stylesIndex.footer}>
         <Footer />
       </footer>
     </>

@@ -12,10 +12,16 @@ export function CardComponent({ cardFuncionalidades, cardQuestions }) {
     return (
       <div className={containerStyle}>
         <div className={tituloStyle}>
-          <img src={`/img/${imgFunct}`} className={stylesIndex.titulos__img} alt={titleFunct} />
+          {imgFunct && (
+          <img
+            src={`/img/${imgFunct}`}
+            className={stylesIndex.titulos__img}
+            alt={titleFunct}
+          />
+          )}
           {React.createElement(titleTag, { className: stylesIndex.titulo__h3 }, titleFunct || titleText)}
         </div>
-        <p className={stylesIndex.texto}>{textFunct}</p>
+        <p>{textFunct}</p>
       </div>
     );
   };

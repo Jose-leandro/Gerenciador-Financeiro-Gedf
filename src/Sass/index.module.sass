@@ -20,6 +20,7 @@
     font-weight: 500 
     font-size: 45px
     font-weight: bold
+    color: #9fa0c7
 
 .h1__span
     color: #585add
@@ -57,7 +58,7 @@
     height: auto
 
 .funcionaliddaes__h2
-    width: 50%
+    width: auto
     font-weight: 500 
     font-size: 45px
     margin-bottom: 2em
@@ -101,7 +102,7 @@
    width: auto
    font-size: 24px
 
-.gastos__p
+.contener__gastos p
    font-size: 18px
 
 .precos
@@ -192,26 +193,37 @@
 
 .perguntas__h4
     @extend .funcionaliddaes__h2
+    margin-bottom: 0.3em
     width: auto
 
 .h4__span
     color: #585add
 
+.perguntas__p
+    @extend .informacoes__p
+    width: 85%
+    text-align: center
+    margin-block-start: 0em
+    margin-block-end: 2em
+
 .perguntas__contener
     display: flex
     width: 100%
     flex-wrap: wrap
+    margin-top: 18px
     justify-content: space-around
 
 .contener__gedf
+    @extend .contener__gastos
     background-color: #00000036
-    padding: 20px 30px
-    width: 35%
-    margin-bottom: 4em
+    width: 28%
 
 .gedf__titulo
     display: flex
     justify-content: space-between
+
+.gedf__titulo h5
+    font-size: 22px
 
 .gedf__p
     font-weight: 400 
@@ -251,6 +263,12 @@
 .conta__titulo
     @extend .gedf__titulo
     
+.footer
+    margin-top: 35px
+    padding: 20px 0px 8px 0px
+    display: flex
+    height: 250px
+    justify-content: space-evenly
 
 
 
