@@ -35,7 +35,7 @@ export default function Header(props) {
             <ul className={styles.div__ul}>
               <li className={styles.div__li}>About</li>
               <li className={styles.div__li}>Features</li>
-              <li className={styles.div__li}>Plans and prices</li>
+              <li className={styles.div__li}>Plans and Prices</li>
               <li className={styles.div__li}>Contact</li>
             </ul>
 

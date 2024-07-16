@@ -17,49 +17,56 @@ function Index() {
 
   const informationCreateCard = {
     cardFuncionalidades: {
-      spendManagement: createCardInfo('icons8-analysis-64.png', 'Spend management', defaultText),
+      spendManagement: 
+      createCardInfo(
+        'icons8-analysis-64.png', 
+        'Discover a Prosperous Financial Life: Manage Your Expenses and Achieve Your Dreams!', 
+        `Unlock the path to financial freedom by taking control of your expenses and planning 
+        for your future. With our expert guidance and tools, you'll learn how to manage your 
+        finances effectively, helping you reach your dreams and live a prosperous life.
+         Start your journey today and see the difference in your financial well-being!`),
+
       mySpendReports: createCardInfo('icons8-relatórios-externos-produtividade-icons-64.png', 'Reports', defaultText),
       mySpendPlanning: createCardInfo('icons8-pay-date-100.png', 'Financial Planning', defaultText),
       mySpendAccounts: createCardInfo('icons8-conta-de-teste-100.png', 'Create and manage custom accounts', defaultText),
       mySpendLimit: createCardInfo('icons8-alerta-100.png', 'Create and manage custom accounts', defaultText),
       mySpendAFree: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
     },
-    const cardQuestions = {
+    cardQuestions: {
       question1: createCardInfo(
         false,
         'What is Gedf',
         `Discover the secret to a peaceful and prosperous financial life! By managing your expenses, 
     you can achieve your financial goals and make your dreams come true without worries. The time has 
     come to take control of your financial life and gain the freedom you deserve. Start today to transform 
-    your expenses into opportunities for a better future`
+    your expenses into opportunities for a better future`,
       ),
       question2: createCardInfo(
         false,
-        'Create and manage custom accounts',
-        defaultText
+        'What does the Word Gedf mean',
+        defaultText,
       ),
       question3: createCardInfo(
         false,
-        'Create and manage custom accounts',
-        defaultText
+        'How Much does Gedf cost',
+        defaultText,
       ),
       question4: createCardInfo(
         false,
-        'Create and manage custom accounts',
-        defaultText
+        'Where can I access my Gedf account',
+        defaultText,
       ),
       question5: createCardInfo(
         false,
-        'Create and manage custom accounts',
-        defaultText
+        'My data is Safe on Gedf',
+        defaultText,
       ),
       question6: createCardInfo(
         false,
-        'Create and manage custom accounts',
-        defaultText
+        'I can achieve Financial Freedom with Gdf',
+        defaultText,
       ),
-    };
-    
+    },
   };
 
   return (
@@ -72,23 +79,23 @@ function Index() {
         <section className={stylesIndex.main__apresentacao}>
           <div className={stylesIndex.apresentacao__informacoes}>
             <h1 className={stylesIndex.main__h1}>
-              <span className={stylesIndex.h1__span}>Controle</span>
+              <span className={stylesIndex.h1__span}>Control</span>
               {' '}
-              seu dinheiro, conquiste seus
+              your Money, Achieve your
               {' '}
-              <span className={stylesIndex.h1__span}>sonhos</span>
-              , viva livre
+              <span className={stylesIndex.h1__span}>Dreams</span>
+              , Live free
               <span className={stylesIndex.h1__span}>!</span>
             </h1>
             <p
               className={stylesIndex.informacoes__p}
             >
-              Explore, aproveite e alcance sua liberdade financeira.
-              Transforme seus sonhos e objetivos
-              financeiros em realidade com Gedf.
+              Explore, enjoy and achieve your financial freedom.
+              Transform your dreams and goals
+              finances into reality with Gedf.
             </p>
 
-            <button className={stylesIndex.main__button}>Iniciar minha liberdade financeira</button>
+            <button className={stylesIndex.main__button}>Start my financial freedom</button>
           </div>
 
           <img className={stylesIndex.main__img} src="/img/Screenshot-Gedf.png" alt="Image de apresentação" />
@@ -197,61 +204,6 @@ function Index() {
               && Object.entries(informationCreateCard.cardQuestions).map(([key, value]) => (
                 <CardComponent key={key} cardQuestions={value} />
               ))}
-            {/* <div className={stylesIndex.contener__gedf}>
-              <div className={stylesIndex.gedf__titulo}>
-                <h5 className={stylesIndex.titulo__h5}>O que é gedf </h5>
-                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
-
-            <div className={stylesIndex.contener__significado}>
-              <div className={stylesIndex.significado__titulo}>
-                <h5 className={stylesIndex.titulo__h5}>O que significa a palavra gedf </h5>
-                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
-
-            <div className={stylesIndex.contener__preco}>
-              <div className={stylesIndex.preco__titulo}>
-                <h5 className={stylesIndex.titulo__h5}>Quanto custa o gedf </h5>
-                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
-
-            <div className={stylesIndex.contener__conta}>
-              <div className={stylesIndex.conta__titulo}>
-                <h5 className={stylesIndex.titulo__h5}>Onde posso acessar minha conta no gedf </h5>
-                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div>
-
-            <div className={stylesIndex.contener__seguranca}>
-              <div className={stylesIndex.seguranca__titulo}>
-                <h5 className={stylesIndex.titulo__h5}>Os meus daos estão seguro no Gedf </h5>
-                <img src='/img/icons8-seta-para-cima-48.png' className={stylesIndex.titulo__img}></img>
-              </div>
-              <p>Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
-                Chegou a hora de tomar as rédeas da sua vida financeira e conquistar a liberdade que você merece.
-                Comece hoje mesmo a transformar seus gastos em oportunidades para um futuro melhor</p>
-            </div> */}
-
           </div>
         </div>
       </main>
