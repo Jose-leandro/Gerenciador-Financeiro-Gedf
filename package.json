@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_ENV=development next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -16,6 +16,7 @@
     "@supabase/supabase-js": "^2.39.1",
     "@testing-library/react": "^14.1.2",
     "caniuse-lite": "^1.0.30001397",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "eslint-config-next": "^14.0.4",
     "module": "^1.1.0",
