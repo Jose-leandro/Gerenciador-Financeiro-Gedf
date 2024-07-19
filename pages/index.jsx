@@ -17,58 +17,71 @@ function Index() {
 
   const informationCreateCard = {
     cardFuncionalidades: {
-      spendManagement: 
-      createCardInfo(
-        'icons8-analysis-64.png', 
-        'Discover a Prosperous Financial Life: Manage Your Expenses and Achieve Your Dreams!', 
-        `Unlock the path to financial freedom by taking control of your expenses and planning 
-        for your future. With our expert guidance and tools, you'll learn how to manage your 
-        finances effectively, helping you reach your dreams and live a prosperous life.
-         Start your journey today and see the difference in your financial well-being!`),
-
-      mySpendReports: createCardInfo('icons8-relatórios-externos-produtividade-icons-64.png', 'Reports', defaultText),
-      mySpendPlanning: createCardInfo('icons8-pay-date-100.png', 'Financial Planning', defaultText),
-      mySpendAccounts: createCardInfo('icons8-conta-de-teste-100.png', 'Create and manage custom accounts', defaultText),
-      mySpendLimit: createCardInfo('icons8-alerta-100.png', 'Create and manage custom accounts', defaultText),
-      mySpendAFree: createCardInfo('icons8-dinheiro-100.png', 'Create and manage custom accounts', defaultText),
+      spendManagement: createCardInfo(
+        'icons8-analysis-64.png',
+        'Discover a Prosperous Financial Life: Manage Your Expenses and Achieve Your Dreams!',
+        'Take control of your expenses and plan for your future with our tools. Achieve financial freedom and live a prosperous life. Start today!'
+      ),
+      mySpendReports: createCardInfo(
+        'icons8-relatórios-externos-produtividade-icons-64.png',
+        'Reports',
+        'Gain insights into your financial habits with our detailed reports. Understand your spending, find savings, and make informed decisions. Start your journey to smarter money management today!'
+      ),
+      mySpendPlanning: createCardInfo(
+        'icons8-pay-date-100.png',
+        'Financial Planning',
+        'Create a personalized financial roadmap. Set goals, track progress, and make informed financial decisions. Plan for purchases, vacations, or retirement with our intuitive platform.'
+      ),
+      mySpendAccounts: createCardInfo(
+        'icons8-conta-de-teste-100.png',
+        'Account Management',
+        'Create and manage multiple accounts tailored to your needs. Track income, expenses, and savings separately for clearer financial insights. Customize each account for effective management.'
+      ),
+      mySpendLimit: createCardInfo(
+        'icons8-alerta-100.png',
+        'Spending Limit',
+        'Set and manage spending limits to keep your finances on track. Establish budget thresholds, receive alerts, and avoid overspending. Cultivate better financial discipline.'
+      ),
+      mySpendAFree: createCardInfo(
+        'icons8-dinheiro-100.png',
+        'GEDF: Your Free Financial Manager',
+        'GDEF is a free financial manager with no limitations or ads. It helps you budget, track expenses, and plan for the future. Join us for a user-friendly, ad-free experience.'
+      ),
     },
     cardQuestions: {
       question1: createCardInfo(
         false,
-        'What is Gedf',
-        `Discover the secret to a peaceful and prosperous financial life! By managing your expenses, 
-    you can achieve your financial goals and make your dreams come true without worries. The time has 
-    come to take control of your financial life and gain the freedom you deserve. Start today to transform 
-    your expenses into opportunities for a better future`,
+        'What is GDEF?',
+        'Manage your expenses to achieve your financial goals and make your dreams come true. Start today to transform your finances for a better future.'
       ),
       question2: createCardInfo(
         false,
-        'What does the Word Gedf mean',
-        defaultText,
+        'What Does the Word GDEF Mean?',
+        'GDEF comes from the Portuguese "Gerenciador Financeiro," combining the letters G, E, D, and F. It reflects our mission to provide an effective, user-friendly financial management tool.'
       ),
       question3: createCardInfo(
         false,
-        'How Much does Gedf cost',
-        defaultText,
+        'How Much Does GDEF Cost?',
+        'GDEF is completely free. No hidden fees, subscriptions, or ads. Enjoy all features and benefits at no cost.'
       ),
       question4: createCardInfo(
         false,
-        'Where can I access my Gedf account',
-        defaultText,
+        'Where Can I Access My GDEF Account?',
+        'Access your GDEF account from any device with an internet connection. Visit our website and log in with your credentials.'
       ),
       question5: createCardInfo(
         false,
-        'My data is Safe on Gedf',
-        defaultText,
+        'Is My Data Safe on GDEF?',
+        'We prioritize your data security. GDEF ensures your personal and financial data remains confidential and protected from unauthorized access.'
       ),
       question6: createCardInfo(
         false,
-        'I can achieve Financial Freedom with Gdf',
-        defaultText,
+        'Can I Achieve Financial Freedom with GDEF?',
+        'GDEF helps you manage your finances, but your dedication and effort are crucial. GDEF supports you, but achieving financial freedom requires your commitment.'
       ),
     },
   };
-
+  
   return (
     <>
       <header>
@@ -95,7 +108,7 @@ function Index() {
               finances into reality with Gedf.
             </p>
 
-            <button className={stylesIndex.main__button}>Start my financial freedom</button>
+            <button className={stylesIndex.main__button}>Start My Financial Freedom</button>
           </div>
 
           <img className={stylesIndex.main__img} src="/img/Screenshot-Gedf.png" alt="Image de apresentação" />
@@ -126,52 +139,65 @@ function Index() {
 
         <section className={stylesIndex.precos}>
           <h4 className={stylesIndex.precos__h4}>
-            <span className={stylesIndex.h4__span}>Quanto</span>
+            <span className={stylesIndex.h4__span}>How much</span>
             {' '}
-            custa o
+            Does
             {' '}
             <span className={stylesIndex.h4__span}>Gedf</span>
             {' '}
+            cost
           </h4>
 
           <div className={stylesIndex.precos__div}>
             <div className={stylesIndex.precos__informacoes}>
-              <h4 className={stylesIndex.informacoes__h4}>Plano Graituito</h4>
+              <h4 className={stylesIndex.informacoes__h4}>Free Plan</h4>
               <p className={stylesIndex.informacoes__p}>
-                Descubra o segredo para uma vida financeira tranquila e próspera! Com o gerenciamento dos seus gastos,
-                você pode alcançar seus objetivos financeiros e realizar seus sonhos sem preocupações.
+              With effective expense management, you can achieve your financial goals and realize 
+              your dreams without worries. This service plan offers you a range of benefits designed to 
+              bring you financial tranquility and success. It provides everything you need 
+              to manage your finances effectively and reach your aspirations.
               </p>
 
-              <h4 className={stylesIndex.informacoes__titulo}>Beneficios</h4>
+              <h4 className={stylesIndex.informacoes__titulo}>Benefits</h4>
               <div className={stylesIndex.informacoes__contener}>
                 <div className={stylesIndex.contener__funcionalidades}>
-                  <h4>Todas as funcionalidades liberads</h4>
+                  <h4>All features released</h4>
                   <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
-                  <h4>Todas as funcionalidades liberads</h4>
+                  <h4>Goal Setting</h4>
                   <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
-                  <h4>Todas as funcionalidades liberads</h4>
+                  <h4>Budget Planning</h4>
                   <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
-                  <h4>Todas as funcionalidades liberads</h4>
+                  <h4>Expense Tracking</h4>
+                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                </div>
+
+                <div className={stylesIndex.contener__funcionalidades}>
+                  <h4>Free without ads</h4>
+                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                </div>
+
+                <div className={stylesIndex.contener__funcionalidades}>
+                  <h4>Use on any device</h4>
                   <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
                 </div>
               </div>
             </div>
 
             <div className={stylesIndex.informacoes__preco}>
-              <p className={stylesIndex.preco__p}>Por apenas</p>
-              <h4 className={stylesIndex.preco__valor}>R$ 0</h4>
+              <p className={stylesIndex.preco__p}>For only</p>
+              <h4 className={stylesIndex.preco__valor}>$ 0</h4>
 
               <button className={stylesIndex.preco__button}>
-                Começar minha jornada financeira
+              Start My Financial Freedom
               </button>
             </div>
           </div>
@@ -179,23 +205,21 @@ function Index() {
 
         <div className={stylesIndex.perguntas}>
           <h4 className={stylesIndex.perguntas__h4}>
-            O que as
+            What
             {' '}
-            <span className={stylesIndex.h4__span}>pessoas</span>
+            <span className={stylesIndex.h4__span}>People</span>
             {' '}
-            mais
+            most
             {' '}
-            <sapan className={stylesIndex.h4__span}>querem saber</sapan>
+            <sapan className={stylesIndex.h4__span}>Want to know</sapan>
             {' '}
-            sobre o
+            About
             {' '}
             <span className={stylesIndex.h4__span}>Gedf</span>
           </h4>
           <p className={stylesIndex.perguntas__p}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, alias
-            ipsa nisi quae ullam autem laboriosam
-            harum ducimus omnis consequuntur accusantium. Cum esse quidem,
-            totam consequuntur consectetur earum neque repellendus.
+          In FAQ section provides answers to the most common questions about our service. 
+          Here, you can find quick and helpful information on various topics such as:
           </p>
 
           <div className={stylesIndex.perguntas__contener}>

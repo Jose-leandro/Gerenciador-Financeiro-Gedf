@@ -61,7 +61,7 @@
     width: auto
     font-weight: 500 
     font-size: 45px
-    margin-bottom: 2em
+    margin-bottom: 1em
     font-weight: bold
     color: #9fa0c7
 
@@ -81,6 +81,10 @@
     border-radius: 10px
     padding: 20px 20px
 
+.contener__gastos_div
+    @extend .contener__gastos
+    background-color: transparent
+
 .gastos__div
     background-color: #585add
     width: 3px
@@ -92,10 +96,19 @@
     display: flex
     align-items: center
     justify-content: flex-start
+    font-size: 21px
     
 .titulos__img 
     width: 35px
     margin-right: 6px
+    margin-left: 1em
+
+.titulo__p
+    background-color: #5b607930
+    border-radius: 10px
+    padding: 20px 20px
+    line-height: 25px
+
 
 .gastos__h3
    @extend .main__h1
@@ -129,15 +142,17 @@
     font-weight: bold
 
 .informacoes__p
-    font-size: 20px
+    font-size: 18px
+     line-height: 25px
     margin-block-start: 0.5em
     margin-block-end: 0.5em
 
 .informacoes__titulo
     color: #585add
     font-weight: 400 
-    font-size: 22px
-    margin-bottom: 1em
+    font-size: 25px
+    margin-top: 1em
+    margin-bottom: 0.5em
 
 .informacoes__contener
     @extend .funcionalidades__contener
@@ -158,7 +173,7 @@
     margin-left: 7px
 
 .informacoes__preco
-    background-color: #20203575
+    background-color: #212737f2
     width: 30%
     padding: 40px 0px
     display: flex
@@ -167,7 +182,7 @@
 
 .preco__p
     font-weight: 400 
-    font-size: 20px
+    font-size: 25px
     margin-bottom: 1em
 
 .preco__valor
@@ -178,9 +193,8 @@
 
 .preco__button
     @extend .main__button
-    border: #0c0c0c 1px solid
     width: auto
-    border-radius: 0px
+    padding: 10px 56px
 
 .perguntas
     margin-top: 1.6em
@@ -219,6 +233,7 @@
     @extend .contener__gastos
     background-color: #00000036
     width: 28%
+    line-height: 26px
 
 .gedf__titulo
     display: flex
