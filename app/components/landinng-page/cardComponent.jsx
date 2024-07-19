@@ -6,12 +6,14 @@ export function CardComponent({ cardFuncionalidades, cardQuestions }) {
     return null;
   }
 
-  const renderCard = (cardData, containerStyle, tituloStyle, titleTag, titleText, isQuestion) => {
+  const renderCard = (cardData, containerStyle, tituloStyle, titleTag, isQuestion) => {
+    console.log(isQuestion)
+    console.log(cardData)
     const { imgFunct, titleFunct, textFunct } = cardData;
     const TitleComponent = titleTag || 'h3';
 
     return (
-      <div className={isQuestion ? '' : containerStyle}>
+      <div className={isQuestion ? stylesIndex.contener__gastos_div : containerStyle}>
         <div className={tituloStyle}>
           {imgFunct && (
             <img
@@ -21,10 +23,10 @@ export function CardComponent({ cardFuncionalidades, cardQuestions }) {
             />
           )}
           <TitleComponent className={stylesIndex.titulo__h3}>
-            {titleFunct || titleText}
+            {titleFunct}
           </TitleComponent>
         </div>
-        <p className={isQuestion ? containerStyle : ''}>{textFunct}</p>
+        <p className={isQuestion ? stylesIndex.titulo__p : ''}>{textFunct}</p>
       </div>
     );
   };
@@ -44,7 +46,6 @@ export function CardComponent({ cardFuncionalidades, cardQuestions }) {
         stylesIndex.contener__gedf,
         stylesIndex.gedf__titulo,
         'h5',
-        'O que é gedf',
         false,
       )}
     </>
