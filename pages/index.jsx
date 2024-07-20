@@ -111,7 +111,7 @@ function Index() {
             <button className={stylesIndex.main__button}>Start My Financial Freedom</button>
           </div>
 
-          <img className={stylesIndex.main__img} src="/img/Screenshot-Gedf.png" alt="Image de apresentação" />
+          <img className={stylesIndex.main__img} src="/img/Screenshot 2024-07-20 110005.png" alt="Image de apresentação" />
         </section>
 
         <div className={stylesIndex.main__funcionalidades}>
