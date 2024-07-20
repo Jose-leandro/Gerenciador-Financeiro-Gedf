@@ -1,3 +1,5 @@
+
+import styles from '../../../src/Sass/page.module.sass'
 import { Cormorant_Garamond } from 'next/font/google'
 
 const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ["normal"], weight: ['300'] })
@@ -23,7 +25,7 @@ export default function TelaInicial() {
 
                 <div className={styles.div__gastos}>
 
-                    <button className={styles.gastos__button} oncli>Meus gastos</button>
+                    <button className={styles.gastos__button}>Meus gastos</button>
                     <p className={styles.gastos__p}>
                         Para começar, queremos saber mais sobre seus gastos, seja qual for o tamanho. <br />
                         Cada detalhe conta! Vamos te mostrar onde, o quê e quanto você está gastando.  <br />
