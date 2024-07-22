@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:jsx-a11y/recommended',
+    'plugin:security/recommended',
   ],
   overrides: [
   ],
@@ -19,6 +20,7 @@ module.exports = {
     'react',
     'jest',
     'jsx-a11y',
+    'security',
   ],
   rules: {
     "jsx-a11y/alt-text": 2,
