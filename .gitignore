@@ -36,3 +36,6 @@ next-env.d.ts
 
 # configuration of the extension spell
 .vscode
+
+# Usimg for learn webpack
+dist
