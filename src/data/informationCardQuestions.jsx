@@ -1,6 +1,11 @@
 import { createCardInfo } from "@/utils/createCardInfo";
 
-const informationCreateCard = {
+const informationCreateCardQuestions = {
+    cardInformationQuestions: {
+      str: 'What People most Want to know About Gedf',
+      description: `In FAQ section provides answers to the most common questions about our service.
+            Here, you can find quick and helpful information on various topics such as:`
+    },
     cardQuestions: {
       question1: createCardInfo(
         false,
@@ -35,4 +40,4 @@ const informationCreateCard = {
     },
   };
   
-  export default informationCreateCard;
+  export default informationCreateCardQuestions;

@@ -2,14 +2,15 @@ import React from 'react';
 import stylesIndex from '../../../src/Sass/index.module.sass';
 
 export function CardComponent({ cardFuncionalidades, cardQuestions }) {
+ 
   if (!cardFuncionalidades && !cardQuestions) {
     return null;
   }
-
+   
   const renderCard = (cardData, containerStyle, tituloStyle, titleTag, isQuestion) => {
-    console.log(isQuestion)
-    console.log(cardData)
-    const { imgFunct, titleFunct, textFunct } = cardData;
+   
+    const { imgFunct, title, description } = cardData;
+   
     const TitleComponent = titleTag || 'h3';
 
     return (
@@ -19,14 +20,14 @@ export function CardComponent({ cardFuncionalidades, cardQuestions }) {
             <img
               src={`/img/${imgFunct}`}
               className={stylesIndex.titulos__img}
-              alt={titleFunct}
+              alt={title}
             />
           )}
           <TitleComponent className={stylesIndex.titulo__h3}>
-            {titleFunct}
+            {title}
           </TitleComponent>
         </div>
-        <p className={isQuestion ? stylesIndex.titulo__p : ''}>{textFunct}</p>
+        <p className={isQuestion ? stylesIndex.titulo__p : ''}>{description}</p>
       </div>
     );
   };

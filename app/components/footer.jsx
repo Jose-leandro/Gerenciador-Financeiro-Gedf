@@ -6,7 +6,8 @@ import stylesFooter from '../../src/Sass/footer.module.sass';
 
 const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ['normal'], weight: ['300'] });
 
-export default function Footer() {
+export default function Footer( { props } ) {
+
   return (
     <>
     <div className={stylesFooter.footer__contener}>
@@ -16,43 +17,43 @@ export default function Footer() {
       </div>
 
       <div className={stylesFooter.desenvolvedor}>
-        <h3 className={stylesFooter.desenvolvedor__nome}>&copy; Desenvolvido por José Leandro</h3>
+        <h3 className={stylesFooter.desenvolvedor__nome}>&copy; {props.nameDevelop} </h3>
       </div>
     </div>
 
       <div className={stylesFooter.footer__informacoes}>
 
         <div>
-          <h2 className={stylesFooter.footer__titulo}>Sobre nós</h2>
+          <h2 className={stylesFooter.footer__titulo}>  {props.titleAbout}  </h2>
           <ul>
-            <li className={stylesFooter.titulo__li}>O que é GEDF</li>
+            <li className={stylesFooter.titulo__li}> {props.aboutGedf}  </li>
           </ul>
         </div>
 
         <div>
-          <h2 className={stylesFooter.footer__titulo}>Contato</h2>
+          <h2 className={stylesFooter.footer__titulo}> {props.titleContact}  </h2>
           <ul>
-            <li className={stylesFooter.titulo__li}>Por Telefone</li>
-            <li className={stylesFooter.titulo__li}>Por email</li>
-            <li className={stylesFooter.titulo__li}>Whatsapp</li>
-            <li className={stylesFooter.titulo__li}>E Mais</li>
+            <li className={stylesFooter.titulo__li}> {props.contact1} </li>
+            <li className={stylesFooter.titulo__li}> {props.contact2} </li>
+            <li className={stylesFooter.titulo__li}> {props.contact3} </li>
+            <li className={stylesFooter.titulo__li}> {props.contact4} </li>
           </ul>
         </div>
 
         <div>
-          <h2 className={stylesFooter.footer__titulo}>Termos e políticas</h2>
+          <h2 className={stylesFooter.footer__titulo}> {props.TermsPolicies}  </h2>
           <ul>
 
-            <li className={stylesFooter.titulo__li}>Termos de uso</li>
-            <li className={stylesFooter.titulo__li}>Polítca de privadicade</li>
-            <li className={stylesFooter.titulo__li}>Política de cookies</li>
+            <li className={stylesFooter.titulo__li}>{props.termsUse} </li>
+            <li className={stylesFooter.titulo__li}>{props.privacyPolicy} </li>
+            <li className={stylesFooter.titulo__li}>{props.cookiePolicy} </li>
           </ul>
         </div>
 
         <div>
-          <h2 className={stylesFooter.footer__titulo}>Direitos autorais</h2>
+          <h2 className={stylesFooter.footer__titulo}> {props.CopyrightTitle} </h2>
           <ul>
-            <li>Uso de imagens e icones</li>
+            <li> {props.useOfImages} </li>
           </ul>
         </div>
       </div>

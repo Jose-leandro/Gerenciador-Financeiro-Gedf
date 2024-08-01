@@ -1,8 +1,11 @@
 import { createCardInfo } from "@/utils/createCardInfo";
 
 
-const informationCreateCard = {
-    cardFuncionalidades: {
+const informationCardBenefits = {
+  cardInformationBenefits: {
+    str: 'What People most Want to know About Gedf',
+  },
+    cardBenefits: {
       spendManagement: createCardInfo(
         'icons8-analysis-64.png',
         'Discover a Prosperous Financial Life: Manage Your Expenses and Achieve Your Dreams!',
@@ -36,4 +39,4 @@ const informationCreateCard = {
     },
   };
   
-  export default informationCreateCard;
+  export default informationCardBenefits;
