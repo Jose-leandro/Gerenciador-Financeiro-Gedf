@@ -4,9 +4,8 @@ import stylesIndex from '../../../src/Sass/index.module.sass';
 import { CardComponent } from "./cardComponent";
 
 export function ComumQuestions( {props} ) {
-    const stringParts = useStringParts(props.cardInformationQuestions.str) || [];
-    console.log(props.cardQuestions)
-
+  
+    const stringParts = useStringParts(props.cardInformationQuestions.str, false) || [];
     return (
         <section>
              <div className={stylesIndex.perguntas}>

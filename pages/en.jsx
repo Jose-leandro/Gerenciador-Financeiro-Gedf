@@ -12,8 +12,11 @@ import informationCreateCardQuestions from '@/data/informationCardQuestions';
 import Head from 'next/head';
 import { SectionBenefits } from '../app/components/landinng-page/sectionBenefits';
 import informationCardBenefits from '@/data/informationCardBenefits';
+import informationCardApresentacion from '@/data/informationCardApresentacion';
 
 function Index() {
+
+  const dataInformationApresentacion = informationCardApresentacion;
 
   const dateInformationFooter = informationCardFooter;
   console.log(dateInformationFooter)
@@ -27,39 +30,19 @@ function Index() {
   return (
     <>
       <Head>
-        <title>Bem vindo ao Gedf </title>
-        <meta
-          name="description"
-          content="Bem-vindo ao meu Gedf!" />
+        <title>Bem-vindo ao Gedf</title>
+        <meta name="description" content="Bem-vindo ao meu Gedf!" />
       </Head>
-      <body>
-        <header>
-          <Header />
-        </header>
-
+      <div>
+        <Header />
         <main className={stylesIndex.main}>
-
-          <ApresentacionInicial
-            str={'Control your Money, Achieve your Dreams, Live free'}
-            descrition={`Explore, enjoy and achieve your financial freedom.
-            Transform your dreams and goals
-            finances into reality with Gedf.`}
-            textBtn={'Start My Financial Freedom'}
-            alt={'Imagem of apresentaciojn of the gedf'}
-          />
-
-          <SectionBenefits props={dataCardBenefits}  />
-
+          <ApresentacionInicial props={dataInformationApresentacion} />
+          <SectionBenefits props={dataCardBenefits} />
           <SectionPrices props={dataCardPricies} />
-
           <ComumQuestions props={dataCardQuestions} />
-
         </main>
-
-        <footer className={stylesIndex.footer}>
-          <Footer props={dateInformationFooter} />
-        </footer>
-      </body>
+        <Footer props={dateInformationFooter} />
+      </div>
     </>
 
   );

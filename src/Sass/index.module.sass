@@ -1,291 +1,253 @@
-.main 
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: space-evenly
-    height: auto
+@import '../Sass/variables.sass'
+@import '../Sass/mixins.sass'
 
-.main__apresentacao
-    display: flex
-    flex-direction: column
+// Main Section
+.main
+  @include flex-center(column, space-evenly, center)
+  height: auto
+
+  &__apresentacao
+    @include flex-center(column, space-evenly, center)
     width: 100%
-    align-items: center
-    justify-content: space-evenly
-    padding: 0px 0px 70px 0px
-    
-.main__h1
-    width: auto
-    margin: 5px 0px 0px 0px
-    padding: 10px 0px 0px 0px
-    font-weight: 500 
-    font-size: 45px
+    padding: 0 0 $spacing-large
+
+  &__h1
+    margin: $spacing-small 0 0
+    padding: $spacing-small 0 0
     font-weight: bold
-    color: #9fa0c7
+    font-size: $font-size-large
+    color: $primary-color
 
-.h1__span
-    color: #fff
+    & span
+      color: $secondary-color
 
-.apresentacao__informacoes
-    width: 100%
-    display: flex
-    height: auto
-    align-items: center
-    flex-direction: column
-    justify-content: center
-
-.main__button
-    background-color: #283f7e
-    border: #0c0c0c 1px solid
-    padding: 10px 15px
-    border-radius: 15px
-    font-size: 17px 
-    margin: 10px 0px
+  &__button
+    background-color: $button-bg-color
+    border: 1px solid $button-border-color
+    padding: $spacing-small $spacing-medium
+    border-radius: $border-radius
+    font-size: 17px
+    margin: $spacing-small 0
     width: 33%
 
-.main__img
+  &__img
     width: 90%
     height: 620px
     border: 1.5px solid #293444
     border-radius: 12px
-    margin: 30px 0px
+    margin: $spacing-large 0
 
-.main__funcionalidades
-    @extend .main
-    padding: 80px 0px
-    background-color: #56567521
+  &__section
     width: 100%
-    border-radius: 10px
+
+  &__funcionalidades
+    @include flex-center(column, space-evenly, center)
+    padding: 80px 0
+    background-color: $container-bg-color
+    width: 100%
+    border-radius: $border-radius
     height: auto
 
-.funcionaliddaes__h2
-    width: auto
-    font-weight: 500 
-    font-size: 45px
-    margin-bottom: 1em
-    font-weight: bold
-    color: #9fa0c7
+    & h2
+      font-weight: bold
+      font-size: $font-size-large
+      margin-bottom: 1em
+      color: $primary-color
 
-.h2__span
-    color: #fff
+      & span
+        color: $secondary-color
 
-.funcionalidades__contener
-    display: flex
-    justify-content: space-evenly
-    align-self: center
-    flex-wrap: wrap
+    .funcionalidades__contener
+      @include flex-center(row, space-evenly, center)
+      flex-wrap: wrap
 
+// Apresentacao Informacoes
+.apresentacao__informacoes
+  @include flex-center(column, center, center)
+  width: 100%
+  height: auto
+
+// Contener Gastos
 .contener__gastos
-    width: 45%
-    margin-bottom: 1em
-    background-color: #5b607930
-    border-radius: 10px
-    padding: 20px 20px
+  width: 45%
+  margin-bottom: 1em
+  background-color: $container-bg-color
+  border-radius: $border-radius
+  padding: $spacing-medium
 
-.contener__gastos_div
+  &__div
     @extend .contener__gastos
     background-color: transparent
 
-.gastos__div
-    background-color: #585add
+  .gastos__div
+    background-color: $highlight-color
     width: 3px
     border-radius: 6px
-    margin: 0px 5px
+    margin: 0 5px
     height: 25px
 
-.gastos__titulos
-    display: flex
-    align-items: center
-    justify-content: flex-start
+  .gastos__titulos
+    @include flex-center(row, flex-start, center)
     font-size: 21px
-    
-.titulos__img 
+
+  .titulo__h3
+    font-size: $font-size-medium
+
+  .titulos__img
     width: 35px
     margin-right: 6px
     margin-left: 1em
 
-.titulo__p
-    background-color: #5b607930
-    border-radius: 10px
-    padding: 20px 20px
-    line-height: 25px
+    .titulo__p
+      background-color: $container-bg-color
+      border-radius: $border-radius
+      padding: $spacing-medium
+      line-height: 25px
 
+  .gastos__h3
+    // @extend .main__h1
+    width: auto
+    font-size: $font-size-medium
 
-.gastos__h3
-   @extend .main__h1
-   width: auto
-   font-size: 24px
+  p
+    font-size: $font-size-small
 
-.contener__gastos p
-   font-size: 18px
-
+// Precos Section
 .precos
-    width: 100%
-    padding: 60px 0px
-    display: flex
-    flex-direction: column
-    align-items: center
+  width: 100%
+  padding: 60px 0
+  @include flex-center(column, center, center)
 
-.precos__h4
-    @extend .funcionaliddaes__h2
+  &__h4
+    font-weight: bold
+    font-size: $font-size-large
+    margin-bottom: 1em
+    color: $primary-color
     width: auto
 
-.precos__div
-    display: flex
-    justify-content: space-evenly
+  &__div
+    @include flex-center(row, space-evenly, center)
 
-.precos__informacoes
+  &__informacoes
     width: 50%
 
-.informacoes__h4
-    font-weight: 500 
-    font-size: 30px
-    font-weight: bold
+    .informacoes__h4
+      font-weight: bold
+      font-size: 30px
 
-.informacoes__p
-    font-size: 18px
-     line-height: 25px
-    margin-block-start: 0.5em
-    margin-block-end: 0.5em
+    .informacoes__titulo
+      color: $highlight-color
+      font-weight: 400
+      font-size: 25px
+      margin-top: 1em
+      margin-bottom: 0.5em
 
-.informacoes__titulo
-    color: #585add
-    font-weight: 400 
-    font-size: 25px
-    margin-top: 1em
-    margin-bottom: 0.5em
+    .informacoes__p
+      font-size: $font-size-small
+      line-height: 25px
+      margin-block-start: 0.5em
+      margin-block-end: 0.5em
 
-.informacoes__contener
-    @extend .funcionalidades__contener
-    justify-content: flex-start
+    .informacoes__contener
+      @include flex-center(row, space-evenly, center)
+      flex-wrap: wrap
 
-.contener__funcionalidades
-    display: flex
-    width: 44%
-    justify-content: space-center
-    align-items: center
-    margin-left: 1em
-    margin-bottom: 1em 
+    .contener__funcionalidades
+      display: flex
+      width: 44%
+      @include flex-center(row, flex-start, center)
+      margin-left: 1em
+      margin-bottom: 1em
 
-.contener__funcionalidades h4
-    font-size: 18px
+    .funcionalidades__h4
+      font-size: $font-size-small
 
-.contener__funcionalidades img 
-    margin-left: 7px
+    .funcionalidades__img
+      margin-left: 7px
 
-.informacoes__preco
+
+  .informacoes__preco
     background-color: #212737f2
     width: 30%
-    padding: 40px 0px
-    display: flex
-    flex-direction: column
-    align-items: center
+    padding: 40px 0
+    @include flex-center(column, center, center)
 
-.preco__p
-    font-weight: 400 
-    font-size: 25px
-    margin-bottom: 1em
+    .preco__p
+      font-weight: 400
+      font-size: 25px
+      margin-bottom: 1em
 
-.preco__valor
-    font-weight: 600 
-    font-size: 35px
-    margin-bottom: 1em
-    color: #fff
+    .preco__valor
+      font-weight: 600
+      font-size: 35px
+      margin-bottom: 1em
+      color: $secondary-color
 
-.preco__button
-    @extend .main__button
-    width: auto
-    padding: 10px 56px
+    .preco__button
+      @extend .main__button
+      width: auto
+      padding: $spacing-small 56px
 
+// Perguntas Section
 .perguntas
-    margin-top: 1.6em
-    padding: 80px 0px
-    background-color: #2e2f4580
-    width: 100%
-    border-radius: 10px
-    height: auto
-    display: flex
-    flex-direction: column
-    align-items: center
+  margin-top: 1.6em
+  padding: 80px 0
+  background-color: #2e2f4580
+  width: 100%
+  border-radius: $border-radius
+  height: auto
+  @include flex-center(column, center, center)
 
-.perguntas__h4
-    @extend .funcionaliddaes__h2
-    margin-bottom: 0.3em
+  &__h4
+    @extend .precos__h4
     width: auto
 
-.h4__span
-    color: #fff
-
-.perguntas__p
+  .perguntas__p
     @extend .informacoes__p
+    font-size: $font-size-small
     width: 75%
     text-align: center
     margin-block-start: 0em
     margin-block-end: 2em
 
-.perguntas__contener
-    display: flex
-    width: 100%
+  .perguntas__contener
+    @include flex-center(row, space-around, center)
     flex-wrap: wrap
     margin-top: 18px
-    justify-content: space-around
+    width: 100%
 
-.contener__gedf
+  .contener__gedf,
+  .contener__seguranca,
+  .contener__significado,
+  .contener__preco,
+  .contener__conta
     @extend .contener__gastos
     background-color: #00000036
     width: 28%
     line-height: 26px
 
-.gedf__titulo
-    display: flex
-    justify-content: space-between
+    &__titulo
+      @include flex-center(row, space-between, center)
 
-.gedf__titulo h5
-    font-size: 22px
+      .contener__gedf h5
+        font-size: $font-size-medium
 
-.gedf__p
-    font-weight: 400 
-    font-size: 20px
-    margin-bottom: 1em
-
-.contener__seguranca
-    @extend .contener__gedf
-
-.seguranca__titulo
-    @extend .gedf__titulo
-
-.titulo__h5
-    @extend .main__h1
+  .titulo__h5
+    // @extend .main__h1
     width: auto
     font-size: 30px
 
-.titulo__img
+  .titulo__img
     width: 20px
     height: 20px
 
-.contener__significado
-    @extend .contener__gedf
+.h4__span
+  color: $secondary-color
 
-.significado__titulo
-    @extend .gedf__titulo
-
-.contener__preco
-    @extend .contener__gedf
-
-.preco__titulo
-    @extend .gedf__titulo
-
-.contener__conta
-    @extend .contener__gedf
-
-.conta__titulo
-    @extend .gedf__titulo
-    
+// Footer
 .footer
-    margin-top: 35px
-    padding: 20px 0px 8px 0px
-    display: flex
-    height: 250px
-    justify-content: space-evenly
-
-
-
+  margin-top: 35px
+  padding: 20px 0 8px
+  display: flex
+  height: $footer-height
+  justify-content: space-evenly
