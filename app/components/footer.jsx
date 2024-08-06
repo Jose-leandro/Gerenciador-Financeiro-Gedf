@@ -6,20 +6,20 @@ import stylesFooter from '../../src/Sass/footer.module.sass';
 
 const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ['normal'], weight: ['300'] });
 
-export default function Footer({ props }) {
+export default function Footer( { props } ) {
 
   return (
-    <div className={stylesFooter.footer}>
-      <div className={stylesFooter.footer__contener}>
-        <div className={stylesFooter.footer__logo}>
-          <Image src="/img/logo.png" width={70} height={80} alt="logo do site" />
-          <h1 className={` ${cormorant_garamond.className} ${stylesFooter.logo__h1}`}>Gedf</h1>
-        </div>
-
-        <div className={stylesFooter.desenvolvedor}>
-          <h3 className={stylesFooter.desenvolvedor__nome}>&copy; {props.nameDevelop} </h3>
-        </div>
+    <>
+    <div className={stylesFooter.footer__contener}>
+      <div className={stylesFooter.footer__logo}>
+        <Image src="/img/logo.png" width={70} height={80} alt="logo do site" />
+        <h1 className={` ${cormorant_garamond.className} ${stylesFooter.logo__h1}`}>Gedf</h1>
       </div>
+
+      <div className={stylesFooter.desenvolvedor}>
+        <h3 className={stylesFooter.desenvolvedor__nome}>&copy; {props.nameDevelop} </h3>
+      </div>
+    </div>
 
       <div className={stylesFooter.footer__informacoes}>
 
@@ -57,6 +57,8 @@ export default function Footer({ props }) {
           </ul>
         </div>
       </div>
-    </div>
+
+
+    </>
   );
 }

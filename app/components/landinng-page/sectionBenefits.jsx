@@ -4,22 +4,21 @@ import useStringParts from "../../../hooks/useStringParts";
 import { CardComponent } from './cardComponent';
 
 export function SectionBenefits({props} ) {
-    console.log(props.cardBenefits)
-    const stringParts = useStringParts(props.cardInformationBenefits.str, true) || [];
+    const stringParts = useStringParts(props.cardInformationBenefits.str) || [];
 
   return (
-    <section className={stylesIndex.main__section}>
+    <section>
        <div className={stylesIndex.main__funcionalidades}>
           <h2 className={stylesIndex.funcionaliddaes__h2}>
           {stringParts.part0}
             {' '}
-            <span className={stylesIndex.h2__span}>{stringParts.part1 + ' ' + stringParts.part2} </span>
+            <span className={stylesIndex.h2__span}>{stringParts.part1} </span>
             {' '}
-            {stringParts.part3}
+            {stringParts.part2}
             {' '}
-            <span className={stylesIndex.h2__span}> {stringParts.part4} </span>
+            <span className={stylesIndex.h2__span}> {stringParts.part3} </span>
             {' '}
-            {stringParts.part5 + ' ' + stringParts.part6 + ' ' + stringParts.part7 }
+            {stringParts.part4}
           </h2>
 
           <div className={stylesIndex.funcionalidades__contener}>

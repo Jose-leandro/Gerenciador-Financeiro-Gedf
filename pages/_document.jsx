@@ -1,12 +1,6 @@
 import React from 'react';
-import {Html, Head, Main, NextScript} from 'next/document';
+import { Html, Head, Main, NextScript } from 'next/document';
 
-/**
- * Documento é um componente de documento personalizado para Next.js.
- * É usado para aumentar o aplicativo <html> e <body> tags.
- * @returns {React.ReactElement} O elemento React que
- *  representa a estrutura do documento.
- */
 export default function Document() {
   return (
     <Html lang="pt-BR">

@@ -3,7 +3,7 @@ import { createCardInfo } from "@/utils/createCardInfo";
 
 const informationCardBenefits = {
   cardInformationBenefits: {
-    str: 'What People most Want to know About Gedf',
+    str: 'Discover The unique Benefits Gedf Brings to You',
   },
     cardBenefits: {
       spendManagement: createCardInfo(

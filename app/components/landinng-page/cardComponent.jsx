@@ -9,17 +9,16 @@ export function CardComponent({ cardFuncionalidades, cardQuestions }) {
    
   const renderCard = (cardData, containerStyle, tituloStyle, titleTag, isQuestion) => {
    
-    const { icon, title, description } = cardData;
-   console.log(isQuestion)
-   console.log(icon)
+    const { imgFunct, title, description } = cardData;
+   
     const TitleComponent = titleTag || 'h3';
 
     return (
-      <div className={isQuestion ? stylesIndex.contener__gastos : containerStyle}>
+      <div className={isQuestion ? stylesIndex.contener__gastos_div : containerStyle}>
         <div className={tituloStyle}>
-          {icon && (
+          {imgFunct && (
             <img
-              src={`/img/${icon}`}
+              src={`/img/${imgFunct}`}
               className={stylesIndex.titulos__img}
               alt={title}
             />

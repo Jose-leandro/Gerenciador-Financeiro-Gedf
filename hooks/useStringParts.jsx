@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
-const useStringParts = (str, isCardFuncio) => {
+const useStringParts = (str, isCardBenefits) => {
   const [stringParts, setStringParts] = useState([]);
+  console.log(str)
+  console.log(isCardBenefits)
 
   useEffect(() => {
     if (typeof str === 'string') {
@@ -12,20 +14,22 @@ const useStringParts = (str, isCardFuncio) => {
         parts[`part${i}`] = words[i] || '';
       }
 
-      if (isCardFuncio) {
-        setStringParts(prevState => ({
-          ...prevState,
-          ...parts,
-        }));
-      } else {
-        setStringParts(parts);
-      }
+      // if (isCardBenefits) {
+      //   setStringParts(prevState => ({
+      //     ...prevState,
+      //     ...parts,
+      //   }));
+
+      //   console.log(stringParts)
+      // } else {
+      // }
+      setStringParts(parts);
     } else {
       console.error('The provided str is not a string:', str);
     }
-  }, [str, isCardFuncio]);
-  console.log(stringParts)
+  }, [str, isCardBenefits]);
 
+  console.log(stringParts)
   return stringParts;
 };
 

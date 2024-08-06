@@ -3,9 +3,11 @@ import useStringParts from "../../../hooks/useStringParts";
 import stylesIndex from '../../../src/Sass/index.module.sass';
 
 export function SectionPrices( {props} ) {
-  
+    console.log(props)
 
     const stringParts = useStringParts(props.str) || [];
+
+console.log(useStringParts(props.str))
 
     return (
         <section className={stylesIndex.precos}>
@@ -29,33 +31,33 @@ export function SectionPrices( {props} ) {
             <h4 className={stylesIndex.informacoes__titulo}> {props.textBenefits} </h4>
             <div className={stylesIndex.informacoes__contener}>
               <div className={stylesIndex.contener__funcionalidades}>
-                <h4 className={stylesIndex.funcionalidades__h4}> {props.funcio1} </h4>
-                <img className={stylesIndex.funcionalidades__img} src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                <h4> {props.funcio1} </h4>
+                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
               </div>
 
               <div className={stylesIndex.contener__funcionalidades}>
-                <h4 className={stylesIndex.funcionalidades__h4}> {props.funcio2} </h4>
-                <img className={stylesIndex.funcionalidades__img} src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                <h4> {props.funcio2} </h4>
+                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
               </div>
 
               <div className={stylesIndex.contener__funcionalidades}>
-                <h4 className={stylesIndex.funcionalidades__h4}> {props.funcio3} </h4>
-                <img className={stylesIndex.funcionalidades__img} src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                <h4> {props.funcio3} </h4>
+                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
               </div>
 
               <div className={stylesIndex.contener__funcionalidades}>
-                <h4 className={stylesIndex.funcionalidades__h4}> {props.funcio4} </h4>
-                <img className={stylesIndex.funcionalidades__img} src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                <h4> {props.funcio4} </h4>
+                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
               </div>
 
               <div className={stylesIndex.contener__funcionalidades}>
-                <h4 className={stylesIndex.funcionalidades__h4}> {props.funcio5} </h4>
-                <img className={stylesIndex.funcionalidades__img} src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                <h4> {props.funcio5} </h4>
+                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
               </div>
 
               <div className={stylesIndex.contener__funcionalidades}>
-                <h4 className={stylesIndex.funcionalidades__h4}> {props.funcio6} </h4>
-                <img className={stylesIndex.funcionalidades__img} src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                <h4> {props.funcio6} </h4>
+                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
               </div>
             </div>
           </div>
