@@ -20,24 +20,23 @@ export default function Header(props) {
         <Image src="/img/logo.png" width={70} height={80} alt="logo do site" />
         <h1 className={` ${cormorant_garamond.className} ${styles.div__h1}`}>Gedf</h1>
       </div>
-      <div className={styles.menu} ref={divMenu}>
         {props.estadoUsuario ? (
-          <ul className={styles.div__ul}>
-            <li>Overview</li>
-            <li>Your performance</li>
-            <li>Learn how to use</li>
-            <li>Settings</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
+          <div className={styles.menu} ref={divMenu}>
+            <h1 className={styles.div__li}>Overview</h1>
+            <h2 className={styles.div__li}>Your performance</h2>
+            <h3 className={styles.div__li}>Learn how to use</h3>
+            <h4 className={styles.div__li}>Settings</h4>
+            <h5 className={styles.div__li}>About</h5>
+            <h6 className={styles.div__li}>Contact</h6>
+          </div>
         ) : (
           <>
-            <ul className={styles.div__ul}>
-              <li className={styles.div__li}>About</li>
-              <li className={styles.div__li}>Features</li>
-              <li className={styles.div__li}>Plans and Prices</li>
-              <li className={styles.div__li}>Contact</li>
-            </ul>
+          <div className={styles.menu} ref={divMenu}>
+            <h1 className={styles.div__li}>About</h1>
+            <h2 className={styles.div__li}>Features</h2>
+            <h3 className={styles.div__li}>Plans and Prices</h3>
+            <h4 className={styles.div__li}>Contact</h4>
+          </div>
 
             <div className={styles.menu__usuario}>
               <button className={styles.usuario__login}>
@@ -45,12 +44,11 @@ export default function Header(props) {
               </button>
 
               <button className={styles.usuario__sing}>
-                Sing up
+                Sign up
               </button>
             </div>
           </>
         )}
-      </div>
     </div>
   );
 }
