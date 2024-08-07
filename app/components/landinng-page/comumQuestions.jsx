@@ -5,7 +5,6 @@ import { CardComponent } from "./cardComponent";
 
 export function ComumQuestions( {props} ) {
     const stringParts = useStringParts(props.cardInformationQuestions.str) || [];
-    console.log(props.cardQuestions)
 
     return (
         <section>
