@@ -17,9 +17,7 @@ export function ApresentacionInicial( {props} ) {
           {stringParts.part6 + " " + stringParts.part7}
           <span className={stylesIndex.h1__span}>!</span>
         </h1>
-        <p
-          className={stylesIndex.informacoes__p}
-        >
+        <p>
           {props.description}
         </p>
 
