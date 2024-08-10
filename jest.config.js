@@ -5,7 +5,7 @@ module.exports = {
     '\\.(css|sass|scss)$': 'identity-obj-proxy'
   },
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
-    '^.+\\.sass$': 'jest-transform-sass'
+    '^.+\\.jsx?$': 'C:/Users/leand/gerenciador-financeiro-gedf/babel-transformer.js',
+    '^.+\\.sass$': 'C:/Users/leand/gerenciador-financeiro-gedf/sass-transformer.js'
   }  
 }
