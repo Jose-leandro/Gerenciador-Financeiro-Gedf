@@ -1,35 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
+import devLog from '@/utils/logger';
 
-const useStringParts = (str, isCardBenefits) => {
-  const [stringParts, setStringParts] = useState([]);
-  console.log(str)
-  console.log(isCardBenefits)
-
-  useEffect(() => {
-    if (typeof str === 'string') {
-      const words = str.split(' ');
-
-      const parts = {};
-      for (let i = 0; i < words.length; i++) {
-        parts[`part${i}`] = words[i] || '';
-      }
-
-      // if (isCardBenefits) {
-      //   setStringParts(prevState => ({
-      //     ...prevState,
-      //     ...parts,
-      //   }));
-
-      //   console.log(stringParts)
-      // } else {
-      // }
-      setStringParts(parts);
-    } else {
-      console.error('The provided str is not a string:', str);
+const useStringParts = (str) => {
+  // Memoize the computed parts so that it only recalculates when `str` changes
+  const stringParts = useMemo(() => {
+    if (typeof str !== 'string') {
+      devLog(`The provided str is not a string:${str}'`, true);
+      return {};
     }
-  }, [str, isCardBenefits]);
 
-  console.log(stringParts)
+    const words = str.split(' ');
+    return words.reduce((parts, word, index) => ({
+      ...parts,
+      [`part${index}`]: word || '',
+    }), {});
+  }, [str]);
+
   return stringParts;
 };
 

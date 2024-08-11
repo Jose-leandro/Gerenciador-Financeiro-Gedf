@@ -1,76 +1,82 @@
-import React from "react";
-import useStringParts from "../../../hooks/useStringParts";
+import React from 'react';
+import PropTypes from 'prop-types';
+import useStringParts from '../../../hooks/useStringParts';
 import stylesIndex from '../../../src/Sass/index.module.sass';
+import devLog from '@/utils/logger';
 
-export function SectionPrices( {props} ) {
-    console.log(props)
+function SectionPrices({
+  str, titlePlan, description, textBenefits,
+  funcio1, funcio2, funcio3, funcio4, funcio5, funcio6,
+  PlanP, pricer, textBtn,
+}) {
+  const stringParts = useStringParts(str) || [];
 
-    const stringParts = useStringParts(props.str) || [];
+  devLog(stringParts, true);
 
-console.log(useStringParts(props.str))
+  const selectedIcon = '/img/icons8-selecionado-24.png';
 
-    return (
-        <section className={stylesIndex.precos}>
-        <h4 className={stylesIndex.precos__h4}>
-          <span className={stylesIndex.h4__span}> {stringParts.part0} </span>
-          {' '}
-          {stringParts.part1}
-          {' '}
-          <span className={stylesIndex.h4__span}> {stringParts.part2} </span>
-          {' '}
-          {stringParts.part3}
-        </h4>
+  const funcionalidades = [
+    { id: 1, name: funcio1 },
+    { id: 2, name: funcio2 },
+    { id: 3, name: funcio3 },
+    { id: 4, name: funcio4 },
+    { id: 5, name: funcio5 },
+    { id: 6, name: funcio6 },
+  ];
 
-        <div className={stylesIndex.precos__div}>
-          <div className={stylesIndex.precos__informacoes}>
-            <h4 className={stylesIndex.informacoes__h4}>{props.titlePlan}</h4>
-            <p className={stylesIndex.informacoes__p}>
-           {props.description}
-            </p>
+  return (
+    <section className={stylesIndex.precos}>
+      <h4 className={stylesIndex.precos__h4}>
+        <span className={stylesIndex.h4__span}>{stringParts.part0}</span>
+        {` ${stringParts.part1} `}
+        <span className={stylesIndex.h4__span}>{stringParts.part2}</span>
+        {` ${stringParts.part3}`}
+      </h4>
 
-            <h4 className={stylesIndex.informacoes__titulo}> {props.textBenefits} </h4>
-            <div className={stylesIndex.informacoes__contener}>
-              <div className={stylesIndex.contener__funcionalidades}>
-                <h4> {props.funcio1} </h4>
-                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
-              </div>
+      <div className={stylesIndex.precos__div}>
+        <div className={stylesIndex.precos__informacoes}>
+          <h4 className={stylesIndex.informacoes__h4}>{titlePlan}</h4>
+          <p className={stylesIndex.informacoes__p}>{description}</p>
 
-              <div className={stylesIndex.contener__funcionalidades}>
-                <h4> {props.funcio2} </h4>
-                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
-              </div>
-
-              <div className={stylesIndex.contener__funcionalidades}>
-                <h4> {props.funcio3} </h4>
-                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
-              </div>
-
-              <div className={stylesIndex.contener__funcionalidades}>
-                <h4> {props.funcio4} </h4>
-                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
-              </div>
-
-              <div className={stylesIndex.contener__funcionalidades}>
-                <h4> {props.funcio5} </h4>
-                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
-              </div>
-
-              <div className={stylesIndex.contener__funcionalidades}>
-                <h4> {props.funcio6} </h4>
-                <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
-              </div>
-            </div>
-          </div>
-
-          <div className={stylesIndex.informacoes__preco}>
-            <p className={stylesIndex.preco__p}> {props.PlanP} </p>
-            <h4 className={stylesIndex.preco__valor}> {props.pricer} </h4>
-
-            <button className={stylesIndex.preco__button}>
-            {props.textBtn}
-            </button>
-          </div>
+          <h4 className={stylesIndex.informacoes__titulo}>{textBenefits}</h4>
+          <ul className={stylesIndex.informacoes__contener}>
+            {funcionalidades.map((funcio) => (
+              <li key={funcio.id} className={stylesIndex.contener__funcionalidades}>
+                <h4>{funcio.name}</h4>
+                <img src={selectedIcon} alt="Icone de seleção" />
+              </li>
+            ))}
+          </ul>
         </div>
-      </section>
-    )
+
+        <div className={stylesIndex.informacoes__preco}>
+          <p className={stylesIndex.preco__p}>{PlanP}</p>
+          <h4 className={stylesIndex.preco__valor}>{pricer}</h4>
+
+          <button type="button" className={stylesIndex.preco__button}>
+            {textBtn}
+          </button>
+        </div>
+      </div>
+    </section>
+  );
 }
+
+// PropTypes validation
+SectionPrices.propTypes = {
+  str: PropTypes.string.isRequired,
+  titlePlan: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  textBenefits: PropTypes.string.isRequired,
+  funcio1: PropTypes.string.isRequired,
+  funcio2: PropTypes.string.isRequired,
+  funcio3: PropTypes.string.isRequired,
+  funcio4: PropTypes.string.isRequired,
+  funcio5: PropTypes.string.isRequired,
+  funcio6: PropTypes.string.isRequired,
+  PlanP: PropTypes.string.isRequired,
+  pricer: PropTypes.string.isRequired,
+  textBtn: PropTypes.string.isRequired,
+};
+
+export default SectionPrices;
