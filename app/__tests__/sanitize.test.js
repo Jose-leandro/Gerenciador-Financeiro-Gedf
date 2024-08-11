@@ -1,6 +1,6 @@
 // __tests__/sanitize.test.js
-import { sanitizeHtml } from '../utils/sanitize';
 import DOMPurify from 'dompurify';
+import { sanitizeHtml } from '@/utils/sanitizeHtml';
 
 test('sanitizes HTML to prevent XSS', () => {
   const unsafeHtml = `
