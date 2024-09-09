@@ -20,7 +20,7 @@ const informationCreateCardQuestions = {
       question3: createCardInfo(
         false,
         'How Much Does GDEF Cost?',
-        'GDEF is completely free. No hidden fees, subscriptions, or ads. Enjoy all features and benefits at no cost.'
+        'GDEF is completely free. No hidden fees, subscriptions, or ads. Enjoy all features, benefits at no cost and use it for achieving financial freedom'
       ),
       question4: createCardInfo(
         false,
@@ -35,7 +35,7 @@ const informationCreateCardQuestions = {
       question6: createCardInfo(
         false,
         'Can I Achieve Financial Freedom with GDEF?',
-        'GDEF helps you manage your finances, but your dedication and effort are crucial. GDEF supports you, but achieving financial freedom requires your commitment.'
+        'GDEF helps manage your finances, but success depends on your dedication and effort. Financial freedom requires your commitment.'
       ),
     },
   };
