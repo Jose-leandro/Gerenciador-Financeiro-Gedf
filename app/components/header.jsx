@@ -15,9 +15,8 @@ export default function Header(props) {
     }
   }, []);
 
-console.log(useAutoRespon("600px"))
+console.log(useAutoRespon("600px", "sass-mudule"))
   const renderResponsive = (containerStyle) => (
-
 
     <div className={styles.menu} ref={divMenu}>
     <h1 className={styles.div__li}>Overview</h1>

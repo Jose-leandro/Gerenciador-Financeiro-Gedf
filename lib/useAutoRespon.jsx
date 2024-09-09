@@ -32,9 +32,10 @@ function throttle(func, limit) {
  * @param {positionElem} positionElem - The time limit in milliseconds.
  * @return {Function} - The throttled function.
  */
-function useAutoRespon(sizeResponsive) {
+function useAutoRespon(sizeResponsive, typeOfStlys) {
     // Debugging logs to understand the state of refs
     console.log('sizeResponsive:', sizeResponsive);
+    console.log('typeOfStlys:', typeOfStlys);
     //   console.log('supportElem.current:', supportElem?.current);
     // console.log('positionElem:', positionElem);
     //   console.log('positionElem.current:', positionElem?.current);
@@ -46,6 +47,10 @@ function useAutoRespon(sizeResponsive) {
         const windowHeight = window.innerHeight;
 
         console.log(`Width: ${windowWidth}, Height: ${windowHeight}`);
+
+        if(windowWidth < 600) {
+            console.log(`Width equal to 600px: ${windowWidth}`)
+        }
 
         // Function to apply styles
         // const applyStyles = () => {
