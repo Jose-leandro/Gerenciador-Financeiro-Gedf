@@ -39,3 +39,5 @@ next-env.d.ts
 
 # Usimg for learn webpack
 dist
+
+src\utils\logger.jsx
