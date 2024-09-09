@@ -4,11 +4,13 @@ import useStringParts from '../../../hooks/useStringParts';
 import stylesIndex from '../../../src/Sass/index.module.sass';
 import devLog from '@/utils/logger';
 
-function SectionPrices({
-  str, titlePlan, description, textBenefits,
-  funcio1, funcio2, funcio3, funcio4, funcio5, funcio6,
-  PlanP, pricer, textBtn,
-}) {
+function SectionPrices({ dataCardPricies }) {
+  // console.log(dataCardPricies)
+
+  const { str, titlePlan, description, textBenefits,
+    funcio1, funcio2, funcio3, funcio4, funcio5, funcio6,
+    PlanP, pricer, textBtn, } = dataCardPricies;
+
   const stringParts = useStringParts(str) || [];
 
   devLog(stringParts, true);

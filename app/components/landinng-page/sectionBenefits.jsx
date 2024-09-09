@@ -2,16 +2,37 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import stylesIndex from '../../../src/Sass/index.module.sass';
 import useStringParts from '../../../hooks/useStringParts';
-import { CardComponent } from './cardComponent';
-
+import CardComponent from './cardComponent';
 function SectionBenefits({ cardInformationBenefits, cardBenefits }) {
+  // console.log(cardInformationBenefits)
+  // console.log(cardBenefits)
   const stringParts = useStringParts(cardInformationBenefits?.str, true) || [];
 
-  const renderCardComponents = () => (
-    Object.entries(cardBenefits).map(([key, value]) => (
-      <CardComponent key={key} cardFuncionalidades={value} />
-    ))
-  );
+  const renderCardComponents = () => {
+    const components = [];
+  
+    Object.entries(cardBenefits).forEach(([keyCardBenefits, valueCardBenefits]) => {
+      // console.log(keyCardBenefits, valueCardBenefits);
+    
+      // Check if valueCardBenefits is an object
+      if (typeof valueCardBenefits === 'object' && !Array.isArray(valueCardBenefits) && valueCardBenefits !== null) {
+        components.push(<CardComponent wichTypeOfCard={"cardBenefits"} dataInformationCards={valueCardBenefits} />);
+      } else {
+        // console.error(`Unexpected type for key ${keyCardBenefits}:`, typeof valueCardBenefits);
+      }
+      
+      Object.entries(valueCardBenefits).forEach(([key, value]) => {
+        // console.log(key, value);
+      });
+    });
+    
+  
+    // console.log(components);
+    return components;
+  };
+  
+  
+  
 
   return (
     <section className={stylesIndex.main__section}>
@@ -40,10 +61,6 @@ SectionBenefits.propTypes = {
     str: PropTypes.string.isRequired,
   }).isRequired,
   cardBenefits: PropTypes.object,
-};
-
-SectionBenefits.defaultProps = {
-  cardBenefits: null,
 };
 
 export default SectionBenefits;

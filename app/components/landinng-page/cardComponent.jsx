@@ -3,65 +3,55 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import stylesIndex from '../../../src/Sass/index.module.sass';
 
-function CardComponent({ cardFuncionalidades, cardQuestions }) {
-  if (!cardFuncionalidades && !cardQuestions) {
-    return null;
+export default function CardComponent({ wichTypeOfCard, dataInformationCards }) {
+  // console.log(dataInformationCards)
+
+  if (typeof dataInformationCards !== 'object' || dataInformationCards === null) {
+    // console.error('Invalid dataInformationCards prop:', dataInformationCards);
+    return null; // or handle the error accordingly
   }
-  const renderCard = (cardData, containerStyle, tituloStyle, isQuestion, TitleComponent = 'h3') => (
+
+  const { icon, title, description } = dataInformationCards;
+  // console.log(icon)
+
+  const renderCard = (containerStyle, tituloStyle, isQuestion, TitleComponent = 'h3') => (
     <div className={isQuestion ? stylesIndex.contener__gastos : containerStyle}>
       <div className={tituloStyle}>
-        {cardData?.icon && (
-        <Image
-          src={`/img/${cardData.icon}`}
-          className={stylesIndex.titulos__img}
-          alt={cardData?.title}
-        />
+        {icon && (
+          <img
+            src={`/img/${icon}`}
+            className={stylesIndex.titulos__img}
+            alt={title}
+          />
         )}
         <TitleComponent className={stylesIndex.titulo__h3}>
-          {cardData?.title}
+          {title}
         </TitleComponent>
       </div>
-      <p className={isQuestion ? stylesIndex.titulo__p : ''}>{cardData?.description}</p>
+      <p className={isQuestion ? stylesIndex.titulo__p : ''}>{description}</p>
     </div>
   );
 
   return (
     <>
-      {cardFuncionalidades && renderCard(
-        cardFuncionalidades,
+      {wichTypeOfCard === "cardBenefits" ? renderCard(
         stylesIndex.contener__gastos,
         stylesIndex.gastos__titulos,
-        'h3',
         true,
-      )}
-
-      {cardQuestions && renderCard(
-        cardQuestions,
-        stylesIndex.contener__gedf,
-        stylesIndex.gedf__titulo,
-        'h5',
-        false,
-      )}
+        'h3'
+      ) : renderCard(
+        stylesIndex.contener__gedf, // containerStyle
+        stylesIndex.gedf__titulo,   // tituloStyle
+        false,                       // isQuestion
+        'h5'                   // TitleComponent
+      )
+    }
     </>
   );
 }
 
 CardComponent.propTypes = {
-  cardFuncionalidades: PropTypes.shape({
-    icon: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-  }),
-  cardQuestions: PropTypes.shape({
-    icon: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-  }),
+  dataInformationCards: PropTypes.object.isRequired, // Adjust as necessary
 };
 
-CardComponent.defaultProps = {
-  cardFuncionalidades: null,
-  cardQuestions: null,
-};
-
-export default React.memo(CardComponent);
+// export default React.memo(CardComponent);

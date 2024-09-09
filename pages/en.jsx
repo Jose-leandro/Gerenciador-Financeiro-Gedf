@@ -4,19 +4,20 @@ import Footer from '../app/components/footer';
 import stylesIndex from '../src/Sass/index.module.sass';
 import { CardComponent } from '../app/components/landinng-page/cardComponent';
 import { ApresentacionInicial } from '../app/components/landinng-page/apresentacionInicial';
-import { SectionPrices } from '../app/components/landinng-page/sectionPrecies';
+import SectionBenefits from '../app/components/landinng-page/sectionBenefits';
 import informationCardPrecies from '@/data/informationCardPrecies';
 import informationCardFooter from '@/data/informationCardFooter';
-import { ComumQuestions } from '../app/components/landinng-page/comumQuestions';
+import ComumQuestions from '../app/components/landinng-page/comumQuestions';
 import informationCreateCardQuestions from '@/data/informationCardQuestions';
 import Head from 'next/head';
-import { SectionBenefits } from '../app/components/landinng-page/sectionBenefits';
 import informationCardBenefits from '@/data/informationCardBenefits';
 import informationCardApresentacion from '@/data/informationCardApresentacion';
+import SectionPrices from '../app/components/landinng-page/sectionPrecies';
 
 function Index() {
 
   const dataInformationApresentacion = informationCardApresentacion;
+  console.log(dataInformationApresentacion)
 
   const dateInformationFooter = informationCardFooter;
   console.log(dateInformationFooter)
@@ -24,8 +25,46 @@ function Index() {
   const dataCardPricies = informationCardPrecies;
 
   const dataCardQuestions = informationCreateCardQuestions;
+  console.log(dataCardQuestions)
 
   const dataCardBenefits = informationCardBenefits;
+  console.log(dataCardBenefits)
+
+  const { spendManagement } = dataCardBenefits
+  console.log(spendManagement)
+
+
+//   spendManagement: {
+//     icon: any;
+//     title: any;
+//     description: any;
+// };
+// mySpendReports: {
+//     icon: any;
+//     title: any;
+//     description: any;
+// };
+// mySpendPlanning: {
+//     icon: any;
+//     title: any;
+//     description: any;
+// };
+// mySpendAccounts: {
+//     icon: any;
+//     title: any;
+//     description: any;
+// };
+// mySpendLimit: {
+//     icon: any;
+//     title: any;
+//     description: any;
+// };
+// mySpendAFree: {
+//     icon: any;
+//     title: any;
+//     description: any;
+// };
+// }
 
   return (
     <>
@@ -42,18 +81,20 @@ function Index() {
 
         <main className={stylesIndex.main}>
 
-          <ApresentacionInicial props={dataInformationApresentacion} />
+          <ApresentacionInicial dataInformationApresentacion={dataInformationApresentacion} />
 
-          <SectionBenefits props={dataCardBenefits}  />
+          <SectionBenefits cardInformationBenefits={dataCardBenefits.cardInformationBenefits} 
+          cardBenefits={dataCardBenefits.cardBenefits}  />
 
-          <SectionPrices props={dataCardPricies} />
+          <SectionPrices dataCardPricies={dataCardPricies} /> 
 
-          <ComumQuestions props={dataCardQuestions} />
+          <ComumQuestions cardInformationQuestions={dataCardQuestions.cardInformationQuestions}
+           cardQuestions={dataCardQuestions.cardQuestions} />
 
         </main>
 
           <footer>
-          <Footer props={dateInformationFooter} />
+          <Footer dateInformationFooter={dateInformationFooter} />
           </footer>
     </>
 
