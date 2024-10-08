@@ -5,7 +5,13 @@
   align-items: $align
 
 @mixin respond-to($breakpoint)
-  @if $breakpoint == small
+  @if $breakpoint == tiny
+    @media (max-width: $breakpoint-tiny)
+      @content
+  @else if $breakpoint == smaller
+    @media (max-width: $breakpoint-smaller)  // Correct indentation here
+      @content
+  @else if $breakpoint == small
     @media (max-width: $breakpoint-small)
       @content
   @else if $breakpoint == medium
@@ -17,6 +23,6 @@
   @else if $breakpoint == xlarge
     @media (max-width: $breakpoint-xlarge)
       @content
-
-  
-
+  @else if $breakpoint == xxlarge
+    @media (min-width: $breakpoint-xxlarge)
+      @content
