@@ -3,59 +3,52 @@ import Image from 'next/image';
 import { Cormorant_Garamond } from 'next/font/google';
 import styles from '../../src/Sass/header.module.sass';
 import useAutoRespon from '../../lib/useAutoRespon';
+import { Menu } from 'lucide-react';
 
 const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ['normal'], weight: ['300'] });
 
-export default function Header(props) {
+const MenuItems = ({ items }) => (
+  <>
+    {items.map((item, index) => (
+      <h1 key={index} className={styles.div__li}>{item}</h1>
+    ))}
+  </>
+);
+
+export default function Header({ estadoUsuario }) {
   const divMenu = useRef(null);
 
   useEffect(() => {
-    if (divMenu && divMenu.current) {
-      divMenu.current.style.display = 'flex';
-    }
+    divMenu.current?.classList.add(styles.menuVisible);
   }, []);
 
-console.log(useAutoRespon("600px", "sass-mudule"))
-  const renderResponsive = (containerStyle) => (
-
-    <div className={styles.menu} ref={divMenu}>
-    <h1 className={styles.div__li}>Overview</h1>
-    <h2 className={styles.div__li}>Your performance</h2>
-    <h3 className={styles.div__li}>Learn how to use</h3>
-    <h4 className={styles.div__li}>Settings</h4>
-    <h5 className={styles.div__li}>About</h5>
-    <h6 className={styles.div__li}>Contact</h6>
-  </div>
-  );
+  const autoRespon = useAutoRespon("600px", "sass-mudule", "src/Sass/test.module.sass");
+  console.log(autoRespon)
 
   return (
     <div className={styles.div}>
       <div className={styles.div__logo}>
-        <Image src="/img/logo.png" width={70} height={80} alt="logo do site" />
+        <img src="/img/logo.png" alt="logo do site"/>
         <h1 className={` ${cormorant_garamond.className} ${styles.div__h1}`}>Gedf</h1>
       </div>
-        {props.estadoUsuario ? (
-        <h1>fdt</h1>
-        ) : (
-          <>
+      {estadoUsuario ? (         
           <div className={styles.menu} ref={divMenu}>
-            <h1 className={styles.div__li}>About</h1>
-            <h2 className={styles.div__li}>Features</h2>
-            <h3 className={styles.div__li}>Plans and Prices</h3>
-            <h4 className={styles.div__li}>Contact</h4>
+          {autoRespon ? <Menu /> : null}
+            <MenuItems items={["Overview", "Your performance", "Learn how to use", "Settings", "About", "Contact"]} />
+          </div>
+      ) : (
+        <>
+          <div className={styles.menu} ref={divMenu}>
+            {autoRespon ? <Menu /> : null}
+            <MenuItems items={["About", "Features", "Plans and Prices", "Contact"]} />
           </div>
 
-            <div className={styles.menu__usuario}>
-              <button className={styles.usuario__login}>
-                Login
-              </button>
-
-              <button className={styles.usuario__sing}>
-                Sign up
-              </button>
-            </div>
-          </>
-        )}
+          <div className={styles.menu__usuario}>
+            <button className={styles.usuario__login}>Login</button>
+            <button className={styles.usuario__sing}>Sign up</button>
+          </div>
+        </>
+      )}
     </div>
   );
 }

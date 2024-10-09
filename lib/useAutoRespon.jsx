@@ -18,7 +18,6 @@ function useAutoRespon(sizeResponsive, typeOfStlys, fileOfStyles) {
       console.log(screenResponsive)
       console.log(`Width equal to 600px: ${windowWidth}`);
     }
-
     // Call the API route to update the file
     const updateFile = async () => {
       try {
