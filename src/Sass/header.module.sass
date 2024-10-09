@@ -1,3 +1,6 @@
+@import '../Sass/mixins'
+@import '../Sass/variables'
+    
 .div
     display: flex
     justify-content: space-between
@@ -6,10 +9,18 @@
     display: flex
     justify-content: space-evenly
 
+.div__logo img
+     @include respond-to(small) 
+      width: 40px
+      height: 40px
+    
 .div__h1
     color: #fff
     font-size: 40px
     margin-top: 7px
+
+    @include respond-to(small) 
+      font-size: 30px
 
 .div__li
     font-weight: 500
@@ -18,10 +29,10 @@
 
 .menu
     width: 74%
-    displey: flex
+    display: flex
     align-items: center
     justify-content: flex-end
-    margin-right: 2em
+    gap: 2
 
 .menu__usuario
     margin-left: 1em
@@ -29,6 +40,9 @@
     display: flex
     align-items: center
     justify-content: space-evenly
+
+    @include respond-to(small) 
+      width: 52%
 
 .usuario__login
     background-color: transparent
@@ -53,3 +67,4 @@
         background-color: #221f4363
         border-radius: 14px
          border: 1px #292644 solid
+
