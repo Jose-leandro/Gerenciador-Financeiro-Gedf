@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useStringParts from '../../../hooks/useStringParts';
 import stylesIndex from '../../../src/Sass/index.module.sass';
-import devLog from '@/utils/logger';
 
 function SectionPrices({ dataCardPricies }) {
   // console.log(dataCardPricies)
@@ -12,8 +11,6 @@ function SectionPrices({ dataCardPricies }) {
     PlanP, pricer, textBtn, } = dataCardPricies;
 
   const stringParts = useStringParts(str) || [];
-
-  devLog(stringParts, true);
 
   const selectedIcon = '/img/icons8-selecionado-24.png';
 
