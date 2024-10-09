@@ -8,7 +8,7 @@ const informationCardBenefits = {
     cardBenefits: {
       spendManagement: createCardInfo(
         'icons8-analysis-64.png',
-        'Discover a Prosperous Financial Life: Manage Your Expenses and Achieve Your Dreams!',
+        'Master Your Finances, Achieve Your Dreams!',
         'Take control of your expenses and plan for your future with our tools. Achieve financial freedom and live a prosperous life. Start today!'
       ),
       mySpendReports: createCardInfo(
