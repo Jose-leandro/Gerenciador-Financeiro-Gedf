@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Image from 'next/image';
 import { Cormorant_Garamond } from 'next/font/google';
 import stylesFooter from '../../src/Sass/footer.module.sass';
 
@@ -16,7 +15,7 @@ export default function Footer({ dateInformationFooter }) {
     <div className={stylesFooter.footer}>
       <div className={stylesFooter.footer__contener}>
         <div className={stylesFooter.footer__logo}>
-          <Image src="/img/logo.png" width={70} height={80} alt="logo do site" />
+          <img src="/img/logo.png" alt="logo do site" />
           <h1 className={` ${cormorant_garamond.className} ${stylesFooter.logo__h1}`}>Gedf</h1>
         </div>
 
