@@ -10,7 +10,7 @@ const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ['nor
 const MenuItems = ({ items }) => (
   <>
     {items.map((item, index) => (
-      <h1 key={index} className={styles.div__li}>{item}</h1>
+      <h1 key={index} className={styles.menu__item}>{item}</h1>
     ))}
   </>
 );
@@ -22,7 +22,10 @@ export default function Header({ estadoUsuario }) {
     divMenu.current?.classList.add(styles.menuVisible);
   }, []);
 
-  const autoRespon = useAutoRespon("600px", "sass-mudule", "src/Sass/test.module.sass");
+  const autoRespon = useAutoRespon(
+    "600px", "sass-mudule", "src/Sass/header.module.sass", 
+    "menu__icon", "menu__list", "menu__item");
+
   console.log(autoRespon)
 
   return (
@@ -33,13 +36,13 @@ export default function Header({ estadoUsuario }) {
       </div>
       {estadoUsuario ? (         
           <div className={styles.menu} ref={divMenu}>
-          {autoRespon ? <Menu /> : null}
-            <MenuItems items={["Overview", "Your performance", "Learn how to use", "Settings", "About", "Contact"]} />
+           <Menu className={styles.menu__icon} />
+            <MenuItems className={styles.menu__list} items={["Overview", "Your performance", "Learn how to use", "Settings", "About", "Contact"]} />
           </div>
       ) : (
         <>
           <div className={styles.menu} ref={divMenu}>
-            {autoRespon ? <Menu /> : null}
+            <Menu /> 
             <MenuItems items={["About", "Features", "Plans and Prices", "Contact"]} />
           </div>
 
