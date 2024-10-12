@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Cormorant_Garamond } from 'next/font/google';
 import styles from '../../src/Sass/header.module.sass';
-import useAutoRespon from '../../lib/useAutoRespon';
+import useAutoRespon from '../../lib/autoRespon/useAutoRespon';
 import { Menu } from 'lucide-react';
 
 const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ['normal'], weight: ['300'] });
@@ -22,9 +22,14 @@ export default function Header({ estadoUsuario }) {
     divMenu.current?.classList.add(styles.menuVisible);
   }, []);
 
+  const firstElement = {
+    class: 'menu__icon',
+    type: 'image'
+  }
+
   const autoRespon = useAutoRespon(
-    "600px", "sass-mudule", "src/Sass/header.module.sass", 
-    "menu__icon", "menu__list", "menu__item");
+    "600px", "sass-mudule", "C:/Users/leand/gerenciador-financeiro-gedf/src/Sass/header.module.sass", 
+    firstElement, "menu__list", "menu__item");
 
   console.log(autoRespon)
 
