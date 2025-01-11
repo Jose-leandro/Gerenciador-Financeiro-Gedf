@@ -69,10 +69,10 @@ function Index() {
   return (
     <>
       <Head>
-        <title>Bem vindo ao Gedf </title>
+        <title>Welcome To Gedf!</title>
         <meta
           name="description"
-          content="Bem-vindo ao meu Gedf!" />
+          content="Welcome To Gedf!" />
       </Head>
 
         <header>

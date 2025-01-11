@@ -4,21 +4,11 @@ import useStringParts from "../../../hooks/useStringParts";
 import stylesIndex from '../../../src/Sass/index.module.sass';
 import CardComponent from "./cardComponent";
 
-function ComumQuestions({ cardInformationQuestions,cardQuestions }) {
+function ComumQuestions({ cardInformationQuestions, cardQuestions }) {
   // const { cardInformationQuestions, cardQuestions } = dataCardQuestions;
 
   // Destructure properties as needed
   const { str, description } = cardInformationQuestions;
-
-  // // Destructure the properties of cardQuestions
-  // const {
-  //   question1: { icon: icon1, title: title1, description: desc1 },
-  //   question2: { icon: icon2, title: title2, description: desc2 },
-  //   question3: { icon: icon3, title: title3, description: desc3 },
-  //   question4: { icon: icon4, title: title4, description: desc4 },
-  //   question5: { icon: icon5, title: title5, description: desc5 },
-  //   question6: { icon: icon6, title: title6, description: desc6 },
-  // } = cardQuestions;
 
   const stringParts = useStringParts(str) || [];
 
