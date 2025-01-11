@@ -40,4 +40,7 @@ next-env.d.ts
 # Usimg for learn webpack
 dist
 
-src\utils\logger.jsx
+src/utils/logger.jsx
+
+#Api in development
+lib/autoRespon/api.js
