@@ -9,14 +9,5 @@ module.exports = {
     paths: {
       '@/*': ['src/*'],
     },
-  },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/en',
-        permanent: true,
-      },
-    ];
-  },
+  }
 };
