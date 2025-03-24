@@ -2,15 +2,16 @@ import React from 'react';
 
 import { Cormorant_Garamond } from 'next/font/google';
 import stylesFooter from '../../src/Sass/footer.module.sass';
+import informationCardFooter from '@/data/informationCardFooter';
 
 const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ['normal'], weight: ['300'] });
 
-export default function Footer({ dateInformationFooter }) {
+export default function Footer() {
 
   const { nameDevelop, titleAbout, aboutGedf, titleContact,
     contact1, contact2, contact3, contact4, TermsPolicies, termsUse, privacyPolicy,
-    cookiePolicy, CopyrightTitle, useOfImages } = dateInformationFooter;
-    
+    cookiePolicy, CopyrightTitle, useOfImages, languagesTitle, languages } = informationCardFooter;
+
   return (
     <div className={stylesFooter.footer}>
       <div className={stylesFooter.footer__contener}>
@@ -57,6 +58,14 @@ export default function Footer({ dateInformationFooter }) {
           <h2 className={stylesFooter.footer__titulo}> {CopyrightTitle} </h2>
           <ul>
             <li> {useOfImages} </li>
+          </ul>
+        </div>
+        <div>
+          <h2 className={stylesFooter.footer__titulo}> {languagesTitle} </h2>
+            <ul>
+              {Object.keys(languages).map(key => (
+                <li key={key}> {languages[key]} </li>
+              ))}
           </ul>
         </div>
       </div>
