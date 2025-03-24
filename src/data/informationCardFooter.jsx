@@ -13,7 +13,12 @@ const informationCardFooter = {
     privacyPolicy: 'Privacy Policy',
     cookiePolicy: 'cookie policy',
     CopyrightTitle: 'Copyright',
-    useOfImages: 'Use of images and icons'
+    useOfImages: 'Use of images and icons',
+    languagesTitle: "Languages",
+    languages: {
+        languages1: "English",
+        languages2: "Portugues"
+    }
 };
 
 export default informationCardFooter;
