@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import Header from '../app/components/header';
 import Footer from '../app/components/footer';
 import stylesIndex from '../src/Sass/index.module.sass';
-import { CardComponent } from '../app/components/landinng-page/cardComponent';
+import CardComponent from '../app/components/landinng-page/cardComponent';
+
 
 function Index() {
   const [wichiCardComponent, setWichiCardComponent] = useState(false);
