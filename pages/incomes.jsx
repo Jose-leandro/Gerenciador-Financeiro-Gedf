@@ -2,9 +2,7 @@ import React from "react";
 import Header from "../app/components/header";
 import Footer from "../app/components/footer";
 import informationCardFooter from "@/data/informationCardFooter";
-import dataSpends from "@/data/dataSpends";
 import stylesIncomes from "../src/Sass/incomes.module.sass"
-import DialogDemo from "../app/components/ui/dialog-income";
 
 function Incomes() {
 
@@ -32,14 +30,14 @@ function Incomes() {
                                 <h2>Total Incomes</h2>
                                 <h3> R${incomesTotal}</h3>
                             </div>
-                            {/* <button> + Add Spend </button> */}
+                            <button> + Add Spend </button> 
                             <DialogDemo />
-                        </div>
+                        </div> 
 
-                        {/* {
+                        {
                             dataSpendsInformation.forEach((titleIncome, categoryIncome, amountIncomes, dataOfIncome) => {
                                 <div>
-                                    <img src="" alt="" />
+                                   <Image src="" alt="" width={0} height={0} />
                                     <div>
 
                                         <h3> {titleIncome} </h3>
@@ -58,14 +56,14 @@ function Incomes() {
                                     </div>
                                 </div>
                             })
-                        } */}
-                    </div>
+                        } 
+                    </div> 
 
-                </div>
+                </div> 
 
-            </main>
-            <Footer dateInformationFooter={dateInformationFooter} />
-        </>
+            </main>  
+            <Footer dateInformationFooter={dateInformationFooter} /> 
+        </> 
     )
 }
 
