@@ -1,6 +1,7 @@
 import React from 'react';
 import stylesIndex from '../../../src/Sass/index.module.sass';
 import useStringParts from '../../../hooks/useStringParts';
+import Image from 'next/image';
 
 export function ApresentacionInicial({ dataInformationApresentacion }) {
   const { str, description, textButton, alt } = dataInformationApresentacion;
@@ -30,7 +31,7 @@ export function ApresentacionInicial({ dataInformationApresentacion }) {
         <button className={stylesIndex.main__button}> {textButton} </button>
       </div>
 
-      <img className={stylesIndex.main__img} src={selectedIcon} alt={alt} />
+      <Image className={stylesIndex.main__img} src={selectedIcon} alt={alt}  width={1000} height={600} />
     </section>
   );
 }

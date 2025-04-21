@@ -77,34 +77,34 @@ export default function Header({ estadoUsuario }) {
       type: 'button'
     }
   };
-  console.log(elements)
+  // console.log(elements)
 
-  useEffect(() => {
-    console.log({
-        div: div.current,
-        menuIcon: menuIcon.current,
-        divMenu: divMenu.current,
-        menu: menu.current,
-        menuUsuario: menuUsuario.current,
-        menuItemRefs: menuItemRefs.current,
-        usuarioLogin: usuarioLogin.current,
-        usuarioSing: usuarioSing.current,
-    });
-}, []);
+//   useEffect(() => {
+//     console.log({
+//         div: div.current,
+//         menuIcon: menuIcon.current,
+//         divMenu: divMenu.current,
+//         menu: menu.current,
+//         menuUsuario: menuUsuario.current,
+//         menuItemRefs: menuItemRefs.current,
+//         usuarioLogin: usuarioLogin.current,
+//         usuarioSing: usuarioSing.current,
+//     });
+// }, []);
 
-  const autoRespon = useAutoRespon(
-    600, elements, "menu");
+  // const autoRespon = useAutoRespon(
+  //   600, elements, "menu");
 
-    useEffect(() => {
-      console.log(menuItemRefs.current); // Logs all <h1> elements
-    }, []);
+    // useEffect(() => {
+    //   console.log(menuItemRefs.current); // Logs all <h1> elements
+    // }, []);
 
-  console.log(autoRespon)
+  // console.log(autoRespon)
 
   return (
     <div className={styles.div} ref={div} >
       <div className={styles.div__logo}>
-        <img src="/img/logo.png" alt="logo do site" />
+        <Image  src="/img/logo.png" alt="logo do site" width={70} height={79} />
         <h1 className={` ${cormorant_garamond.className} ${styles.div__h1}`}>Gedf</h1>
       </div>
       {estadoUsuario ? (
@@ -131,6 +131,11 @@ export default function Header({ estadoUsuario }) {
           </div>
         </>
       )}
+
+      <div>
+        <h1>EN</h1>
+        <button>^</button>
+      </div>
     </div>
   );
 }

@@ -18,11 +18,11 @@ export default function CardComponent({ wichTypeOfCard, dataInformationCards }) 
     <div className={isQuestion ? stylesIndex.contener__gastos : containerStyle}>
       <div className={tituloStyle}>
         {icon && (
-          <img
-            src={`/img/${icon}`}
-            className={stylesIndex.titulos__img}
-            alt={title}
-          />
+          <Image 
+          src={`/img/${icon}`}
+          className={stylesIndex.titulos__img}
+          alt={title} width={0} height={0} />
+
         )}
         <TitleComponent className={stylesIndex.titulo__h3}>
           {title}

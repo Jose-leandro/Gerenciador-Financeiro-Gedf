@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Header from '../app/components/header';
 import Footer from '../app/components/footer';
 import stylesIndex from '../src/Sass/index.module.sass';
@@ -112,7 +113,7 @@ function Index() {
             <button className={stylesIndex.main__button}>Start My Financial Freedom</button>
           </div>
 
-          <img className={stylesIndex.main__img} src="/img/Screenshot 2024-07-20 110005.png" alt="Image de apresentação" />
+          <Image className={stylesIndex.main__img} src="/img/Screenshot 2024-07-20 110005.png" alt="Image de apresentação" width={1126} height={634} priority />
         </section>
 
         <div className={stylesIndex.main__funcionalidades}>
@@ -163,32 +164,32 @@ function Index() {
               <div className={stylesIndex.informacoes__contener}>
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>All features released</h4>
-                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                  <Image src="/img/icons8-selecionado-24.png" alt="Icone de seleção" width={35} height={35} />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>Goal Setting</h4>
-                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                  <Image src="/img/icons8-selecionado-24.png" alt="Icone de seleção" width={35} height={35} />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>Budget Planning</h4>
-                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                  <Image src="/img/icons8-selecionado-24.png" alt="Icone de seleção" width={35} height={35} />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>Expense Tracking</h4>
-                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                  <Image src="/img/icons8-selecionado-24.png" alt="Icone de seleção" width={35} height={35} />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>Free without ads</h4>
-                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                  <Image src="/img/icons8-selecionado-24.png" alt="Icone de seleção" width={35} height={35} />
                 </div>
 
                 <div className={stylesIndex.contener__funcionalidades}>
                   <h4>Use on any device</h4>
-                  <img src="/img/icons8-selecionado-24.png" alt="Icone de seleção" />
+                  <Image src="/img/icons8-selecionado-24.png" alt="Icone de seleção" width={35} height={35} />
                 </div>
               </div>
             </div>

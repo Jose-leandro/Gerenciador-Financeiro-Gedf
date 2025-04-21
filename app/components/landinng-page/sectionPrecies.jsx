@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useStringParts from '../../../hooks/useStringParts';
 import stylesIndex from '../../../src/Sass/index.module.sass';
+import Image from 'next/image';
 
 function SectionPrices({ dataCardPricies }) {
   // console.log(dataCardPricies)
@@ -42,7 +43,7 @@ function SectionPrices({ dataCardPricies }) {
             {funcionalidades.map((funcio) => (
               <li key={funcio.id} className={stylesIndex.contener__funcionalidades}>
                 <h4>{funcio.name}</h4>
-                <img src={selectedIcon} alt="Icone de seleção" />
+                 <Image src={selectedIcon} alt="Icone de seleção" width={24} height={24} />
               </li>
             ))}
           </ul>

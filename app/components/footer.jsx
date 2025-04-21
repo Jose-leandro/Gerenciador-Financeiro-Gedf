@@ -3,6 +3,7 @@ import React from 'react';
 import { Cormorant_Garamond } from 'next/font/google';
 import stylesFooter from '../../src/Sass/footer.module.sass';
 import informationCardFooter from '@/data/informationCardFooter';
+import Image from 'next/image';
 
 const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ['normal'], weight: ['300'] });
 
@@ -16,7 +17,7 @@ export default function Footer() {
     <div className={stylesFooter.footer}>
       <div className={stylesFooter.footer__contener}>
         <div className={stylesFooter.footer__logo}>
-          <img src="/img/logo.png" alt="logo do site" />
+           <Image src="/img/logo.png" alt="logo do site" width={70} height={79} />
           <h1 className={` ${cormorant_garamond.className} ${stylesFooter.logo__h1}`}>Gedf</h1>
         </div>
 
