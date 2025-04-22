@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Dialog } from "radix-ui";
 import { Cross2Icon } from "@radix-ui/react-icons";
-import styles from "./../../../src/Sass/spends.module.sass";
+import styles from "./../../../src/Sass/dialogIncome.module.sass";
 
-const DialogDemo = () => (
+const DialogIncome = () => (
 	<Dialog.Root>
 		<Dialog.Trigger asChild>
 			<button className={`${styles.Button} violet`}>Add Income</button>
@@ -11,13 +11,10 @@ const DialogDemo = () => (
 		<Dialog.Portal>
 			<Dialog.Overlay className={styles.Overlay} />
 			<Dialog.Content className={styles.Content}>
-				<Dialog.Title className={styles.Title}>Edit profile</Dialog.Title>
-				<Dialog.Description className={styles.Description}>
-					Add your New Income. Click save when you're done.
-				</Dialog.Description>
+				<Dialog.Title className={styles.Title}>Add your New Income</Dialog.Title>
 				<fieldset className={styles.Fieldset}>
 					<label className={styles.Label} htmlFor="Amount">
-						Amount
+						Amount in R$
 					</label>
 					<input
 						className={styles.Input}
@@ -76,4 +73,4 @@ const DialogDemo = () => (
 	</Dialog.Root>
 );
 
-export default DialogDemo;
+export default DialogIncome;
