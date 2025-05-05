@@ -1,9 +1,13 @@
 import React, { useRef, useEffect, forwardRef } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Cormorant_Garamond } from 'next/font/google';
 import styles from '../../src/Sass/header.module.sass';
-import useAutoRespon from '../../lib/autoRespon/useAutoRespon';
 import { Menu } from 'lucide-react';
+
+
+const useAutoRespon = dynamic(() => import('../../lib/autoRespon/useAutoRespon'))
+
 
 const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ['normal'], weight: ['300'] });
 

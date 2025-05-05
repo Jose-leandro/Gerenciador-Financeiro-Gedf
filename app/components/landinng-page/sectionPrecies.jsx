@@ -1,8 +1,10 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
-import useStringParts from '../../../hooks/useStringParts';
 import stylesIndex from '../../../src/Sass/index.module.sass';
 import Image from 'next/image';
+
+const useStringParts = dynamic(() => import('../../../hooks/useStringParts'));
 
 function SectionPrices({ dataCardPricies }) {
   // console.log(dataCardPricies)

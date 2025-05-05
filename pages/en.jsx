@@ -1,17 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Header from '../app/components/header';
-import Footer from '../app/components/footer';
+import dynamic from 'next/dynamic';
 import stylesIndex from '../src/Sass/index.module.sass';
-import { ApresentacionInicial } from '../app/components/landinng-page/apresentacionInicial';
-import SectionBenefits from '../app/components/landinng-page/sectionBenefits';
+import Head from 'next/head';
+
+// Dynamic component imports
+const Header = dynamic(() => import('../app/components/header'));
+const Footer = dynamic(() => import('../app/components/footer'));
+const ApresentacionInicial = dynamic(() => import('../app/components/landinng-page/apresentacionInicial'));
+const SectionBenefits = dynamic(() => import('../app/components/landinng-page/sectionBenefits'));
+const ComumQuestions = dynamic(() => import('../app/components/landinng-page/comumQuestions'));
+const SectionPrices = dynamic(() => import('../app/components/landinng-page/sectionPrecies'));
+
+// Static data imports (these are fine as-is)
 import informationCardPrecies from '@/data/informationCardPrecies';
 import informationCardFooter from '@/data/informationCardFooter';
-import ComumQuestions from '../app/components/landinng-page/comumQuestions';
 import informationCreateCardQuestions from '@/data/informationCardQuestions';
-import Head from 'next/head';
 import informationCardBenefits from '@/data/informationCardBenefits';
 import informationCardApresentacion from '@/data/informationCardApresentacion';
-import SectionPrices from '../app/components/landinng-page/sectionPrecies';
+
 
 function Index() {
 
