@@ -1,83 +1,122 @@
+![Banner For Gedf](https://github.com/user-attachments/assets/897537f3-2c06-4286-82a7-b209100d9012)
 
 
- ### Descrição do projeto
+# Welcome to Gedf 
+
+ ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jose-leandro/Gerenciador-Financeiro-Gedf)
+![GitHub issues](https://img.shields.io/github/issues/jose-leandro/Gerenciador-Financeiro-Gedf)
+![GitHub](https://img.shields.io/github/license/jose-leandro/Gerenciador-Financeiro-Gedf)
+
+## 📚 Table of Contents
+- [Project Overview](#project-overview)
+- [Key Focus Areas](#key-focus-areas)
+- [Current Status](#current-status)
+- [Key Features](#key-features)
+- [Technologies Used](#technologies-used)
+- [How It Works](#how-it-works)
+   - [For Sellers](#for-Sellers)
+   - [For Buyers ](#for-buyers)
+- [Inspiration](#inspiration)
+- [Getting Started](#getting-started)
+- [Contributions](#contributions)
+- [Roadmap](#roadmap)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Author](#author)
+
+## 📘 About GEDF
+
+### 🌐 GEDF is a modern personal finance manager designed to help you stay on top of your budget, track spending, and make smarter financial decisions — all through a clean, fast, and user-friendly web interface.
 
 
- ### Vídeo de Introdução
 
- No vídeo a seguir, você encontrará uma descrição do primeiro contato que terá com o projeto.
+## 🔧 Key Focus Areas
+This project was built with a strong emphasis on modern web development best practices and engineering fundamentals:
+
+### ⚙️ Webpack – Custom-configured bundler setup for optimized builds and performance.
+
+### ♿ Accessibility (a11y) – Semantic HTML and ARIA support to ensure usability for all users.
+
+### 🔐 Security – Protection against common vulnerabilities like XSS, with secure data handling.
+
+### 🎨 UI/UX Design – Thoughtful layout, intuitive interactions, and responsive design.
+
+### 🎨 Sass – Modular and maintainable styling with SCSS architecture.
+
+### 🧪 Jest & TDD – Comprehensive unit and integration tests built using Test-Driven Development.
+
+### 🚀 Performance Optimization – Lazy loading, code splitting, and efficient state management.
+
+### 🌐 REST APIs – Structured communication with backend services using RESTful patterns.
+
+### ☁️ AWS Integration – Deployment and asset management with AWS services (e.g., S3 or Amplify).
+
+### 🧠 Data Structures & Algorithms – Efficient rendering and logic handling via algorithmic thinking.
+
+### 🛠️ Debugging & Tooling – Developer-focused tools and clear logging for smooth development.
+
+### 🧱 Clean Architecture – Separation of concerns, modular design, and scalable codebase.
+
+
+
+## 🚀 Current Status
+
+* ### Version: 0.0.1
+* ### Live Demo: Stellar on 
+
+ ## 🌟 Key Features(In Development)
  
-
-
- ### Features implementadas
-
-
-### Features em desenvolvimento
-
-
- ### Estado do projeto
  
-    Projeto concluído em desenvolvimento
+## 🛠️ Technologies Used
+This project is a symphony of modern technologies:
+
+
+## ⚙️ How It Works
+
+
+
+## 🌱 Inspiration
+
+
+## 🚀 Getting Started
+
+## Clone the Repository
+    git clone https://github.com/jose-leandro/Stellar.git
+
+## Install Dependencies
+    npm install
     
-
-### Hospedagem do projeto
-
-Para dar vida ao meu projeto, escolhi a poderosa plataforma de hospedagem Vercel, Sinta-se à vontade para explorar cada detalhe e funcionalidade deste projeto clicando neste [Link]()
-
-### Tecnologias utilizadas no projeto
-
-Neste projeto, você encontrará uma sinfonia de tecnologias, sendo cada uma delas desempenhando um papel vital e único essa são as tecnologias presente:
-
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)  ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)  ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)  ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) 
-
-### Executando o projeto Gerenciador financeiro GEDF
-
-    # Faça o clone deste repositório
-
-    # Acesse a pasta do projeto no terminal/cmd
-
-    # Instale as dependências
+## Run the Application
+    npm run dev
     
-    $ No seu terminal/cmd execute `npm i` ou `npm install` na raiz do projeto para restaurar os pacotes e dependências
+* ### The server will start on 'http://localhost:3000'
 
-    # Execute a aplicação 
-    $  No seu terminal/cmd execute `npm run dev` 
+## 🤝 Contributions
+Contributions are always welcome! If you’re interested in improving this project, follow these steps:
 
-    # O servidor inciará na porta:3000 - para visualizar acesse em seu navegador <http://localhost:3333> ou digite na barra de busca [http://localhost:3000]
+1. Fork the Project
+2. Set Up Locally
+3. Make Changes: Feel free to explore, fix issues, and add features.
+4. Submit a Pull Request: Describe your changes and their impact.
+5. Review & Merge: Your contribution will be reviewed, and if everything looks good, it will be merged.
 
-### Contribuições
+Thank you for helping to make Stellar even more amazing!
 
- Contribuições são sempre bem-vindas! Se você deseja contribuir para o aprimoramento deste projeto, siga os passos abaixo:
- 
-  1. Faça um Fork do Projeto
- 
-  2. Configure em Sua Máquina
- 
-  3. Realize Suas Modificações e Sugestões
-     
-      Agora você está pronto para fazer suas modificações e implementar suas sugestões para o projeto. Sinta-se à vontade para explorar, corrigir problemas e adicionar recursos.
- 
- 4. Envie um Pull Request
- 
-      Após ter feito as alterações necessárias no projeto, crie o seu Pull Request, certifique-se de descrever suas alterações e os problemas que elas resolvem.
- 
- 5. Aguarde a Análise
- 
-      Agora, sua contribuição será revisada, caso esteja tudo certo, seu Pull Request pode ser aprovado e fundido ao projeto após a revisão.
- 
- Agradeço antecipadamente por suas sugestões e por ajudar a tornar este projeto ainda mais incrível. 
+  ## 🛣️ Roadmap
 
- 
-### Autor
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
- <p>Desenvolvido por José leandro</p>
+## 🙏 Acknowledgments
+OpenAI & ChatGPT: For assisting in exploring new features, fixing issues, and improving the project.
+React & Next.js: For providing the foundation of Stellar.
 
- <img src="https://github.com/Joseleandro7i/Calculadora-OES/assets/104599482/aa4ab3f4-e5a8-4958-bcdd-3307242019f8" width="130px;"/>
+## 👨‍💻 Author
+Developed by José Leandro.
 
- <p>Se você quer acompanhar a minha jornada de aprimoramento da Calculadora OES, ou mesmo apenas deseja entrar em contato, por favor, sinta-se à vontade para utilizar esses canais de comunicação. Estou entusiasmado para estabelecer conexões significativas e compartilhar interesses em comum.</p>
+Feel free to connect with me and follow my journey:
 
  [![Linkedin Badge](https://img.shields.io/badge/-Leandro-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/josé-leandro-do-nascimento/) 
-
 
 
 
