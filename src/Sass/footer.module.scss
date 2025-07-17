@@ -1,0 +1,138 @@
+@use '../Sass/mixins' as mixins;
+@use '../Sass/variables' as vars;
+
+.footer {
+  margin-top: 35px;
+  padding: 20px 0px 8px 0px;
+  display: flex;
+  height: 250px;
+  justify-content: space-evenly;
+
+  @include mixins.respond-to(vars.$breakpoint-medium) {
+    height: 400px;
+  }
+
+  @include mixins.respond-to(vars.$breakpoint-small) {
+    height: 450px;
+  }
+
+  @include mixins.respond-to(vars.$breakpoint-smaller) {
+    flex-direction: column;
+    align-items: center;
+    height: 520px;
+  }
+}
+
+.footer__contener {
+  width: 30%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @include mixins.respond-to(vars.$breakpoint-medium) {
+    width: auto;
+  }
+
+  @include mixins.respond-to(vars.$breakpoint-small) {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.footer__logo {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  margin-bottom: 2em;
+
+  @include mixins.respond-to(vars.$breakpoint-small) {
+    margin-bottom: 0em;
+  }
+}
+
+.footer__logo img {
+  width: 70px;
+  height: 70px;
+
+  @include mixins.respond-to(vars.$breakpoint-small) {
+    width: 35px;
+    height: 35px;
+  }
+
+  @include mixins.respond-to(vars.$breakpoint-tiny) {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.logo__h1 {
+  color: #fff;
+  font-size: 40px;
+}
+
+.footer__informacoes {
+  display: flex;
+  justify-content: space-evenly;
+  width: 65%;
+
+  @include mixins.respond-to(vars.$breakpoint-medium) {
+    width: 100%;
+  }
+
+  @include mixins.respond-to(vars.$breakpoint-small) {
+    flex-direction: row;
+  }
+
+  @include mixins.respond-to(vars.$breakpoint-smaller) {
+    width: 97%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1.5em;
+    flex-direction: column;
+  }
+}
+
+.footer__informacoes div {
+  margin-left: 1em;
+}
+
+.footer__titulo {
+  font-size: 19px;
+  font-weight: 300;
+  font-weight: bold;
+}
+
+.titulo__li {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-size: 18px;
+  margin-bottom: 15px;
+
+  @include mixins.respond-to(vars.$breakpoint-small) {
+    margin: 0px 0px;
+  }
+}
+
+.titulo__imagens {
+  @extend .titulo__li;
+  text-decoration: underline;
+  font-size: 19.3px;
+}
+
+.desenvolvedor {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+
+  @include mixins.respond-to(vars.$breakpoint-small) {
+    width: auto;
+  }
+}
+
+.desenvolvedor__nome {
+  font-size: 18px;
+}

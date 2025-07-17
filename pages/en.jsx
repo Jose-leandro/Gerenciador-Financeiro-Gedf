@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Header from '../app/components/header';
 import Footer from '../app/components/footer';
-import stylesIndex from '../src/Sass/index.module.sass';
+import stylesIndex from '../src/Sass/index.module.scss';
 import { ApresentacionInicial } from '../app/components/landinng-page/apresentacionInicial';
 import SectionBenefits from '../app/components/landinng-page/sectionBenefits';
 import informationCardPrecies from '@/data/informationCardPrecies';

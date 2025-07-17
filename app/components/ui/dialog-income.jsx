@@ -3,7 +3,61 @@ import { Dialog } from "radix-ui";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import styles from "./../../../src/Sass/dialogIncome.module.sass";
 
-const DialogIncome = () => (
+const DialogIncome = () => {
+  const [amount, setAmount] = React.useState('');
+  const [date, setDate] = React.useState('');
+  const [category, setCategory] = React.useState('');
+  const [description, setDescription] = React.useState('');
+
+  const [successMessage, setSuccessMessage] = React.useState('');
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const incomeData = {
+    value: parseFloat(amount),
+    date,
+    category,
+    description,
+	people: "leandro",
+	 userId: "leandro2",
+  };
+
+  console.log("Sending incomeData:", incomeData);
+
+  try {
+    const res = await fetch('https://26d0f7f0-e086-4c32-bc1f-00f90d20b01f-00-2rirapqo8k67l.riker.replit.dev/api/income', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(incomeData),
+    });
+
+    if (!res.ok) {
+	setSuccessMessage('Income saved successfully!');
+	 setTimeout(() => setSuccessMessage(''), 5000); // clear after 5 sec
+      const errorBody = await res.json();
+      console.error("Backend error:", errorBody);
+      throw new Error('Failed to submit income');
+
+    }
+
+    console.log('Income submitted successfully');
+
+    // Optional: Reset form
+    setAmount('');
+    setDate('');
+    setCategory('');
+    setDescription('');
+
+  } catch (err) {
+    console.error('Error saving income:', err.message);
+  }
+};
+
+
+	
+	return (
 	<Dialog.Root>
 		<Dialog.Trigger asChild>
 			<button className={`${styles.Button} violet`}>Add Income</button>
@@ -12,6 +66,26 @@ const DialogIncome = () => (
 			<Dialog.Overlay className={styles.Overlay} />
 			<Dialog.Content className={styles.Content}>
 				<Dialog.Title className={styles.Title}>Add your New Income</Dialog.Title>
+				<div className={styles.separator}></div>
+				{successMessage && (
+					<p
+						style={{
+						color: 'green',
+						position: 'absolute',
+						top: '60px',
+						left: '50%',
+						transform: 'translateX(-50%)',
+						backgroundColor: '#e6ffe6',
+						padding: '8px 16px',
+						borderRadius: '8px',
+						boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+						fontWeight: 'bold'
+						}}
+					>
+						{successMessage}
+					</p>
+				)}
+
 				<fieldset className={styles.Fieldset}>
 					<label className={styles.Label} htmlFor="Amount">
 						Amount in R$
@@ -21,6 +95,7 @@ const DialogIncome = () => (
 						id="Amount"
 						defaultValue="R$ 0.00"
                         type="number"
+						 onChange={(e) => setAmount(e.target.value)}
 					/>
 				</fieldset>
 				<fieldset className={styles.Fieldset}>
@@ -32,18 +107,19 @@ const DialogIncome = () => (
 						id="data"
 						defaultValue="Today"
                         type="date"
+						onChange={(e) => setDate(e.target.value)}
 					/>
 				</fieldset>
 				<fieldset className={styles.Fieldset}>
 					<label className={styles.Label} htmlFor="category">
-						Category
 					</label>
 					<input
 						className={styles.Input}
 						id="category"
-						defaultValue="Add The Description Of You Spend"
+						defaultValue="Add The Category Of You Income"
                         type="text"
-					/>
+						onChange={(e) => setCategory(e.target.value)}
+						/>
 				</fieldset>
                 <fieldset className={styles.Fieldset}>
 					<label className={styles.Label} htmlFor="username">
@@ -52,15 +128,18 @@ const DialogIncome = () => (
 					<input
 						className={styles.Input}
 						id="username"
-						defaultValue="Add The Description Of You Spend"
+						defaultValue="Add The Description Of You Income"
                         type="text"
-					/>
+						onChange={(e) => setDescription(e.target.value)}
+						/>
 				</fieldset>
+
+				<div className={styles.separator}></div>
 				<div
 					style={{ display: "flex", marginTop: 25, justifyContent: "flex-end" }}
 				>
 					<Dialog.Close asChild>
-						<button className={`${styles.Button} green`}>Save changes</button>
+						<button className={`${styles.Button__save} green`} onClick={handleSubmit}>Save changes</button>
 					</Dialog.Close>
 				</div>
 				<Dialog.Close asChild>
@@ -71,6 +150,7 @@ const DialogIncome = () => (
 			</Dialog.Content>
 		</Dialog.Portal>
 	</Dialog.Root>
-);
+ )
+}
 
 export default DialogIncome;

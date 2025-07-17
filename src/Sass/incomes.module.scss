@@ -1,0 +1,90 @@
+@use '../Sass/variables';
+@use '../Sass/mixins' as mixins;
+
+.main__title {
+  margin-left: 0.50em;
+  margin-bottom: 1em;
+}
+
+.container {
+      background-color: #222327;
+      padding: 25px 0px;
+}
+
+.income {
+  display: flex;
+  flex-wrap: nowrap;       // corrected "no-wrap" to "nowrap"
+  justify-content: space-evenly;
+}
+
+.income__contener {
+  width: 25%;
+  margin: 0px 15px;
+}
+
+.total_income {
+  width: 88%;
+  height: 150px;
+background: #0d1117fa;
+//   border: 2px solid;
+  border-radius: 15px;
+  padding: 15px;
+  & h2 {
+    font-size: 20px;
+    margin-bottom: 0.5em;
+  }
+
+  & h3 {
+    margin: 7px 0 10px 0;   // corrected "0p" to "0"
+    font-size: 30px;
+    margin-bottom: 0.2em;
+  }
+}
+
+.dialog {
+  background: #0d1117fa;
+  height: 150px;
+  border-radius: 15px;
+//   border: 2px solid #4b4e59;
+  padding: 15px;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dialog span {
+      margin-top: 0.6em;
+      margin-left: 1em;
+}
+
+.lastTransactions {
+  width: 95%;
+  margin-left: 0.7em;
+  background: #0d1117fa;
+  border-radius: 15px;
+  height: auto;
+  padding: 15px;
+  margin-top: 2em;
+
+  &__dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 15px 0;
+
+    & span {
+      width: 100px;
+      text-align: start;
+    }
+
+    & div {
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 2em;
+    }
+
+    & h3 {
+      width: 100px;
+    }
+  }
+}

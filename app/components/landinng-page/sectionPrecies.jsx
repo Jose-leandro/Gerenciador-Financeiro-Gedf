@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useStringParts from '../../../hooks/useStringParts';
-import stylesIndex from '../../../src/Sass/index.module.sass';
+import stylesIndex from '../../../src/Sass/index.module.scss';
 import Image from 'next/image';
 
 function SectionPrices({ dataCardPricies }) {

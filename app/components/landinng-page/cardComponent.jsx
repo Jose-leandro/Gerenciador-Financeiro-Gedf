@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import stylesIndex from '../../../src/Sass/index.module.sass';
+import stylesIndex from '../../../src/Sass/index.module.scss';
 
 export default function CardComponent({ wichTypeOfCard, dataInformationCards }) {
   // console.log(dataInformationCards)
@@ -51,7 +51,7 @@ export default function CardComponent({ wichTypeOfCard, dataInformationCards }) 
 }
 
 CardComponent.propTypes = {
-  dataInformationCards: PropTypes.object.isRequired, // Adjust as necessary
+  dataInformationCards: PropTypes.object, // Adjust as necessary
 };
 
 // export default React.memo(CardComponent);

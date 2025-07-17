@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development next dev",
+    "dev": "cross-env NODE_ENV=development next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -16,7 +16,6 @@
     "@radix-ui/react-select": "^2.1.1",
     "@supabase/supabase-js": "^2.45.3",
     "@testing-library/react": "^16.1.0",
-    "caniuse-lite": "^1.0.30001397",
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
     "dompurify": "^3.1.6",
@@ -62,7 +61,8 @@
     "jest-transform-stub": "^2.0.0",
     "jsdom": "^24.1.1",
     "madge": "^8.0.0",
-    "sass": "^1.69.5",
+    "sass": "1.70",
+    "sass-loader": "^13.3.3",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   }
