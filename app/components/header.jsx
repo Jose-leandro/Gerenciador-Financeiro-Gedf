@@ -6,10 +6,6 @@ import styles from '../../src/Sass/header.module.scss';
 import useAutoRespon from '../../lib/autoRespon/useAutoRespon';
 import { Menu } from 'lucide-react';
 
-
-const useAutoRespon = dynamic(() => import('../../lib/autoRespon/useAutoRespon'))
-
-
 const cormorant_garamond = Cormorant_Garamond({ subsets: ['latin'], style: ['normal'], weight: ['300'] });
 
 const MenuItems = ({ items, setRef }) => (
