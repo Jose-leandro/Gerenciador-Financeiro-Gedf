@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Header from '../app/components/header';
 import Footer from '../app/components/footer';
-import stylesIndex from '../src/Sass/index.module.sass';
+import stylesIndex from '../src/Sass/index.module.scss';
 import CardComponent from '../app/components/landinng-page/cardComponent';
 
 
@@ -103,7 +103,7 @@ function Index() {
               <span className={stylesIndex.h1__span}>!</span>
             </h1>
             <p
-              className={stylesIndex.informacoes__p}
+              className={stylesIndex.informacoes_p}
             >
               Explore, enjoy and achieve your financial freedom.
               Transform your dreams and goals

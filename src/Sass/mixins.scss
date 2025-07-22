@@ -1,0 +1,40 @@
+@use '../Sass/variables' as vars;
+
+@mixin flex-center($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'tiny' {
+    @media (max-width: vars.$breakpoint-tiny) {
+      @content;
+    }
+  } @else if $breakpoint == 'smaller' {
+    @media (max-width: vars.$breakpoint-smaller) {
+      @content;
+    }
+  } @else if $breakpoint == 'small' {
+    @media (max-width: vars.$breakpoint-small) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium' {
+    @media (max-width: vars.$breakpoint-medium) {
+      @content;
+    }
+  } @else if $breakpoint == 'large' {
+    @media (max-width: vars.$breakpoint-large) {
+      @content;
+    }
+  } @else if $breakpoint == 'xlarge' {
+    @media (max-width: vars.$breakpoint-xlarge) {
+      @content;
+    }
+  } @else if $breakpoint == 'xxlarge' {
+    @media (min-width: vars.$breakpoint-xxlarge) {
+      @content;
+    }
+  }
+}

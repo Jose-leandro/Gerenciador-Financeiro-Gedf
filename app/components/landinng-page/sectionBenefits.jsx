@@ -1,11 +1,9 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
-import stylesIndex from '../../../src/Sass/index.module.sass';
-
-const useStringParts = dynamic(() => import('../../../hooks/useStringParts'))
-const CardComponent = dynamic(() => import('./cardComponent'))
-
+import stylesIndex from '../../../src/Sass/index.module.scss';
+import useStringParts from '../../../hooks/useStringParts';
+import CardComponent from './cardComponent';
 function SectionBenefits({ cardInformationBenefits, cardBenefits }) {
   // console.log(cardInformationBenefits)
   // console.log(cardBenefits)

@@ -2,7 +2,8 @@ import React, { useRef, useEffect, forwardRef } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Cormorant_Garamond } from 'next/font/google';
-import styles from '../../src/Sass/header.module.sass';
+import styles from '../../src/Sass/header.module.scss';
+import useAutoRespon from '../../lib/autoRespon/useAutoRespon';
 import { Menu } from 'lucide-react';
 
 

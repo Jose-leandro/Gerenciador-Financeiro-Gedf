@@ -1,5 +1,5 @@
 import React from 'react';
-import stylesIndex from '../../../src/Sass/index.module.sass';
+import stylesIndex from '../../../src/Sass/index.module.scss';
 import useStringParts from '../../../hooks/useStringParts';
 import Image from 'next/image';
 

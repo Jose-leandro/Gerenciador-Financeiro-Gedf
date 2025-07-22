@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Cormorant_Garamond } from 'next/font/google';
-import stylesFooter from '../../src/Sass/footer.module.sass';
+import stylesFooter from '../../src/Sass/footer.module.scss';
 import informationCardFooter from '@/data/informationCardFooter';
 import Image from 'next/image';
 

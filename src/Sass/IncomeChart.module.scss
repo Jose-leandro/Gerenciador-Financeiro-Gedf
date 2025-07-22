@@ -1,0 +1,20 @@
+@use '../Sass/variables';
+@use '../Sass/mixins';
+
+.chartWrapper {
+  width: 40%;
+  height: auto;
+  background-color: #0d1117fa;
+  border-radius: 15px;
+//   border: 2px solid #4b4e59;
+  padding: 15px 15px;
+
+  h2 {
+    margin: 1em 0;
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+}
