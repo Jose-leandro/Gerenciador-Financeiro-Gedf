@@ -4,50 +4,66 @@ import Footer from "../app/components/footer";
 import Header from "../app/components/header";
 import DynamicChart from "../app/components/incomeChart";
 
-const defaultDashboardData = {
-  totalIncome: 0,
-  infoText: "No insights available.",
-  bar: [
-    { category: "Food", amount: 0 },
-    { category: "Transport", amount: 0 },
-    { category: "Utilities", amount: 0 },
-  ],
-  NameUser: "Leandro",
-  dailySprends: "200",
-  dailyIncome: "300",
-  totalIncome: "2000",
-  Balance: "3000",
-  totalSprends: "140"
-};
+// const defaultDashboardData = {
+//   totalIncome: 0,
+//   infoText: "No insights available.",
+//   bar: [
+//     { category: "Food", amount: 0 },
+//     { category: "Transport", amount: 0 },
+//     { category: "Utilities", amount: 0 },
+//   ],
+//   NameUser: "Leandro",
+//   dailySprends: "200",
+//   dailyIncome: "300",
+//   totalIncome: "2000",
+//   Balance: "3000",
+//   totalSprends: "140"
+// };
 
 const Dashboard = () => {
-  const [dashboardData, setDashboardData] = useState(defaultDashboardData);
+  const [dashboardData, setDashboardData] = useState("");
   const [error, setError] = useState(null);
+  const [dataLine, setDataLine] = useState([]);
+
 
   const today = new Date();
 const options = { year: "numeric", month: "long", day: "numeric" };
 const dateToday = today.toLocaleDateString("pt-BR", options);
 
-  useEffect(() => {
-    const fetchDashboard = async () => {
-      try {
-        const userId = "leandro2"; 
-        const res = await fetch(`https://26d0f7f0-e086-4c32-bc1f-00f90d20b01f-00-2rirapqo8k67l.riker.replit.dev/api/dashboard?userId=${userId}`);
+useEffect(() => {
+  const fetchDashboard = async () => {
+    try {
+  
+      const res = await fetch(`https://gedf-backend.onrender.com/dashboard?userId=1`);
 
-        if (!res.ok) {
-          throw new Error("Failed to fetch dashboard data");
-        }
-
-        const data = await res.json();
-        setDashboardData(data);
-      } catch (err) {
-        console.error("Dashboard fetch error:", err);
-        setError("Failed to load dashboard");
+      if (!res.ok) {
+        throw new Error("Failed to fetch dashboard data");
       }
-    };
 
-    fetchDashboard();
-  }, []);
+      const data = await res.json();
+
+      const formattedData = data.dailyData.map((item) => ({
+        name: new Date(item.date).toLocaleDateString(),     // X-Axis label (date)
+        income: item.income, // Line 1
+        spend: item.spend,   // Line 2
+      }));
+
+      console.log("✅ Dashboard data fetched:", data); // ✅ NOW you see the real data
+      setDataLine(formattedData);
+
+      setDashboardData(data)
+      
+      console.log("Response status:", res.status);
+    } catch (err) {
+      console.error("❌ Dashboard fetch error:", err);
+      setError("Failed to load dashboard");
+    }
+  };
+
+  fetchDashboard();
+}, []);
+
+console.log(dashboardData)
 
 //   if (error) return <p className="text-red-500 p-4">{error}</p>;
 //   if (!dashboardData) return <p className="p-4">Loading...</p>;
@@ -61,8 +77,8 @@ const dateToday = today.toLocaleDateString("pt-BR", options);
   <main className={styles.dashboard}>
     <section className={styles.welcomeMessage}>
       <p className={styles.greeting}>
-        Good morning, <strong>{dashboardData.NameUser}</strong>!<br />
-        Today is <strong>{dateToday}</strong>. You've spent <strong>R$ {dashboardData.dailySprends}</strong> and earned <strong>R$ {dashboardData.dailyIncome}</strong>.
+        Good morning, <strong>{dashboardData.nameUser}</strong>!<br />
+        Today is <strong>{dateToday}</strong>. You've spent <strong>R$ {dashboardData.dailySpends}</strong> and earned <strong>R$ {dashboardData.dailyIncome}</strong>.
       </p>
     </section>
 
@@ -71,7 +87,7 @@ const dateToday = today.toLocaleDateString("pt-BR", options);
       <section className={styles.cards}>
         <div className={styles.card}>
           <h2>Total Balance</h2>
-          <p className={styles.balance}>R$ {dashboardData.Balance}</p>
+          <p className={styles.balance}>R$ {dashboardData.balance}</p>
         </div>
 
         <div className={styles.card}>
@@ -81,7 +97,7 @@ const dateToday = today.toLocaleDateString("pt-BR", options);
 
         <div className={styles.card}>
           <h2>Total Spending</h2>
-          <p className={styles.spending}>R$ {dashboardData.totalSprends}</p>
+          <p className={styles.spending}>R$ {dashboardData.totalSpends}</p>
         </div>
       </section>
 
@@ -93,6 +109,7 @@ const dateToday = today.toLocaleDateString("pt-BR", options);
           title="Comparison Between Spending and Income"
           dataKey="value"
           nameKey="name"
+          dataLine={dataLine}
         />
       </section>
 
@@ -100,13 +117,22 @@ const dateToday = today.toLocaleDateString("pt-BR", options);
       <section className={styles.spendingBreakdown}>
         <h2>Spending by Category</h2>
         <ul className={styles.spendingList}>
-          {dashboardData.bar.map((item, i) => (
-            <li key={i} className={styles.spendingItem}>
-              <span className={styles.category}>{item.category}</span>
-              <span className={styles.amount}>R$ {item.amount}</span>
-            </li>
-          ))}
+          {dashboardData?.bar?.length > 0 ? (
+            dashboardData.bar.map((item, i) => (
+              <li key={i} className={styles.spendingItem}>
+                <span className={styles.category}>{item.category}</span>
+                <span className={styles.amount}>R$ {item.amount}</span>
+              </li>
+            ))
+          ) : (
+            <p>No bar data</p>
+          )}
         </ul>
+      </section>
+          <h2>{dashboardData.nameUser}, This It is You Last Transactions</h2>
+
+      <section>
+
       </section>
     </div>
   </main>

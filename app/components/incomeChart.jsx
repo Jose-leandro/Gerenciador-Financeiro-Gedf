@@ -11,50 +11,50 @@ import styles from './../../src/Sass/IncomeChart.module.scss';
 
 const defaultColors = ['#1b3b49', '#2e2a25', '#1f2a30', '#221c1e', '#7c8285'];
 
-const dataLine = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+// const dataLine = [
+//   {
+//     name: 'Page A',
+//     uv: 4000,
+//     pv: 2400,
+//     amt: 2400,
+//   },
+//   {
+//     name: 'Page B',
+//     uv: 3000,
+//     pv: 1398,
+//     amt: 2210,
+//   },
+//   {
+//     name: 'Page C',
+//     uv: 2000,
+//     pv: 9800,
+//     amt: 2290,
+//   },
+//   {
+//     name: 'Page D',
+//     uv: 2780,
+//     pv: 3908,
+//     amt: 2000,
+//   },
+//   {
+//     name: 'Page E',
+//     uv: 1890,
+//     pv: 4800,
+//     amt: 2181,
+//   },
+//   {
+//     name: 'Page F',
+//     uv: 2390,
+//     pv: 3800,
+//     amt: 2500,
+//   },
+//   {
+//     name: 'Page G',
+//     uv: 3490,
+//     pv: 4300,
+//     amt: 2100,
+//   },
+// ];
 
 export default function DynamicChart({
   type,
@@ -63,8 +63,11 @@ export default function DynamicChart({
   nameKey = 'name',
   xKey = 'category',
   title = '',
-  colors = defaultColors
+  colors = defaultColors,
+  dataLine
 }) {
+
+  console.log(dataLine)
   return (
     <div className={styles.chartWrapper}>
       {title && <h2>{title}</h2>}
@@ -123,8 +126,8 @@ export default function DynamicChart({
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="Income" stroke="#8884d8" activeDot={{ r: 8 }} />
+        <Line type="monotone" dataKey="Spends" stroke="#82ca9d" />
       </LineChart>
     </ResponsiveContainer>
   ) }

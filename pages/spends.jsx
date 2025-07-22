@@ -10,10 +10,10 @@ const DialogIncome = dynamic(() =>
 
 // Static imports
 import informationCardFooter from "@/data/informationCardFooter";
-import stylesIncomes from "../src/Sass/incomes.module.scss";
+import stylesSpends from "../src/Sass/incomes.module.scss";
 
-export default function Incomes() {
-const [incomesTotal, setIncomesTotal] = useState(0);
+export default function Spends() {
+const [SpendsTotal, setSpendsTotal] = useState(0);
   const [informationalText, setInformationalText] = useState("");
   const [barData, setBarData] = useState([]);
   const [pieData, setPieData] = useState([]);
@@ -22,12 +22,12 @@ const [incomesTotal, setIncomesTotal] = useState(0);
    useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const res = await fetch(`https://gedf-backend.onrender.com/api/income/summary?userId=1`);
+        const res = await fetch(`https://gedf-backend.onrender.com/api/spends/summary?userId=1`);
         if (!res.ok) throw new Error("Failed to fetch dashboard data");
 
         const data = await res.json();
 
-        setIncomesTotal(data.totalIncome);
+        setSpendsTotal(data.totalIncome);
         setInformationalText(data.infoText);
         setBarData(data.bar);
         setPieData(data.pie);
@@ -43,77 +43,6 @@ const [incomesTotal, setIncomesTotal] = useState(0);
   const dateInformationFooter = informationCardFooter;
 
   const informatioAddcional = "Your Spender 20% more of last month";
-  //   {
-  //     type: {
-  //       img: "img",
-  //       category: "Groceries",
-  //     },
-  //     date: "2025-06-01",
-  //     value: 120.5,
-  //     status: "Paid",
-  //     people: "Alice",
-  //     action: {
-  //       edit: "edit",
-  //       delete: "delete",
-  //     },
-  //   },
-  //   {
-  //     type: {
-  //       img: "img",
-  //       category: "Transport",
-  //     },
-  //     date: "2025-06-02",
-  //     value: 15.0,
-  //     status: "Pending",
-  //     people: "Bob",
-  //     action: {
-  //       edit: "edit",
-  //       delete: "delete",
-  //     },
-  //   },
-  //   {
-  //     type: {
-  //       img: "img",
-  //       category: "Dining Out",
-  //     },
-  //     date: "2025-06-03",
-  //     value: 60.0,
-  //     status: "Paid",
-  //     people: "Charlie",
-  //     action: {
-  //       edit: "edit",
-  //       delete: "delete",
-  //     },
-  //   },
-  //   {
-  //     type: {
-  //       img: "img",
-  //       category: "Subscription",
-  //     },
-  //     date: "2025-06-04",
-  //     value: 9.99,
-  //     status: "Failed",
-  //     people: "Dana",
-  //     action: {
-  //       edit: "edit",
-  //       delete: "delete",
-  //     },
-  //   },
-  //   {
-  //     type: {
-  //       img: "img",
-  //       category: "Utilities",
-  //     },
-  //     date: "2025-06-05",
-  //     value: 75.25,
-  //     status: "Paid",
-  //     people: "Evan",
-  //     action: {
-  //       edit: "edit",
-  //       delete: "delete",
-  //     },
-  //   },
-  // ];
 
   const keys = Array.from(
     new Set(dataSpendsInformation.flatMap((item) => Object.keys(item)))
@@ -124,50 +53,50 @@ const [incomesTotal, setIncomesTotal] = useState(0);
       <Header />
       <main>
         <div>
-          <h1 className={stylesIncomes.main__title}>Income Manager</h1>
+          <h1 className={stylesSpends.main__title}>Spends Manager</h1>
 
-          <div className={stylesIncomes.container} >
+          <div className={stylesSpends.container} >
 
 
-          <div className={stylesIncomes.income}>
+          <div className={stylesSpends.income}>
             <IncomeChart
               type="bar"
-              title="Monthly Income by Category"
+              title="Monthly Spends by Category"
               data={barData}
               dataKey="amount"
               xKey="category"
             />
 
-            <div className={stylesIncomes.income__contener}>
-              <div className={stylesIncomes.total_income}>
-                <h2>Total Incomes</h2>
-                <h3> R${incomesTotal}</h3>
+            <div className={stylesSpends.income__contener}>
+              <div className={stylesSpends.total_income}>
+                <h2>Total Spends</h2>
+                <h3> R${SpendsTotal}</h3>
 
                 <span> {informatioAddcional} </span>
               </div>
 
-              <div className={stylesIncomes.dialog}>
+              <div className={stylesSpends.dialog}>
                 <DialogIncome />
-                <span>Every income moves you closer to control.</span>
+                <span>Every Spends moves you closer to control.</span>
               </div>
             </div>
 
             <IncomeChart
               type="pie"
-              title="Income Distribution"
+              title="Spends Distribution"
               data={pieData}
               dataKey="value"
               nameKey="name"
             />
           </div>
 
-          <div className={stylesIncomes.lastTransactions}>
+          <div className={stylesSpends.lastTransactions}>
             <div></div>
 
-            <div className={stylesIncomes.lastTransactions__dates}>
+            <div className={stylesSpends.lastTransactions__dates}>
               <div>
                 {keys.map((key, index) => (
-                  <span key={index} className={stylesIncomes.lastTransactions__span}>
+                  <span key={index} className={stylesSpends.lastTransactions__span}>
                     {key}
                   </span>
                 ))}

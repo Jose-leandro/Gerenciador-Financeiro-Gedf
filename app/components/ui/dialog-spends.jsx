@@ -3,7 +3,7 @@ import { Dialog } from "radix-ui";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import styles from "./../../../src/Sass/dialogIncome.module.sass";
 
-const DialogIncome = () => {
+const DialogSpends = () => {
   const [amount, setAmount] = React.useState('');
   const [date, setDate] = React.useState('');
   const [category, setCategory] = React.useState('');
@@ -15,7 +15,7 @@ const DialogIncome = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const incomeData = {
+  const spendsData = {
     value: parseFloat(amount),
     date,
     category,
@@ -24,25 +24,25 @@ const handleSubmit = async (e) => {
 	 userId: "1",
   };
 
-  console.log("Sending incomeData:", incomeData);
+  console.log("Sending spendsData:", spendsData);
 
   try {
-    const res = await fetch('https://gedf-backend.onrender.com/api/income?userId=1', {
+    const res = await fetch('https://gedf-backend.onrender.com/api/spends?userId=1', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(incomeData),
+      body: JSON.stringify(spendsData),
     });
 
     if (!res.ok) {
-	setSuccessMessage('Income saved successfully!');
+	setSuccessMessage('Spends saved successfully!');
 	 setTimeout(() => setSuccessMessage(''), 5000); // clear after 5 sec
       const errorBody = await res.json();
       console.error("Backend error:", errorBody);
-      throw new Error('Failed to submit income');
+      throw new Error('Failed to submit Spends');
 
     }
 
-    console.log('Income submitted successfully');
+    console.log('Spends submitted successfully');
 
     // Optional: Reset form
     setAmount('');
@@ -51,21 +51,19 @@ const handleSubmit = async (e) => {
     setDescription('');
 
   } catch (err) {
-    console.error('Error saving income:', err.message);
+    console.error('Error saving spends:', err.message);
   }
 };
 
-
-	
 	return (
 	<Dialog.Root>
 		<Dialog.Trigger asChild>
-			<button className={`${styles.Button} violet`}>Add Income</button>
+			<button className={`${styles.Button} violet`}>Add Spends</button>
 		</Dialog.Trigger>
 		<Dialog.Portal>
 			<Dialog.Overlay className={styles.Overlay} />
 			<Dialog.Content className={styles.Content}>
-				<Dialog.Title className={styles.Title}>Add your New Income</Dialog.Title>
+				<Dialog.Title className={styles.Title}>Add your New Spends</Dialog.Title>
 				<div className={styles.separator}></div>
 				{successMessage && (
 					<p
@@ -116,7 +114,7 @@ const handleSubmit = async (e) => {
 					<input
 						className={styles.Input}
 						id="category"
-						defaultValue="Add The Category Of You Income"
+						defaultValue="Add The Category Of You Spends"
                         type="text"
 						onChange={(e) => setCategory(e.target.value)}
 						/>
@@ -128,7 +126,7 @@ const handleSubmit = async (e) => {
 					<input
 						className={styles.Input}
 						id="username"
-						defaultValue="Add The Description Of You Income"
+						defaultValue="Add The Description Of You Spends"
                         type="text"
 						onChange={(e) => setDescription(e.target.value)}
 						/>
