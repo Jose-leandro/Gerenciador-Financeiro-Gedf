@@ -9,59 +9,27 @@ import informationCardFooter from '@/data/informationCardFooter';
 import informationCreateCardQuestions from '@/data/informationCardQuestions';
 import informationCardBenefits from '@/data/informationCardBenefits';
 import informationCardApresentacion from '@/data/informationCardApresentacion';
+import Head from 'next/head';
+import SectionPrices from '../app/components/landinng-page/sectionPrecies';
+import ComumQuestions from '../app/components/landinng-page/comumQuestions';
 
 
 function Index() {
 
   const dataInformationApresentacion = informationCardApresentacion;
-  console.log(dataInformationApresentacion)
 
   const dateInformationFooter = informationCardFooter;
-  console.log(dateInformationFooter)
+
 
   const dataCardPricies = informationCardPrecies;
 
   const dataCardQuestions = informationCreateCardQuestions;
-  console.log(dataCardQuestions)
+
 
   const dataCardBenefits = informationCardBenefits;
-  console.log(dataCardBenefits)
+
 
   const { spendManagement } = dataCardBenefits
-  console.log(spendManagement)
-
-
-//   spendManagement: {
-//     icon: any;
-//     title: any;
-//     description: any;
-// };
-// mySpendReports: {
-//     icon: any;
-//     title: any;
-//     description: any;
-// };
-// mySpendPlanning: {
-//     icon: any;
-//     title: any;
-//     description: any;
-// };
-// mySpendAccounts: {
-//     icon: any;
-//     title: any;
-//     description: any;
-// };
-// mySpendLimit: {
-//     icon: any;
-//     title: any;
-//     description: any;
-// };
-// mySpendAFree: {
-//     icon: any;
-//     title: any;
-//     description: any;
-// };
-// }
 
   return (
     <>
