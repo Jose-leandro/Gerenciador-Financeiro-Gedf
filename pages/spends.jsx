@@ -11,6 +11,8 @@ const DialogIncome = dynamic(() =>
 // Static imports
 import informationCardFooter from "@/data/informationCardFooter";
 import stylesSpends from "../src/Sass/incomes.module.scss";
+import DialogSpends from "../app/components/ui/dialog-spends";
+import Transactions from "../app/components/transactions";
 
 export default function Spends() {
 const [SpendsTotal, setSpendsTotal] = useState(0);
@@ -18,6 +20,9 @@ const [SpendsTotal, setSpendsTotal] = useState(0);
   const [barData, setBarData] = useState([]);
   const [pieData, setPieData] = useState([]);
   const [dataSpendsInformation, setDataSpendsInformation] = useState([]);
+
+ const [transactions, setTransactions] = useState({ transactions: [], incomes: [], spends: [] });
+
 
    useEffect(() => {
     const fetchDashboardData = async () => {
@@ -27,19 +32,40 @@ const [SpendsTotal, setSpendsTotal] = useState(0);
 
         const data = await res.json();
 
-        setSpendsTotal(data.totalIncome);
+        setSpendsTotal(data.totalSpend);
         setInformationalText(data.infoText);
         setBarData(data.bar);
         setPieData(data.pie);
         setDataSpendsInformation(data.spends);
+
+        console.log("✅ Dashboard data fetched:", data); // ✅ NOW you see the real data
+        conso
       } catch (err) {
         console.error("Error loading dashboard data:", err);
       }
     };
 
     fetchDashboardData();
+
+    const fetchTransactionsData = async () => {
+      try {
+        const res = await fetch(`https://gedf-backend.onrender.com/transactions?userId=1`);
+        if (!res.ok) throw new Error("Failed to fetch transactions data");
+
+        const data = await res.json();
+
+        setTransactions(data)
+
+        console.log("✅ Transactions data fetched:", data); // ✅ NOW you see the real data
+      } catch (err) {
+        console.error("Error loading Transactions data:", err);
+      }
+    };
+
+    fetchTransactionsData()
   }, []);
 
+  
   const dateInformationFooter = informationCardFooter;
 
   const informatioAddcional = "Your Spender 20% more of last month";
@@ -70,13 +96,13 @@ const [SpendsTotal, setSpendsTotal] = useState(0);
             <div className={stylesSpends.income__contener}>
               <div className={stylesSpends.total_income}>
                 <h2>Total Spends</h2>
-                <h3> R${SpendsTotal}</h3>
+                <h3> R$ {SpendsTotal}</h3>
 
                 <span> {informatioAddcional} </span>
               </div>
 
               <div className={stylesSpends.dialog}>
-                <DialogIncome />
+                <DialogSpends mode={"create"} />
                 <span>Every Spends moves you closer to control.</span>
               </div>
             </div>
@@ -90,45 +116,14 @@ const [SpendsTotal, setSpendsTotal] = useState(0);
             />
           </div>
 
-          <div className={stylesSpends.lastTransactions}>
-            <div></div>
+          {transactions?.transactions?.length > 0 && (
+            <Transactions
+              lastTransactions={transactions.transactions}
+              transactionsId={transactions.transactions[0].id}
+              mode="edit"
+            />
+          )}
 
-            <div className={stylesSpends.lastTransactions__dates}>
-              <div>
-                {keys.map((key, index) => (
-                  <span key={index} className={stylesSpends.lastTransactions__span}>
-                    {key}
-                  </span>
-                ))}
-              </div>
-
-              {dataSpendsInformation.map((item, index) => (
-                <div>
-                  <>
-                    {/* Access nested type.category and type.img */}
-                    <span>
-                      {/* <img src={item.type.img} alt={item.type.category} /> */}
-                      {/* {item.type.category} */}
-                    </span>
-
-                    {/* <h3>{item.date}</h3> */}
-
-                    {/* <h3>{item.value}</h3> */}
-
-                    {/* <h3>{item.status}</h3> */}
-
-                    {/* <h3>{item.people}</h3> */}
-
-                    {/* Access nested action.edit and action.delete */}
-                    <h3>
-                      {/* <button>{item.action.edit}</button> */}
-                      {/* <button>{item.action.delete}</button> */}
-                    </h3>
-                  </>
-                </div>
-              ))}
-            </div>
-          </div>
            </div>
         </div>
       </main>

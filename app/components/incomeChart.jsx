@@ -126,8 +126,8 @@ export default function DynamicChart({
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="Income" stroke="#8884d8" activeDot={{ r: 8 }} />
-        <Line type="monotone" dataKey="Spends" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="income" stroke="#8884d8" activeDot={{ r: 8 }} />
+        <Line type="monotone" dataKey="spend" stroke="#82ca9d" />
       </LineChart>
     </ResponsiveContainer>
   ) }

@@ -3,154 +3,187 @@ import { Dialog } from "radix-ui";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import styles from "./../../../src/Sass/dialogIncome.module.sass";
 
-const DialogIncome = () => {
-  const [amount, setAmount] = React.useState('');
-  const [date, setDate] = React.useState('');
-  const [category, setCategory] = React.useState('');
-  const [description, setDescription] = React.useState('');
+const DialogIncome = ({ incomeId, mode = "create", onSave, onDelete }) => {
+ const [loading, setLoading] = React.useState(false);
+const [income, setIncome] = React.useState(null);
 
+  const [amount, setAmount] = React.useState(income.value || '');
+  const [date, setDate] = React.useState(income.date || '');
+  const [category, setCategory] = React.useState(income.category || '');
+  const [description, setDescription] = React.useState(income.description || '');
   const [successMessage, setSuccessMessage] = React.useState('');
 
+   React.useEffect(() => {
+    if (mode === "edit" && incomeId) {
+      setLoading(true);
+      fetch(`https://gedf-backend.onrender.com/api/income/${incomeId}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setIncome(data);
+          setAmount(data.value);
+          setDate(data.date.slice(0, 10)); // only yyyy-mm-dd
+          setCategory(data.category);
+          setDescription(data.description);
+        })
+        .catch((err) => console.error("Error fetching income:", err))
+        .finally(() => setLoading(false));
+    }
+  }, [incomeId, mode]);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const incomeData = {
-    value: parseFloat(amount),
-    date,
-    category,
-    description,
-	people: "leandro",
-	 userId: "1",
+    const incomeData = {
+      value: parseFloat(amount),
+      date,
+      category,
+      description,
+      people: "leandro",
+      userId: "1",
+    };
+
+    try {
+      const method = mode === "edit" ? "PUT" : "POST";
+      const url =
+        mode === "edit"
+          ? `https://gedf-backend.onrender.com/api/income/${income.id}`
+          : `https://gedf-backend.onrender.com/api/income?userId=1`;
+
+      const res = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(incomeData),
+      });
+
+      if (!res.ok) throw new Error("Failed to save income");
+
+      setSuccessMessage("Income saved successfully!");
+      setTimeout(() => setSuccessMessage(""), 4000);
+
+      onSave?.(); // Optional callback
+    } catch (err) {
+      console.error("Save error:", err.message);
+    }
   };
 
-  console.log("Sending incomeData:", incomeData);
+  const handleDelete = async () => {
+    if (!income.id) return;
 
-  try {
-    const res = await fetch('https://gedf-backend.onrender.com/api/income?userId=1', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(incomeData),
-    });
+    try {
+      const res = await fetch(`https://gedf-backend.onrender.com/api/income/${income.id}`, {
+        method: "DELETE",
+      });
 
-    if (!res.ok) {
-	setSuccessMessage('Income saved successfully!');
-	 setTimeout(() => setSuccessMessage(''), 5000); // clear after 5 sec
-      const errorBody = await res.json();
-      console.error("Backend error:", errorBody);
-      throw new Error('Failed to submit income');
+      if (!res.ok) throw new Error("Delete failed");
 
+      setSuccessMessage("Income deleted!");
+      setTimeout(() => setSuccessMessage(""), 4000);
+
+      onDelete?.(); // Optional callback
+    } catch (err) {
+      console.error("Delete error:", err.message);
     }
+  };
 
-    console.log('Income submitted successfully');
+  return (
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
+        <button className={`${styles.Button} violet`}>
+          {mode === "edit" ? "Edit Income" : "Add Income"}
+        </button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay className={styles.Overlay} />
+        <Dialog.Content className={styles.Content}>
+          <Dialog.Title className={styles.Title}>
+            {mode === "edit" ? "Edit Income" : "Add New Income"}
+          </Dialog.Title>
 
-    // Optional: Reset form
-    setAmount('');
-    setDate('');
-    setCategory('');
-    setDescription('');
+          {successMessage && (
+            <p className={styles.SuccessMessage}>{successMessage}</p>
+          )}
 
-  } catch (err) {
-    console.error('Error saving income:', err.message);
-  }
+          {loading ? (
+			<p>Loading income data...</p>
+			) : (
+          <form onSubmit={handleSubmit}>
+            <fieldset className={styles.Fieldset}>
+              <label htmlFor="amount">Amount (R$)</label>
+              <input
+                type="number"
+                id="amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                required
+              />
+            </fieldset>
+
+            <fieldset className={styles.Fieldset}>
+              <label htmlFor="date">Date</label>
+              <input
+                type="date"
+                id="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                required
+              />
+            </fieldset>
+
+            <fieldset className={styles.Fieldset}>
+              <label htmlFor="category">Category</label>
+              <input
+                type="text"
+                id="category"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                required
+              />
+            </fieldset>
+
+            <fieldset className={styles.Fieldset}>
+              <label htmlFor="description">Description</label>
+              <input
+                type="text"
+                id="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </fieldset>
+
+            <div className={styles.separator}></div>
+
+            {/* Save and Delete Buttons */}
+            <div className={styles.Actions}>
+              <Dialog.Close asChild>
+                <button type="submit" className={styles.Button__save}>
+                  Save
+                </button>
+              </Dialog.Close>
+
+              {mode === "edit" && (
+                <Dialog.Close asChild>
+                  <button
+                    type="button"
+                    className={styles.Button__delete}
+                    onClick={handleDelete}
+                  >
+                    Delete
+                  </button>
+                </Dialog.Close>
+              )}
+            </div>
+          </form>
+		  )}
+
+          <Dialog.Close asChild>
+            <button className={styles.IconButton} aria-label="Close">
+              <Cross2Icon />
+            </button>
+          </Dialog.Close>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
 };
-
-
-	
-	return (
-	<Dialog.Root>
-		<Dialog.Trigger asChild>
-			<button className={`${styles.Button} violet`}>Add Income</button>
-		</Dialog.Trigger>
-		<Dialog.Portal>
-			<Dialog.Overlay className={styles.Overlay} />
-			<Dialog.Content className={styles.Content}>
-				<Dialog.Title className={styles.Title}>Add your New Income</Dialog.Title>
-				<div className={styles.separator}></div>
-				{successMessage && (
-					<p
-						style={{
-						color: 'green',
-						position: 'absolute',
-						top: '60px',
-						left: '50%',
-						transform: 'translateX(-50%)',
-						backgroundColor: '#e6ffe6',
-						padding: '8px 16px',
-						borderRadius: '8px',
-						boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
-						fontWeight: 'bold'
-						}}
-					>
-						{successMessage}
-					</p>
-				)}
-
-				<fieldset className={styles.Fieldset}>
-					<label className={styles.Label} htmlFor="Amount">
-						Amount in R$
-					</label>
-					<input
-						className={styles.Input}
-						id="Amount"
-						defaultValue="R$ 0.00"
-                        type="number"
-						 onChange={(e) => setAmount(e.target.value)}
-					/>
-				</fieldset>
-				<fieldset className={styles.Fieldset}>
-					<label className={styles.Label} htmlFor="data">
-						Data
-					</label>
-					<input
-						className={styles.Input}
-						id="data"
-						defaultValue="Today"
-                        type="date"
-						onChange={(e) => setDate(e.target.value)}
-					/>
-				</fieldset>
-				<fieldset className={styles.Fieldset}>
-					<label className={styles.Label} htmlFor="category">
-					</label>
-					<input
-						className={styles.Input}
-						id="category"
-						defaultValue="Add The Category Of You Income"
-                        type="text"
-						onChange={(e) => setCategory(e.target.value)}
-						/>
-				</fieldset>
-                <fieldset className={styles.Fieldset}>
-					<label className={styles.Label} htmlFor="username">
-						Description
-					</label>
-					<input
-						className={styles.Input}
-						id="username"
-						defaultValue="Add The Description Of You Income"
-                        type="text"
-						onChange={(e) => setDescription(e.target.value)}
-						/>
-				</fieldset>
-
-				<div className={styles.separator}></div>
-				<div
-					style={{ display: "flex", marginTop: 25, justifyContent: "flex-end" }}
-				>
-					<Dialog.Close asChild>
-						<button className={`${styles.Button__save} green`} onClick={handleSubmit}>Save changes</button>
-					</Dialog.Close>
-				</div>
-				<Dialog.Close asChild>
-					<button className={styles.IconButton} aria-label="Close">
-						<Cross2Icon />
-					</button>
-				</Dialog.Close>
-			</Dialog.Content>
-		</Dialog.Portal>
-	</Dialog.Root>
- )
-}
 
 export default DialogIncome;

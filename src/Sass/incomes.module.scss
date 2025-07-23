@@ -18,14 +18,14 @@
 }
 
 .income__contener {
-  width: 25%;
+  width: auto;
   margin: 0px 15px;
 }
 
 .total_income {
-  width: 88%;
+  width: auto;
   height: 150px;
-background: #0d1117fa;
+  background: #0d1117fa;
 //   border: 2px solid;
   border-radius: 15px;
   padding: 15px;
@@ -57,34 +57,3 @@ background: #0d1117fa;
       margin-left: 1em;
 }
 
-.lastTransactions {
-  width: 95%;
-  margin-left: 0.7em;
-  background: #0d1117fa;
-  border-radius: 15px;
-  height: auto;
-  padding: 15px;
-  margin-top: 2em;
-
-  &__dates {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 15px 0;
-
-    & span {
-      width: 100px;
-      text-align: start;
-    }
-
-    & div {
-      display: flex;
-      justify-content: space-evenly;
-      margin-bottom: 2em;
-    }
-
-    & h3 {
-      width: 100px;
-    }
-  }
-}

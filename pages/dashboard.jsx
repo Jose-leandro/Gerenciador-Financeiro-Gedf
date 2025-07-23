@@ -3,6 +3,7 @@ import styles from "../src/Sass/Dashboard.module.scss";
 import Footer from "../app/components/footer";
 import Header from "../app/components/header";
 import DynamicChart from "../app/components/incomeChart";
+import Transactions from "../app/components/transactions";
 
 // const defaultDashboardData = {
 //   totalIncome: 0,
@@ -43,9 +44,9 @@ useEffect(() => {
       const data = await res.json();
 
       const formattedData = data.dailyData.map((item) => ({
-        name: new Date(item.date).toLocaleDateString(),     // X-Axis label (date)
-        income: item.income, // Line 1
-        spend: item.spend,   // Line 2
+        name: new Date(item.date).toLocaleDateString('en-GB'),    // X-Axis label (date)
+        income: `${item.income}`, // Line 1
+        spend: `${item.spend}`,   // Line 2
       }));
 
       console.log("✅ Dashboard data fetched:", data); // ✅ NOW you see the real data
@@ -63,7 +64,6 @@ useEffect(() => {
   fetchDashboard();
 }, []);
 
-console.log(dashboardData)
 
 //   if (error) return <p className="text-red-500 p-4">{error}</p>;
 //   if (!dashboardData) return <p className="p-4">Loading...</p>;
@@ -128,10 +128,8 @@ console.log(dashboardData)
             <p>No bar data</p>
           )}
         </ul>
-      </section>
-          <h2>{dashboardData.nameUser}, This It is You Last Transactions</h2>
 
-      <section>
+        {/* <Transactions transactions={dashboardData.transactions} /> */}
 
       </section>
     </div>

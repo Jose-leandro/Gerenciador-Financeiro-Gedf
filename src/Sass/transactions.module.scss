@@ -1,0 +1,25 @@
+.lastTransactions {
+  width: 95%;
+  margin-left: 0.7em;
+  background: #0d1117fa;
+  border-radius: 15px;
+  height: auto;
+  padding: 15px;
+  margin-top: 2em;
+}
+
+.lastTransactions__container {
+ display: flex;
+ justify-content: space-around;
+}
+
+.container {
+  margin: 15px 20px;
+  background: #1f2631fa;
+  border-radius: 15px;
+  padding: 18px 15px;
+}
+
+.container__div {
+  margin-bottom: 1em;
+}

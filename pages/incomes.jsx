@@ -11,6 +11,7 @@ const DialogIncome = dynamic(() =>
 // Static imports
 import informationCardFooter from "@/data/informationCardFooter";
 import stylesIncomes from "../src/Sass/incomes.module.scss";
+import Transactions from "../app/components/transactions";
 
 export default function Incomes() {
 const [incomesTotal, setIncomesTotal] = useState(0);
@@ -161,45 +162,8 @@ const [incomesTotal, setIncomesTotal] = useState(0);
             />
           </div>
 
-          <div className={stylesIncomes.lastTransactions}>
-            <div></div>
+          <Transactions />
 
-            <div className={stylesIncomes.lastTransactions__dates}>
-              <div>
-                {keys.map((key, index) => (
-                  <span key={index} className={stylesIncomes.lastTransactions__span}>
-                    {key}
-                  </span>
-                ))}
-              </div>
-
-              {dataSpendsInformation.map((item, index) => (
-                <div>
-                  <>
-                    {/* Access nested type.category and type.img */}
-                    <span>
-                      {/* <img src={item.type.img} alt={item.type.category} /> */}
-                      {/* {item.type.category} */}
-                    </span>
-
-                    {/* <h3>{item.date}</h3> */}
-
-                    {/* <h3>{item.value}</h3> */}
-
-                    {/* <h3>{item.status}</h3> */}
-
-                    {/* <h3>{item.people}</h3> */}
-
-                    {/* Access nested action.edit and action.delete */}
-                    <h3>
-                      {/* <button>{item.action.edit}</button> */}
-                      {/* <button>{item.action.delete}</button> */}
-                    </h3>
-                  </>
-                </div>
-              ))}
-            </div>
-          </div>
            </div>
         </div>
       </main>
