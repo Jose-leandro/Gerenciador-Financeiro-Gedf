@@ -1,70 +1,111 @@
 ![Banner For Gedf](https://github.com/user-attachments/assets/897537f3-2c06-4286-82a7-b209100d9012)
 
-
-# Welcome to Gedf 
-
- ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jose-leandro/Gerenciador-Financeiro-Gedf)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/jose-leandro/Gerenciador-Financeiro-Gedf)
 ![GitHub issues](https://img.shields.io/github/issues/jose-leandro/Gerenciador-Financeiro-Gedf)
-![GitHub](https://img.shields.io/github/license/jose-leandro/Gerenciador-Financeiro-Gedf)
+![GitHub license](https://img.shields.io/github/license/jose-leandro/Gerenciador-Financeiro-Gedf)
 
-## 📚 Table of Contents
-- [Project Overview](#project-overview)
-- [Key Focus Areas](#key-focus-areas)
-- [Current Status](#current-status)
-- [Key Features](#key-features)
-- [Technologies Used](#technologies-used)
-- [How It Works](#how-it-works)
-   - [For Sellers](#for-Sellers)
-   - [For Buyers ](#for-buyers)
-- [Inspiration](#inspiration)
-- [Getting Started](#getting-started)
-- [Contributions](#contributions)
-- [Roadmap](#roadmap)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-- [Author](#author)
+# 💰 GEDF – Personal Finance Manager
 
-## 📘 About GEDF
+A modern and accessible web app that helps users manage their finances, track spending, and make smarter money decisions — with a clean and intuitive interface.
 
-### 🌐 GEDF is a modern personal finance manager designed to help you stay on top of your budget, track spending, and make smarter financial decisions — all through a clean, fast, and user-friendly web interface.
+---
+## 📖 Table of Contents
 
+- [🚩 The Problem](#-the-problem)
+- [💡 The Solution (GEDF)](#-the-solution-gedf)
+- [🌟 Key Features](#-key-features)
+- [🛠 Tech Stack](#-tech-stack)
+- [📚 What I Learned](#-what-i-learned)
+- [🚀 Live Demo](#-live-demo)
+- [⚙️ Getting Started](#-getting-started)
+- [🤝 Contributions](#-contributions)
+- [🛣️ Roadmap](#-roadmap)
+- [📄 License](#-license)
+- [👨‍💻 Author](#-author)
 
+---
 
-## 🔧 Key Focus Areas
-This project was built with a strong emphasis on modern web development best practices and engineering fundamentals:
+## 🚩 The Problem
 
-### ⚙️ Webpack – Custom-configured bundler setup for optimized builds and performance.
+Managing personal finances shouldn't require mastering spreadsheets or switching between disconnected apps.
 
-### ♿ Accessibility (a11y) – Semantic HTML and ARIA support to ensure usability for all users.
+Yet many people — especially freelancers, students, and young professionals — struggle to:
 
-### 🔐 Security – Protection against common vulnerabilities like XSS, with secure data handling.
+- Understand where their money is really going
+- Set and stick to financial goals
+- Access intuitive tools that are fast, responsive, and enjoyable to use
 
-### 🎨 UI/UX Design – Thoughtful layout, intuitive interactions, and responsive design.
+Most tools on the market are overcomplicated, outdated, or ignore essential things like usability and accessibility. I built GEDF to change that.
 
-### 🎨 Sass – Modular and maintainable styling with SCSS architecture.
+---
 
-### 🧪 Jest & TDD – Comprehensive unit and integration tests built using Test-Driven Development.
+## 💡 The Solution (GEDF)
 
-### 🚀 Performance Optimization – Lazy loading, code splitting, and efficient state management.
+GEDF is a **Personal Finance Manager** that:
 
-### 🌐 REST APIs – Structured communication with backend services using RESTful patterns.
+1. **Automatically imports your expenses** (via CSV or API).  
+2. Shows real-time dashboards to track **income**, **expenses**, and **more**.  
+3. Offers goals and alerts: set your savings target and get notifications.  
+4. Works 100% in the browser with responsive and accessible design.
+5. It's free
+   
+---
 
-### ☁️ AWS Integration – Deployment and asset management with AWS services (e.g., S3 or Amplify).
+## 🎯 Main Features
 
-### 🧠 Data Structures & Algorithms – Efficient rendering and logic handling via algorithmic thinking.
+- **Transaction Registration**: Create income and expense entries with customizable categories.  
+- **Custom Dashboard**: Interactive line, pie, and bar charts for instant analysis.  
+- **Financial Goals**: Set monthly targets and track your progress in real time.  
+- **Report Exporting**: Download reports in PDF/CSV for accounting or external review.  
+- **Secure Authentication**: JWT login + protection against XSS/CSRF.  
+- **Dark Mode**: Switch between light and dark themes with one click.
 
-### 🛠️ Debugging & Tooling – Developer-focused tools and clear logging for smooth development.
+---
 
-### 🧱 Clean Architecture – Separation of concerns, modular design, and scalable codebase.
+---
 
+## 🛠 Tech Stack
 
+- **Frontend**: Next.js + React.js + TypeScript + Tailwind CSS  
+- **Bundler**: Webpack (custom config for optimization)  
+- **Styling**: Modular SCSS + BEM methodology  
+- **Testing**: Jest & React Testing Library (TDD)  
+- **Accessibility**: ARIA, semantic HTML, visible focus  
+- **API**: RESTful (Node.js/Express or Firebase)  
+- **Deployment**: AWS S3 + CloudFront (or Vercel)
 
-## 🚀 Current Status
+---
 
-* ### Version: 0.0.1
-* ### Live Demo: Stellar on 
+## 📚 What I Learned
 
- ## 🌟 Key Features(In Development)
+- ⭐ **Clean Architecture**: Layer separation (UI, domain, data).  
+- ⚡ **Web Performance**: Code-splitting, lazy loading, image optimization.  
+- 🔐 **SPA Security**: XSS mitigation, CSP, JWT best practices.  
+- 🧪 **TDD in Practice**: Test coverage from components to services.  
+- ♿ **Real a11y**: Making interfaces truly usable by everyone.
+
+---
+
+## 🚀 Demo
+
+Check out GEDF in action:  
+🌐 [https://gedf-demo.vercel.app](https://gedf-demo.vercel.app)  
+
+> **Demo user:** demo@gedf.com / **Password:** 123456
+
+---
+
+ ## 👟 Getting Started
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/jose-leandro/Gerenciador-Financeiro-Gedf.git
+   cd Gerenciador-Financeiro-Gedf
+
+2. **Install dependencies**
+
+3.Environment Variables
+Create a .env.local file with your API keys, database info, etc.
  
  
 ## 🛠️ Technologies Used
