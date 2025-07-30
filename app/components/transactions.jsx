@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import stylesIncomes from "../../src/Sass/transactions.module.scss";
 import DialogSpends from "./ui/dialog-spends";
 
-export default function Transactions({lastTransactions, transactionsId, mode}) {
+export default function Transactions({name, lastTransactions, transactionsId, mode}) {
     console.log(lastTransactions)
 
     return (
         <>
                 <div className={stylesIncomes.lastTransactions}>    
                     <h2>
-                        {/* {lastTransactions.nameUser} */}
+                        {lastTransactions?.name}
                         , This It is You Last Transactions</h2>
 
                     <div className={stylesIncomes.lastTransactions__container}>

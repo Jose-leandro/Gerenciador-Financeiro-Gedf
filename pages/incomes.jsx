@@ -44,7 +44,7 @@ const [incomesTotal, setIncomesTotal] = useState(0);
   const dateInformationFooter = informationCardFooter;
 
   const informatioAddcional = "Your Spender 20% more of last month";
-  //   {
+
   //     type: {
   //       img: "img",
   //       category: "Groceries",
@@ -125,7 +125,6 @@ const [incomesTotal, setIncomesTotal] = useState(0);
       <Header />
       <main>
         <div>
-          <h1 className={stylesIncomes.main__title}>Income Manager</h1>
 
           <div className={stylesIncomes.container} >
 

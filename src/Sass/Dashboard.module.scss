@@ -4,8 +4,8 @@
   padding: 0 1rem;
 }
 
-.conatiner {
-    background-color: #222327;
+.container {
+    background-color: #3f444d;
     padding: 40px 55px;
     border-radius: 15px;
     width: auto;
@@ -65,6 +65,17 @@ background-color: #0d1117fa;
       }
     }
   }
+}
+
+.spendingBreakdown {
+  background-color: #0d1117fa;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  width: 100%;
+  height: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .error {

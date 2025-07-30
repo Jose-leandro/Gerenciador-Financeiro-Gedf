@@ -5,7 +5,6 @@ import Header from "../app/components/header";
 import DynamicChart from "../app/components/incomeChart";
 import Transactions from "../app/components/transactions";
 
-// const defaultDashboardData = {
 //   totalIncome: 0,
 //   infoText: "No insights available.",
 //   bar: [
@@ -30,6 +29,8 @@ const Dashboard = () => {
   const today = new Date();
 const options = { year: "numeric", month: "long", day: "numeric" };
 const dateToday = today.toLocaleDateString("pt-BR", options);
+
+ const [transactions, setTransactions] = useState({ transactions: [], incomes: [], spends: [] });
 
 useEffect(() => {
   const fetchDashboard = async () => {
@@ -62,9 +63,26 @@ useEffect(() => {
   };
 
   fetchDashboard();
+
+   const fetchTransactionsData = async () => {
+      try {
+        const res = await fetch(`https://gedf-backend.onrender.com/transactions?userId=1`);
+        if (!res.ok) throw new Error("Failed to fetch transactions data");
+
+        const data = await res.json();
+
+        setTransactions(data)
+
+        console.log("✅ Transactions data fetched:", data); // ✅ NOW you see the real data
+      } catch (err) {
+        console.error("Error loading Transactions data:", err);
+      }
+    };
+
+    fetchTransactionsData()
 }, []);
 
-
+console.log(dashboardData)
 //   if (error) return <p className="text-red-500 p-4">{error}</p>;
 //   if (!dashboardData) return <p className="p-4">Loading...</p>;
 
@@ -113,7 +131,6 @@ useEffect(() => {
         />
       </section>
 
-      {/* Spending by Category */}
       <section className={styles.spendingBreakdown}>
         <h2>Spending by Category</h2>
         <ul className={styles.spendingList}>
@@ -128,8 +145,20 @@ useEffect(() => {
             <p>No bar data</p>
           )}
         </ul>
+        
+      </section>
 
-        {/* <Transactions transactions={dashboardData.transactions} /> */}
+      {/* Spending by Category */}
+      <section>
+
+       {transactions?.transactions?.length > 0 && (
+                   <Transactions
+                     name={dashboardData.nameUser}
+                     lastTransactions={transactions.transactions}
+                     transactionsId={transactions.transactions[0].id}
+                     mode="edit"
+                   />
+                 )}
 
       </section>
     </div>

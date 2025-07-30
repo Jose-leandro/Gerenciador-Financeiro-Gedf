@@ -2,15 +2,28 @@ import * as React from "react";
 import { Dialog } from "radix-ui";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import styles from "./../../../src/Sass/dialogIncome.module.sass";
+import DropdownMenuCategories from "./DropdownMenuCategories";
+import DropdownMenuAcconts from "./DropdownMenuAcconts";
+
+const categories = {
+  name: "Food",
+  haveCetegory: false,
+  subcategorie: {
+    sub1: "Groceries",
+    sub2: "Restaurants",
+    sub3: "Snacks",
+    sub4: "Delivery"
+  }
+}
 
 const DialogIncome = ({ incomeId, mode = "create", onSave, onDelete }) => {
  const [loading, setLoading] = React.useState(false);
 const [income, setIncome] = React.useState(null);
 
-  const [amount, setAmount] = React.useState(income.value || '');
-  const [date, setDate] = React.useState(income.date || '');
-  const [category, setCategory] = React.useState(income.category || '');
-  const [description, setDescription] = React.useState(income.description || '');
+  const [amount, setAmount] = React.useState('');
+  const [date, setDate] = React.useState('');
+  const [category, setCategory] = React.useState('');
+  const [description, setDescription] = React.useState('');
   const [successMessage, setSuccessMessage] = React.useState('');
 
    React.useEffect(() => {
@@ -131,13 +144,20 @@ const [income, setIncome] = React.useState(null);
 
             <fieldset className={styles.Fieldset}>
               <label htmlFor="category">Category</label>
-              <input
+              <DropdownMenuCategories category={category}
+  setCategory={setCategory} />
+            </fieldset>
+
+            <fieldset className={styles.Fieldset}>
+              <label htmlFor="category">Accont</label>
+              {/* <DropdownMenuAcconts /> */}
+              {/* <input
                 type="text"
                 id="category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 required
-              />
+              /> */}
             </fieldset>
 
             <fieldset className={styles.Fieldset}>
@@ -154,14 +174,14 @@ const [income, setIncome] = React.useState(null);
 
             {/* Save and Delete Buttons */}
             <div className={styles.Actions}>
-              <Dialog.Close asChild>
+              
                 <button type="submit" className={styles.Button__save}>
                   Save
                 </button>
-              </Dialog.Close>
+              
 
               {mode === "edit" && (
-                <Dialog.Close asChild>
+               
                   <button
                     type="button"
                     className={styles.Button__delete}
@@ -169,7 +189,7 @@ const [income, setIncome] = React.useState(null);
                   >
                     Delete
                   </button>
-                </Dialog.Close>
+      
               )}
             </div>
           </form>

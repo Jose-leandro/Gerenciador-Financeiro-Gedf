@@ -2,6 +2,7 @@ import * as React from "react";
 import { Dialog } from "radix-ui";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import styles from "./../../../src/Sass/dialogIncome.module.sass";
+import DropdownMenuCategories from "./DropdownMenuCategories";
 
 const DialogSpends = ({ transactionsId, mode }) => {
 	console.log(transactionsId)
@@ -52,7 +53,7 @@ const DialogSpends = ({ transactionsId, mode }) => {
       const method = mode === "edit" ? "PUT" : "POST";
       const url =
         mode === "edit"
-          ? `https://gedf-backend.onrender.com/api/spends/${spend.id}`
+          ? `https://gedf-backend.onrender.com/api/spends/edit/${spend.id}?userId=1`
           : `https://gedf-backend.onrender.com/api/spends?userId=1`;
 
       const res = await fetch(url, {
@@ -135,15 +136,12 @@ const DialogSpends = ({ transactionsId, mode }) => {
               </fieldset>
 
               <fieldset className={styles.Fieldset}>
-                <label htmlFor="category">Category</label>
-                <input
-				className={styles.Input}
-                  type="text"
-                  id="category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                />
-              </fieldset>
+  <label htmlFor="category">Category</label>
+  <DropdownMenuCategories
+    category={category}
+    setCategory={setCategory}
+  />
+</fieldset>
 
               <fieldset className={styles.Fieldset}>
                 <label htmlFor="statusSpend">Status</label>

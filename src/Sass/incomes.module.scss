@@ -4,22 +4,52 @@
 .main__title {
   margin-left: 0.50em;
   margin-bottom: 1em;
+  font-size: 20px
 }
 
 .container {
-      background-color: #222327;
+      background-color:#2b2f35;
       padding: 25px 0px;
+      display: flex;
+      border-radius: 25px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 }
 
 .income {
+   width: 97%;
   display: flex;
-  flex-wrap: nowrap;       // corrected "no-wrap" to "nowrap"
+  flex-wrap: nowrap;    
   justify-content: space-evenly;
+
+  // Responsive changes
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
+
 
 .income__contener {
   width: auto;
   margin: 0px 15px;
+
+  // Responsive changes
+
+  @media (max-width: 480px) {
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+  }
 }
 
 .total_income {
